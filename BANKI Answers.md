@@ -254,7 +254,7 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Explanation:** “Normalize” alteres the default styles of various browsers to match each other. “Reset” will remove a browser’s default styles so you are starting from scratch.
   - **Use:** Using one or the other is done so that websites can remain visually consistent across different browsers. I prefer CSS normalize because of its style presets.
   - **Example:**
-   `Normalize:
+   ```Normalize:
 h1 {
    font -size: 2 em;
    margin: 0.67em 0;
@@ -264,8 +264,7 @@ Reset:
 Html, body, h1, h2, {
    margin: 0;
    padding: 0;
-}
-`
+}```
   - **Source:**
 - [ ] Describe floats and how they work.
   - **Explanation:** They are a positioning property where an element that is floated will be removed from the flow of the page and affect elements around it. `.clearfix` hacks are used to fix parent elements which collapse to zero height due to containing only floated elements.
