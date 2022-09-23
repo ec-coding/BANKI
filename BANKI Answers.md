@@ -327,44 +327,53 @@ h6 {
       - Overflow: Parent will establish a new BFC and expand to contain its floated children.
   - **Source:**
 - [ ] Explain CSS sprites, and how you would implement them on a page or site.
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** CSS sprites combine multiple images into one. To implement them, you would use a sprite generator and apply the proper CSS for it. Each image would have its own corresponding CSS class and background properties, which are placed in the elements which require them. 
+  - **Use:** Commonly used for icons. 
   - **Example:**
   - **Source:**
 - [ ] How would you approach fixing browser-specific styling issues?
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** By writing browser-specific CSS code, using a library like Bootstrap, and also by using a normalizer or reset CSS. My personal preference would be to use a combination normalize/reset style sheet.
+  - **Use:** Safari and IE have different default fonts, which means the font on any given site can change when viewed with either browser.
   - **Example:**
   - **Source:**
 - [ ] How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+	- Graceful degradation - Building an app for modern browsers while ensuring it remains functional in older browsers.
+	- Progressive enhancement - Building an app for a base level of user experience, but adding functional enhancements when a browser supports it.
+	- @support tag in CSS to test whether certain features are supported.
   - **Source:**
 - [ ] What are the different ways to visually hide content (and make it available only for screen readers)?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+	- Make width and height both 0 for the content.
+	- Position outside the screen.
+	- Indent the text by -9999px.
   - **Source:**
 - [ ] Have you ever used a grid system, and if so, what do you prefer?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** I have used floats and flex. I prefer flex because it feels more modernized and customizable, and has substantial browser support. I have been slightly exposed to CSS Grid Layout, but am still learning how to properly implement its `grid` property.
   - **Source:**
 - [ ] Have you used or implemented media queries or mobile specific layouts/CSS?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Yes. It was to adjust the content displayed based on the user’s screen size.
+  - **Use:** Re-organizing certain `<div>` and `<section>` elements on a site to be more aesthetic and functional if the user switches from a desktop to a mobile device.
   - **Source:**
 - [ ] Are you familiar with styling SVG?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Yes. It has advantages over other image formats such as JPG and GIF, such as:
+	- Able to be created and edited with any text editor.
+	- SVG images are scalable.
+	- SVG graphics do not lose quality upon being resized or zoomed.
   - **Source:**
 - [ ] Can you give an example of an `@media` property other than screen?
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** There are 4  types of @media properties:
+	- All - for all media type devices
+	- Print - for printers
+	- Speech - for screen-readers that “read” the page out loud.
+	- Screen - for computer screens, tablets, phones, etc
   - **Example:**
+	```@media print { 
+	body { 
+		color: black
+	}
+}```
+	
   - **Source:**
 - [ ] What are some of the "gotchas" for writing efficient CSS?
   - **Explanation:**
