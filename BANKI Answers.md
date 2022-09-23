@@ -370,9 +370,9 @@ h6 {
   - **Example:**
 	```
 	@media print { 
-		body { 
-			color: black
-		}
+	     body { 
+		color: black
+	     }
 	}
 	```
 	
