@@ -254,7 +254,8 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Explanation:** “Normalize” alteres the default styles of various browsers to match each other. “Reset” will remove a browser’s default styles so you are starting from scratch.
   - **Use:** Using one or the other is done so that websites can remain visually consistent across different browsers. I prefer CSS normalize because of its style presets.
   - **Example:**
-	Normalize:
+
+Normalize:
 
 ```css
 /**
@@ -267,7 +268,8 @@ h1 {
   margin: 0.67em 0;
 }
 ```
-	Reset:
+	
+Reset:
 
 ```css
 html,
