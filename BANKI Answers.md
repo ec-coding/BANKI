@@ -478,7 +478,7 @@ h6 {
 
 ### Javascript
 
-- [x] Explain event delegation
+- [x] T-JS-1) Explain event delegation
   - **Explanation:** Event delegation is the practice of adding event listeners to a parent element instead of its descendents. The listener will be affected by triggered events on the descendent elements due to the parent-child relationship.
   - **Use:** When you want some code to run when the user interacts with any one of a large number of child elements.
   - **Example:**
@@ -490,8 +490,8 @@ h6 {
   container.addEventListener('click', (event) => (event.target.style.backgroundColor = bgChange()));
 </script>
 ```
-  - **Source:**
-- [x] Explain how `this` works in JavaScript
+  - **Source:** https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_delegation
+- [x] T-JS-2) Explain how `this` works in JavaScript
   - **Explanation:** this references an object. When inside of a constructor function or class it will reference the object on instantiation.
   - **Use:** It is used to assign properties and values to an object on instantiation.
   - **Example:**
@@ -502,8 +502,8 @@ class MyThing {
   }
 }
 ```
-  - **Source:**
-- [x] Explain how prototypal inheritance works
+  - **Source:** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+- [x] T-JS-3) Explain how prototypal inheritance works
   - **Explanation:** When a property is accessed on an object, but said property does not exist within said object, it moves up the chain to see if its parent objects contain said property so it can call upon them.
   - **Use:** It can help reduce redundant code.
   - **Example:**
@@ -529,23 +529,23 @@ console.log(child.constructor);
 console.log(child.constructor.name);
 // 'Parent'
 ```	
-  - **Source:**
-- [x] What do you think of AMD vs CommonJS?
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions
+- [x] T-JS-4) What do you think of AMD vs CommonJS?
   - **Explanation:** Historically CommonJS was used in the back-end and runs synchronous and AMD was used in the front-end and runs asynchronous.
   - **Use:** CJS has been used in node.js for a while.
-  - **Source:**
-- [x] Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
+  - **Source:** https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm
+- [x] T-JS-5) Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
   - **Explanation:** The parser reads it as two seperate statements. First the function declaration `function foo(){ }` and then a blank function call attempt `();` The best way to fix this would be to add another set of parenthesis wrapping the function declaration `(function foo(){ })()` This changes it from a function declaration to a function expression.
-  - **Source:**
-- [x] What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions
+- [x] T-JS-6) What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
   - **Explanation:**
     - `null`: the value is intentionally absent (points to nothing in memory).
     - `undefined`: not yet assigned a value or not yet declared.
     - `undeclared`: improperly declared without let/const/var
   - **Use:** null can be used to assign the primitive value of null to a variable. undeclared throws an error where as null and undefined can be checked with a conditional
   - **Example:** `null` and `undefined` can be checked using strict equality `===`. Undeclared will throw it's own error so you could use `try...catch`
-  - **Source:**
-- [x] What is a closure, and how/why would you use one?
+  - **Source:** https://www.30secondsofcode.org/articles/s/javascript-undeclared-undefined-null
+- [x] T-JS-7) What is a closure, and how/why would you use one?
   - **Explanation:** Closure allows you to use an outer function’s scope (go into a parent, grandparent function, etc.) from within an inner function. In JavaScript a closure is created every time a function is created.
   - **Use:** It allows you to combine data with the function that will operate on that data. It is similar to OOP.
   - **Example:**
@@ -560,8 +560,8 @@ function init() {
 }
 init();
 ```	
-  - **Source:**
-- [x] Can you describe the main difference between a `.forEach()` loop and a `.map()` loop and why you would pick one versus the other?
+  - **Source:** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+- [x] T-JS-8) Can you describe the main difference between a `.forEach()` loop and a `.map()` loop and why you would pick one versus the other?
   - **Explanation:** `.forEach()` executes a callback function on each element, but does not return a value. `.map()` executes a callback function on each element and "maps" the result to a new array. The new array is returned.
   - **Use:** If you need the result and don't want to mutate the original array, use map. If you only need to iterate over the array then forEach can be used.
   - **Example:**
@@ -584,20 +584,21 @@ const doubled = a.map((num) => {
 });
 // doubled = [2, 4, 6]
 ```
-- [x] What's a typical use case for anonymous functions?
+- **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-9) What's a typical use case for anonymous functions?
   - **Explanation:** They can be used in IIFEs to contain some code within a local scope so that its variables do not leak to the global scope.
   - **Use:** Essentially when you don't need a named function and the function is bound to some other action.
-  - **Source:**
-- [x] How do you organize your code? (module pattern, classical inheritance?)
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-10) How do you organize your code? (module pattern, classical inheritance?)
   - **Explanation:** Single directional data flow, similar to the one used in React.
-  - **Source:**
-- [x] What's the difference between host objects and native objects?
-  - **Explanation:** 
+  - **Source:** https://www.theodinproject.com/lessons/node-path-javascript-es6-modules
+- [x] T-JS-11) What's the difference between host objects and native objects?
+  - **Explanation:** https://www.frontendinterviewhandbook.com/javascript-questions/
 	- Native objects are ones that are part of the JavaScript language, such as string, math, object, function, etc.
 	- Host objects are provided by the runtime environment (browser) such as window, XMLHTTPRequest, etc.
   - **Example:** Some native objects are `String`, `Math`, `RegExp`, and `Object`. A couple of host objects are `window` and `console`
-  - **Source:**
-- [x] What is the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-12) What is the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
   - **Explanation & Use:**
     - `function Person(){}` is likely being used as a constructor.
     - `var person = new Person()`is instantiated a new Person object as person.
@@ -617,19 +618,19 @@ var person = new Person('John');
 console.log(person); // Person { name: "John" }
 console.log(person.name); // "john"
 ```
-  - **Source:**
-- [x] What's the difference between `.call()` and `.apply()`?
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-13) What's the difference between `.call()` and `.apply()`?
   - **Explanation:** They are both used to invoke functions, but the difference is in how they take arguments. `.call()` takes them as comma-separated values and `.apply()` takes them as an array.
-  - **Source:**
-- [x] Explain `Function.prototype.bind`.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-14) Explain `Function.prototype.bind`.
   - **Explanation:** Creates a new function with a `this` keyword that sets itself to a value provided by the function call.
   - **Use:** It binds the value of [this] in methods of classes you want to pass into other functions. Frequently performed with React components.
-  - **Source:**
-- [x] When would you use `document.write()`?
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-15) When would you use `document.write()`?
   - **Explanation:** It is considered dangerous, and its use is not encouraged. It can clear the entire document and replace its content with a given parameter value.
-  - **Source:**
-- [x] What's the difference between feature detection, feature inference, and using the UA string?
-  - **Explanation:**
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-16) What's the difference between feature detection, feature inference, and using the UA string?
+  - **Explanation:** https://www.frontendinterviewhandbook.com/javascript-questions/
     - **Feature Detection:** Working out whether a browser supports a certain block of code, and running different code depending on whether it does, so that the browser can provide a working experience rather crashing/erroring in some browsers.
     - **Feature Inference:** Checks for a feature just like feature detection, but uses another function because it assumes it will also exist. Feature Detection is the better approach.
     - **UA String:** A browser-reported string that allows the network protocol peers to identify various properties of the system. It's tricky to parse and can be spoofed so it's best to avoid this method.
@@ -642,13 +643,13 @@ if ('geolocation' in navigator) {
   // Handle lack of feature
 }
 ```
-  - **Source:**
-- [x] Explain Ajax in as much detail as possible.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-17) Explain Ajax in as much detail as possible.
   - **Explanation:** Ajax (asynchronous JavaScript and XML) is a set of web development techniques using many web technologies on the client side to create asynchronous web applications. With Ajax, web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page.
   - **Use:** By decoupling the data interchange layer from the presentation layer, Ajax allows for web pages, and by extension web applications, to change content dynamically without the need to reload the entire page. In practice, modern implementations commonly use JSON instead of XML, due to the advantages of JSON being native to JavaScript.
   - **Example:** The `fetch` API is typically used nowadays for asynchronous communication.
-  - **Source:**
-- [x] What are the advantages and disadvantages of using Ajax?
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-18) What are the advantages and disadvantages of using Ajax?
   - **Advantages:**
     - Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page.
     - Reduce connections to the server since scripts and stylesheets only have to be requested once.
@@ -658,8 +659,8 @@ if ('geolocation' in navigator) {
     - Does not work if JavaScript has been disabled in the browser.
     - Some webcrawlers do not execute JavaScript and would not see content that has been loaded by JavaScript.
     - JavaScript will have to be parsed and executed on the browser, and low-end mobile devices might struggle with this.
-  - **Source:**
-- x] Explain how JSONP works (and how it's not really Ajax).
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- x] T-JS-19) Explain how JSONP works (and how it's not really Ajax).
   - **Explanation:** JSONP (JSON with Padding) is a method commonly used to bypass the cross-domain policies in web browsers because Ajax requests from the current page to a cross-origin domain is not allowed.
   - **Use:** JSONP can be unsafe as it can do everything else JavaScript can so you need to trust the provider of data. These days, CORS is the recommended approach and JSONP is seen as a hack.
   - **Example:**
@@ -674,11 +675,11 @@ if ('geolocation' in navigator) {
 
 <script src="https://example.com?callback=printData"></script>
 ```
-  - **Source:**
-- [x] Have you ever used JavaScript templating? If so, what libraries have you used?
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-20) Have you ever used JavaScript templating? If so, what libraries have you used?
   - **Explanation:** Yes. I have used handlebars(hbs) when I was picking up MVC architecture to split my code into multiple files and directories.
-  - **Source:**
-- [x] Explain "hoisting".
+  - **Source:** https://reactjs.org/docs/introducing-jsx.html
+- [x] T-JS-21) Explain "hoisting".
   - **Explanation:** Hoisting is the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. Think of it as moving the code up to the top. Note that the assignment stays where it is despite this.
   - **Use:** It allows you to execute code before they're declared. Function declaration and var are initialized before delaration whereas const, let, and function expressions are not. This means the first two can be accessed globally and the last 3 only after they've been declared.
   - **Example:**
@@ -690,8 +691,8 @@ function eat(){
   console.log('eat')
  }
 ```
-  - **Source:**
-- [x] Describe event bubbling.
+  - **Source:** https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+- [x] T-JS-22) Describe event bubbling.
   - **Explanation & Use:** When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors. The most deeply nested element that caused the event is called a target element, accessible as event.target.
   - **Example:**
 
@@ -710,8 +711,8 @@ function eat(){
   </div>
 </form>
 ```
-  - **Source:**
-- [x] What's the difference between an "attribute" and a "property"?
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+- [x] T-JS-23) What's the difference between an "attribute" and a "property"?
   - **Explanation & Use:** Attributes are defined on the HTML markup but properties are defined on the DOM. An attribute is the initial state when rendered in the DOM. A property is the current state.
   - **Example:**
 
@@ -727,11 +728,11 @@ Notice how the property updates after adding "World" to the input.
 console.log(input.getAttribute('value')); // Hello
 console.log(input.value); // Hello World!
 ```
-  - **Source:**
-- [x] Why is extending built-in JavaScript objects not a good idea?
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/#whats-the-difference-between-an-attribute-and-a-property
+- [x] T-JS-24) Why is extending built-in JavaScript objects not a good idea?
   - **Explanation:** Extending a built-in/native JavaScript object means adding properties/functions to its prototype. While this may seem like a good idea at first, it is dangerous in practice. Imagine your code uses a few libraries that both extend the Array.prototype by adding the same contains method, the implementations will overwrite each other and your code will break if the behavior of these two methods is not the same.
   - **Use:** The only time you may want to extend a native object is when you want to create a polyfill, essentially providing your own implementation for a method that is part of the JavaScript specification but might not exist in the user's browser due to it being an older browser.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/#why-is-extending-built-in-javascript-objects-not-a-good-idea
 - [x] T-JS-25) What is the difference between window `load` event and document `DOMContentLoaded` event?
   - **Explanation:** The DOMContentLoaded event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. window's load event is only fired after the DOM and all dependent resources and assets have loaded.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/#difference-between-document-load-event-and-document-domcontentloaded-event
