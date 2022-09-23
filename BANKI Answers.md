@@ -184,11 +184,13 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Use:** Must be the very first line of code in an HTML document. 
   - **Example:** Modern HTML5 documents use the tag `<!DOCTYPE html>`
   - **Source:** https://www.freecodecamp.org/news/what-is-the-doctype-declaration-in-html/
+
 - [x] T-HTML-2) How do you serve a page with content in multiple languages?
   - **Explanation:** By setting the lang attribute on various elements throughout the page. 
   - **Use:** Translates the text within the attribute’s container into a selected language.
   - **Example:** `<p> French “ <span lang=”fr”> Bonjour </span> “ </p>`
   - **Source:** https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
+
 - [x] T-HTML-3) What kinds of things must you be wary of when designing or developing for multilingual sites?
   - **Explanation:**
       - Including the `lang` attribute.
@@ -197,11 +199,13 @@ Most of the technical questions should have a three sentence response in the EUE
       - Date and currency formats.
       - Allowing users to change the language.
   - **Source:** https://www.frontendinterviewhandbook.com/html-questions
+
 - [x] T-HTML-4) What are `data-` attributes good for?
   - **Explanation:** They store data private to the page or application.
   - **Use:** Were often used for storing extra data in the DOM, but their use is discouraged now.
   - **Example:** `data-columns=”3”` | `data-index-number=”12314”`
   - **Source:** https://www.frontendinterviewhandbook.com/html-questions
+
 - [x] T-HTML-5) Consider HTML5 as an open web platform. What are the building blocks of HTML5?
   - **Explanation:**
       - Semantics - Allows you to describe precisely what your content is
@@ -210,10 +214,12 @@ Most of the technical questions should have a three sentence response in the EUE
       - Styling - More sophisticated themes
       - Standardization - Building a consensus across all involved web browser stakeholders.
   - **Source:** https://www.frontendinterviewhandbook.com/html-questions
+
 - [x] T-HTML-6) Describe the difference between a cookie, sessionStorage and localStorage.
   - **Explanation:** Cookies are typically set by a web server and can store data that is read by both the web server and the web browser. Local storage and session storage are only readable by the browser. The difference between the two is their lifetime; localStorage lasts forever, and sessionStorage only lasts for the length of the session.
   - **Use:** All used for client-side storage of strings in key-value pairs.
   - **Source:** https://www.frontendinterviewhandbook.com/html-questions
+  
 - [x] T-HTML-7) Describe the difference between `<script>, <script async> and <script defer>`.
   - **Explanation:**
       - <script> HTML parsing is blocked, script is fetched and executed right away.
@@ -226,19 +232,23 @@ Most of the technical questions should have a three sentence response in the EUE
       - `async` could be used for analytics scripts.
       - `defer` scripts must not contain `document.write`
   - **Source:** https://www.frontendinterviewhandbook.com/html-questions
+	
 - [x] T-HTML-8) Why is it generally a good idea to position CSS `<link>`s within `<head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
   - **Explanation:** Placing <link> in the <head> allows for quick “first meaningful paint”. When a page first loads, HTML and CSS are being parsed simultaneously. However, <script> tags block HTML parsing while they are being downloaded and run, which can slow down your page. Thus, placing scripts at the bottom will allow the HTML to be parsed and displayed to the user first.
   - **Source:** https://www.frontendinterviewhandbook.com/html-questions
+	
 - [x] T-HTML-9) What is progressive rendering?
   - **Explanation:** Progressive rendering is a technique used to improve the performance of a webpage so that it can render content for display ASAP.
   - **Use:** Improving perceived load time.
   - **Example:** Lazy loading of images, prioritizing visible content, and async HTML fragments.
   - **Source:** https://www.frontendinterviewhandbook.com/html-questions
+	
 - [x] T-HTML-10) Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
   - **Explanation:** When you want to serve different images to users depending on their device display width.
   - **Use:** Sending lower resolution to limit data waste and increase performance or sending larger images to a higher resolution display to enhance the UX.
   - **Example:** `<img srcset =”small.jpg 500w, medium.jpg 1000w, large.jpg 2000w” src=”...” alt=””>`
   - **Source:** https://www.frontendinterviewhandbook.com/html-questions
+	
 - [x] T-HTML-11) Have you used different HTML templating languages before?
   - **Explanation:** Yes, EJS and HBS. They are more or less the same as each other and provide similar functionality to escape content and provide helpful filters for manipulating the data to be displayed. Most templating engines also allow you to inject your own filters in the event you require custom processing before display.
   - **Source:** https://www.frontendinterviewhandbook.com/html-questions
@@ -250,6 +260,7 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Use:** Specificity is a score that is applied to a given CSS declaration, and is determined by the number of each selector type that it calls upon.
   - **Example:** A selector of `#id .class tag` would have 111 points, as id’s count for 100, classes count for 10, and tags count for 1.
   - **Source:** https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+	
 - [x] T-CSS-2) What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
   - **Explanation:** “Normalize” alteres the default styles of various browsers to match each other. “Reset” will remove a browser’s default styles so you are starting from scratch.
   - **Use:** Using one or the other is done so that websites can remain visually consistent across different browsers. I prefer CSS normalize because of its style presets.
@@ -286,11 +297,13 @@ h6 {
 ```
    
   - **Source:** https://elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e
+	
 - [x] T-CSS-3) Describe floats and how they work.
   - **Explanation:** They are a positioning property where an element that is floated will be removed from the flow of the page and affect elements around it. `.clearfix` hacks are used to fix parent elements which collapse to zero height due to containing only floated elements.
   - **Use:** Floats were used prior to flex and grid to organize pages in a more flexible way.
   - **Example:** You can float three `<div>` elements left and give them widths of 33% each to create three columns with equal width.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-4) Describe z-index and how stacking context is formed.
   - **Explanation:** Z-index allows you to stack elements above or below one another to affect their visibility. Stacking context is formed by the parent-child relationship of nested elements, and the order of elements in the DOM.
   - **Use:** Giving a planet image with a transparent background a higher z-index so that it appears in front of a dark-colored background with a lower z-index.
@@ -300,6 +313,7 @@ h6 {
       z-index: 1
    }`
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-5) Describe BFC (Block Formatting Context) and how it works.
   - **Explanation:** A BFC is an HTML box that satisfies one or more of the following conditions:
       - The value of float is not ‘none’.
@@ -309,6 +323,7 @@ h6 {
   - **Use:** Knowing how to establish a block formatting context is crucial, because otherwise, the containing box will not contain floated children.
   - **Example:** Without forming a BFC, you might end up with the contents of a float that end up being taller than the content beside it.
   - **Source:** https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
+	
 - [x] T-CSS-6) What are the various clearing techniques and which is appropriate for what context?
   - **Explanation:**
       - Empty `div` method
@@ -326,6 +341,7 @@ h6 {
 		}`
       - Overflow: Parent will establish a new BFC and expand to contain its floated children.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-7) Explain CSS sprites, and how you would implement them on a page or site.
   - **Explanation:** CSS sprites combine multiple images into one. To implement them, you would use a sprite generator and apply the proper CSS for it. Each image would have its own corresponding CSS class and background properties, which are placed in the elements which require them. 
   - **Use:** Commonly used for icons. 
@@ -334,31 +350,37 @@ h6 {
   - **Explanation:** By writing browser-specific CSS code, using a library like Bootstrap, and also by using a normalizer or reset CSS. My personal preference would be to use a combination normalize/reset style sheet.
   - **Use:** Safari and IE have different default fonts, which means the font on any given site can change when viewed with either browser.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-9) How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
   - **Explanation:**
 	- Graceful degradation - Building an app for modern browsers while ensuring it remains functional in older browsers.
 	- Progressive enhancement - Building an app for a base level of user experience, but adding functional enhancements when a browser supports it.
 	- @support tag in CSS to test whether certain features are supported.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-10) What are the different ways to visually hide content (and make it available only for screen readers)?
   - **Explanation:**
 	- Make width and height both 0 for the content.
 	- Position outside the screen.
 	- Indent the text by -9999px.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-11) Have you ever used a grid system, and if so, what do you prefer?
   - **Explanation:** I have used floats and flex. I prefer flex because it feels more modernized and customizable, and has substantial browser support. I have been slightly exposed to CSS Grid Layout, but am still learning how to properly implement its `grid` property.
   - **Source:** https://www.flux-academy.com/blog/how-to-use-a-grid-in-web-design
+	
 - [x] T-CSS-12) Have you used or implemented media queries or mobile specific layouts/CSS?
   - **Explanation:** Yes. It was to adjust the content displayed based on the user’s screen size.
   - **Use:** Re-organizing certain `<div>` and `<section>` elements on a site to be more aesthetic and functional if the user switches from a desktop to a mobile device.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-13) Are you familiar with styling SVG?
   - **Explanation:** Yes. It has advantages over other image formats such as JPG and GIF, such as:
 	- Able to be created and edited with any text editor.
 	- SVG images are scalable.
 	- SVG graphics do not lose quality upon being resized or zoomed.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-14) Can you give an example of an `@media` property other than screen?
   - **Explanation:** There are 4  types of @media properties:
 	- All - for all media type devices
@@ -374,9 +396,11 @@ h6 {
 	}
 	```
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-15) What are some of the "gotchas" for writing efficient CSS?
   - **Explanation:** Avoid key selectors that are tag and universal selectors. Since they match a large number of elements, browsers become overworked as they have to determine if the parents are a match. Also, avoid writing styles that change the layout. Be aware of the CSS properties which trigger reflow, repaint and compositing. Everything should have a single class.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-16) What are the advantages/disadvantages of using CSS preprocessors?
   - **Explanation:**
 	- Pros:
@@ -389,6 +413,7 @@ h6 {
 
   - **Example:** Sass, Post-CSS, Less
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-17) Describe what you like and dislike about the CSS preprocessors you have used.
   - **Explanation:**
 	- Likes:
@@ -397,9 +422,11 @@ h6 {
 		- Sass requires frequent re-compilation when switching between node versions.
 		- Less uses variable names prefixed with @, which can be confused with native CSS keywords such as @media, @import, etc.
   - **Source:** [https://www.frontendinterviewhandbook.com/css-questions/](https://adamsilver.io/blog/the-disadvantages-of-css-preprocessors/)
+	
 - [x] T-CSS-18) How would you implement a web design comp that uses non-standard fonts?
   - **Explanation:** Use `@font-face` and define `font-family`.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-19) Explain how a browser determines what elements match a CSS selector.
   - **Explanation:** Browsers match selectors from right to left. They filter out elements in the DOM based on the key selector and go up its parent element to find matches
   - **Example:** `p span` locates all `<span>` elements and works its way up until it finds a `<p>` element. 
@@ -408,14 +435,17 @@ h6 {
   - **Explanation:** A keyword added to a selector that lets you style a specific part of the element.
   - **Example:** `span: first-line` | `button: hover` 
   - **Source:** https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+	
 - [x] T-CSS-21) Explain your understanding of the box model and how you would tell the browser, through CSS, to render your layout in different box models.
   - **Explanation:** Everything inside a web-page is a box. There are several components that comprise a box model, such as padding, border, and margin. The size of an overall element is directly affected by the box element.
   - **Use:** The standard box model calculates box size by taking a specified height and width, then adding the padding and border. To change to the alternative box model, however, you would set `box-sizing: border box`, which allows you to set the box size with height and width.
   - **Example:** Content box (default), border box, etc
   - **Source:** https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#what_is_the_css_box_model
+	
 - [x] T-CSS-22) What does `* { box-sizing: border-box; }` do? What are its advantages?
   - **Explanation:** It changes how the height and width of elements are calculated, compared to content-box. Changes the parameters of border and padding to not affect the overall sizing of the element.
   - **Source:** https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#the_alternative_css_box_model
+	
 - [x] T-CSS-23) What is the CSS `display` property and can you give a few examples of its use?
   - **Explanation:** CSS display defines whether an element is treated as a block or inline element, as well as the layout used for its children, such as flow layout, grid, or flex.
   - **Example:**
@@ -423,9 +453,11 @@ h6 {
 	- Inline - elements can be laid out beside one another.
 	- Inline-block - allows you to place block elements side by side.
   - **Source:** https://developer.mozilla.org/en-US/docs/Web/CSS/display
+	
 - [x] T-CSS-24) What's the difference between `inline` and `inline-block`?
   - **Explanation:** Inline-block allows you to set a width and height on the element, unlike inline alone. Inline-block also allows you to set margin and padding on all sides, whereas for inline, you can only set margin and padding on the left and right sides.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-25) What's the difference between a `relative`, `fixed`, `absolute` and `static` positioned element?
   - **Explanation:**
 	- Relative - The element’s position is adjusted relative to itself without changing layout, and allows the use of Z-index on said element.
@@ -433,12 +465,15 @@ h6 {
 	- Absolute - The element is removed from the flow of the page and positioned based off of the top of the DOM content. It is not affected by other elements, and can be placed exactly where you want on the DOM.
 	- Static - Default position; element flows into the page as it normally would.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-26) What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
   - **Explanation:** Bootstrap and Tailwind. I like them as they are.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-27) Have you played around with the new CSS Flexbox or Grid specs?
   - **Explanation:** Yes, to Flexbox. I find it far more efficient than using floats because of enhanced customization and sizing options.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-28) Can you explain the difference between coding a web site to be responsive versus using a mobile-first strategy?
   - **Explanation:** 
 	- A responsive website will respond by adapting its size and/or other functionalities based on the user’s screen size.
@@ -456,11 +491,13 @@ h6 {
 }
 ```
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-29) How is responsive design different from adaptive design?
   - **Explanation:**
 	- Responsive design - A fluid website that can look good on any device. ie. A ball growing or shrinking to fit through several different hoops.
 	- Adaptive design - Detects the type of device used and delivers a pre-set layout for that device. ie. Several different balls to use depending on the hoop size.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-30) Have you ever worked with retina graphics? If so, when and what techniques did you use?
   - **Explanation:** Retina is just a marketing term to refer to high resolution screens with a pixel ratio bigger than 1. In order to have crisp, good-looking graphics that make the best of retina displays we need to use high resolution images whenever possible. However using highest resolution images will have an impact on page load times.
   - **Use:** To overcome this problem, we can use responsive images, as specified in HTML5 with the `srcset` attribute.
@@ -472,6 +509,7 @@ h6 {
   />
   ```
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
+	
 - [x] T-CSS-31) Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?
   - **Explanation:** `translate()` is more efficient than absolute positioning because it uses GPU, rather than CPU, which results in shorter paint times for smoother animations.
   - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
@@ -491,6 +529,7 @@ h6 {
 </script>
 ```
   - **Source:** https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_delegation
+	
 - [x] T-JS-2) Explain how `this` works in JavaScript
   - **Explanation:** this references an object. When inside of a constructor function or class it will reference the object on instantiation.
   - **Use:** It is used to assign properties and values to an object on instantiation.
@@ -503,6 +542,7 @@ class MyThing {
 }
 ```
   - **Source:** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+	
 - [x] T-JS-3) Explain how prototypal inheritance works
   - **Explanation:** When a property is accessed on an object, but said property does not exist within said object, it moves up the chain to see if its parent objects contain said property so it can call upon them.
   - **Use:** It can help reduce redundant code.
@@ -530,13 +570,16 @@ console.log(child.constructor.name);
 // 'Parent'
 ```	
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions
+	
 - [x] T-JS-4) What do you think of AMD vs CommonJS?
   - **Explanation:** Historically CommonJS was used in the back-end and runs synchronous and AMD was used in the front-end and runs asynchronous.
   - **Use:** CJS has been used in node.js for a while.
   - **Source:** https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm
+	
 - [x] T-JS-5) Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
   - **Explanation:** The parser reads it as two seperate statements. First the function declaration `function foo(){ }` and then a blank function call attempt `();` The best way to fix this would be to add another set of parenthesis wrapping the function declaration `(function foo(){ })()` This changes it from a function declaration to a function expression.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions
+	
 - [x] T-JS-6) What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
   - **Explanation:**
     - `null`: the value is intentionally absent (points to nothing in memory).
@@ -545,6 +588,7 @@ console.log(child.constructor.name);
   - **Use:** null can be used to assign the primitive value of null to a variable. undeclared throws an error where as null and undefined can be checked with a conditional
   - **Example:** `null` and `undefined` can be checked using strict equality `===`. Undeclared will throw it's own error so you could use `try...catch`
   - **Source:** https://www.30secondsofcode.org/articles/s/javascript-undeclared-undefined-null
+	
 - [x] T-JS-7) What is a closure, and how/why would you use one?
   - **Explanation:** Closure allows you to use an outer function’s scope (go into a parent, grandparent function, etc.) from within an inner function. In JavaScript a closure is created every time a function is created.
   - **Use:** It allows you to combine data with the function that will operate on that data. It is similar to OOP.
@@ -561,6 +605,7 @@ function init() {
 init();
 ```	
   - **Source:** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+	
 - [x] T-JS-8) Can you describe the main difference between a `.forEach()` loop and a `.map()` loop and why you would pick one versus the other?
   - **Explanation:** `.forEach()` executes a callback function on each element, but does not return a value. `.map()` executes a callback function on each element and "maps" the result to a new array. The new array is returned.
   - **Use:** If you need the result and don't want to mutate the original array, use map. If you only need to iterate over the array then forEach can be used.
@@ -585,19 +630,24 @@ const doubled = a.map((num) => {
 // doubled = [2, 4, 6]
 ```
 - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-9) What's a typical use case for anonymous functions?
   - **Explanation:** They can be used in IIFEs to contain some code within a local scope so that its variables do not leak to the global scope.
   - **Use:** Essentially when you don't need a named function and the function is bound to some other action.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-10) How do you organize your code? (module pattern, classical inheritance?)
   - **Explanation:** Single directional data flow, similar to the one used in React.
   - **Source:** https://www.theodinproject.com/lessons/node-path-javascript-es6-modules
+	
 - [x] T-JS-11) What's the difference between host objects and native objects?
   - **Explanation:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 	- Native objects are ones that are part of the JavaScript language, such as string, math, object, function, etc.
 	- Host objects are provided by the runtime environment (browser) such as window, XMLHTTPRequest, etc.
   - **Example:** Some native objects are `String`, `Math`, `RegExp`, and `Object`. A couple of host objects are `window` and `console`
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-12) What is the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
   - **Explanation & Use:**
     - `function Person(){}` is likely being used as a constructor.
@@ -619,18 +669,23 @@ console.log(person); // Person { name: "John" }
 console.log(person.name); // "john"
 ```
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-13) What's the difference between `.call()` and `.apply()`?
   - **Explanation:** They are both used to invoke functions, but the difference is in how they take arguments. `.call()` takes them as comma-separated values and `.apply()` takes them as an array.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-14) Explain `Function.prototype.bind`.
   - **Explanation:** Creates a new function with a `this` keyword that sets itself to a value provided by the function call.
   - **Use:** It binds the value of [this] in methods of classes you want to pass into other functions. Frequently performed with React components.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-15) When would you use `document.write()`?
   - **Explanation:** It is considered dangerous, and its use is not encouraged. It can clear the entire document and replace its content with a given parameter value.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-16) What's the difference between feature detection, feature inference, and using the UA string?
   - **Explanation:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
     - **Feature Detection:** Working out whether a browser supports a certain block of code, and running different code depending on whether it does, so that the browser can provide a working experience rather crashing/erroring in some browsers.
     - **Feature Inference:** Checks for a feature just like feature detection, but uses another function because it assumes it will also exist. Feature Detection is the better approach.
     - **UA String:** A browser-reported string that allows the network protocol peers to identify various properties of the system. It's tricky to parse and can be spoofed so it's best to avoid this method.
@@ -644,11 +699,13 @@ if ('geolocation' in navigator) {
 }
 ```
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-17) Explain Ajax in as much detail as possible.
   - **Explanation:** Ajax (asynchronous JavaScript and XML) is a set of web development techniques using many web technologies on the client side to create asynchronous web applications. With Ajax, web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page.
   - **Use:** By decoupling the data interchange layer from the presentation layer, Ajax allows for web pages, and by extension web applications, to change content dynamically without the need to reload the entire page. In practice, modern implementations commonly use JSON instead of XML, due to the advantages of JSON being native to JavaScript.
   - **Example:** The `fetch` API is typically used nowadays for asynchronous communication.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-18) What are the advantages and disadvantages of using Ajax?
   - **Advantages:**
     - Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page.
@@ -660,6 +717,7 @@ if ('geolocation' in navigator) {
     - Some webcrawlers do not execute JavaScript and would not see content that has been loaded by JavaScript.
     - JavaScript will have to be parsed and executed on the browser, and low-end mobile devices might struggle with this.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - x] T-JS-19) Explain how JSONP works (and how it's not really Ajax).
   - **Explanation:** JSONP (JSON with Padding) is a method commonly used to bypass the cross-domain policies in web browsers because Ajax requests from the current page to a cross-origin domain is not allowed.
   - **Use:** JSONP can be unsafe as it can do everything else JavaScript can so you need to trust the provider of data. These days, CORS is the recommended approach and JSONP is seen as a hack.
@@ -676,9 +734,11 @@ if ('geolocation' in navigator) {
 <script src="https://example.com?callback=printData"></script>
 ```
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-20) Have you ever used JavaScript templating? If so, what libraries have you used?
   - **Explanation:** Yes. I have used handlebars(hbs) when I was picking up MVC architecture to split my code into multiple files and directories.
   - **Source:** https://reactjs.org/docs/introducing-jsx.html
+	
 - [x] T-JS-21) Explain "hoisting".
   - **Explanation:** Hoisting is the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. Think of it as moving the code up to the top. Note that the assignment stays where it is despite this.
   - **Use:** It allows you to execute code before they're declared. Function declaration and var are initialized before delaration whereas const, let, and function expressions are not. This means the first two can be accessed globally and the last 3 only after they've been declared.
@@ -692,6 +752,7 @@ function eat(){
  }
 ```
   - **Source:** https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+	
 - [x] T-JS-22) Describe event bubbling.
   - **Explanation & Use:** When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors. The most deeply nested element that caused the event is called a target element, accessible as event.target.
   - **Example:**
@@ -712,6 +773,7 @@ function eat(){
 </form>
 ```
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+	
 - [x] T-JS-23) What's the difference between an "attribute" and a "property"?
   - **Explanation & Use:** Attributes are defined on the HTML markup but properties are defined on the DOM. An attribute is the initial state when rendered in the DOM. A property is the current state.
   - **Example:**
@@ -729,10 +791,12 @@ console.log(input.getAttribute('value')); // Hello
 console.log(input.value); // Hello World!
 ```
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/#whats-the-difference-between-an-attribute-and-a-property
+	
 - [x] T-JS-24) Why is extending built-in JavaScript objects not a good idea?
   - **Explanation:** Extending a built-in/native JavaScript object means adding properties/functions to its prototype. While this may seem like a good idea at first, it is dangerous in practice. Imagine your code uses a few libraries that both extend the Array.prototype by adding the same contains method, the implementations will overwrite each other and your code will break if the behavior of these two methods is not the same.
   - **Use:** The only time you may want to extend a native object is when you want to create a polyfill, essentially providing your own implementation for a method that is part of the JavaScript specification but might not exist in the user's browser due to it being an older browser.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/#why-is-extending-built-in-javascript-objects-not-a-good-idea
+	
 - [x] T-JS-25) What is the difference between window `load` event and document `DOMContentLoaded` event?
   - **Explanation:** The DOMContentLoaded event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. window's load event is only fired after the DOM and all dependent resources and assets have loaded.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/#difference-between-document-load-event-and-document-domcontentloaded-event
