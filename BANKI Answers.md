@@ -530,80 +530,135 @@ console.log(child.constructor.name);
 // 'Parent'
 ```	
   - **Source:**
-- [ ] What do you think of AMD vs CommonJS?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+- [x] What do you think of AMD vs CommonJS?
+  - **Explanation:** Historically CommonJS was used in the back-end and runs synchronous and AMD was used in the front-end and runs asynchronous.
+  - **Use:** CJS has been used in node.js for a while.
   - **Source:**
-- [ ] Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+- [x] Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
+  - **Explanation:** The parser reads it as two seperate statements. First the function declaration `function foo(){ }` and then a blank function call attempt `();` The best way to fix this would be to add another set of parenthesis wrapping the function declaration `(function foo(){ })()` This changes it from a function declaration to a function expression.
   - **Source:**
-- [ ] What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
+- [x] What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+    - `null`: the value is intentionally absent (points to nothing in memory).
+    - `undefined`: not yet assigned a value or not yet declared.
+    - `undeclared`: improperly declared without let/const/var
+  - **Use:** null can be used to assign the primitive value of null to a variable. undeclared throws an error where as null and undefined can be checked with a conditional
+  - **Example:** `null` and `undefined` can be checked using strict equality `===`. Undeclared will throw it's own error so you could use `try...catch`
   - **Source:**
-- [ ] What is a closure, and how/why would you use one?
-  - **Explanation:**
-  - **Use:**
+- [x] What is a closure, and how/why would you use one?
+  - **Explanation:** Closure allows you to use an outer function’s scope (go into a parent, grandparent function, etc.) from within an inner function. In JavaScript a closure is created every time a function is created.
+  - **Use:** It allows you to combine data with the function that will operate on that data. It is similar to OOP.
   - **Example:**
+```javascript
+function init() {
+  var name = 'Mozilla'; // name is a local variable created by init
+  function displayName() {
+    // displayName() is the inner function, a closure
+    alert(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();
+```	
   - **Source:**
-- [ ] Can you describe the main difference between a `.forEach()` loop and a `.map()` loop and why you would pick one versus the other?
-  - **Explanation:**
-  - **Use:**
+- [x] Can you describe the main difference between a `.forEach()` loop and a `.map()` loop and why you would pick one versus the other?
+  - **Explanation:** `.forEach()` executes a callback function on each element, but does not return a value. `.map()` executes a callback function on each element and "maps" the result to a new array. The new array is returned.
+  - **Use:** If you need the result and don't want to mutate the original array, use map. If you only need to iterate over the array then forEach can be used.
   - **Example:**
+    `.forEach()`:
+
+```javascript
+const a = [1, 2, 3];
+const doubled = a.forEach((num, index) => {
+  // Do something with num and/or index.
+});
+// doubled = undefined
+```
+
+`.map()`:
+
+```javascript
+const a = [1, 2, 3];
+const doubled = a.map((num) => {
+  return num * 2;
+});
+// doubled = [2, 4, 6]
+```
+- [x] What's a typical use case for anonymous functions?
+  - **Explanation:** They can be used in IIFEs to contain some code within a local scope so that its variables do not leak to the global scope.
+  - **Use:** Essentially when you don't need a named function and the function is bound to some other action.
   - **Source:**
-- [ ] What's a typical use case for anonymous functions?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+- [x] How do you organize your code? (module pattern, classical inheritance?)
+  - **Explanation:** Single directional data flow, similar to the one used in React.
   - **Source:**
-- [ ] How do you organize your code? (module pattern, classical inheritance?)
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What's the difference between host objects and native objects?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+- [x] What's the difference between host objects and native objects?
+  - **Explanation:** 
+	- Native objects are ones that are part of the JavaScript language, such as string, math, object, function, etc.
+	- Host objects are provided by the runtime environment (browser) such as window, XMLHTTPRequest, etc.
+  - **Example:** Some native objects are `String`, `Math`, `RegExp`, and `Object`. A couple of host objects are `window` and `console`
   - **Source:**
 - [ ] What is the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
-  - **Explanation:**
-  - **Use:**
+  - **Explanation & Use:**
+    - `function Person(){}` is likely being used as a constructor.
+    - `var person = new Person()`is instantiated a new Person object as person.
+    - `var person = Person()` is not correct and would likely return undefined. To create a new instance you would need to use the `new` operator as above.
   - **Example:**
+
+```javascript
+function Person(name) {
+  this.name = name;
+}
+
+var person = Person('John');
+console.log(person); // undefined
+console.log(person.name); // Uncaught TypeError: Cannot read property 'name' of undefined
+
+var person = new Person('John');
+console.log(person); // Person { name: "John" }
+console.log(person.name); // "john"
+```
   - **Source:**
-- [ ] What's the difference between `.call()` and `.apply()`?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+- [x] What's the difference between `.call()` and `.apply()`?
+  - **Explanation:** They are both used to invoke functions, but the difference is in how they take arguments. `.call()` takes them as comma-separated values and `.apply()` takes them as an array.
   - **Source:**
-- [ ] Explain `Function.prototype.bind`.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+- [x] Explain `Function.prototype.bind`.
+  - **Explanation:** Creates a new function with a `this` keyword that sets itself to a value provided by the function call.
+  - **Use:** It binds the value of [this] in methods of classes you want to pass into other functions. Frequently performed with React components.
   - **Source:**
-- [ ] When would you use `document.write()`?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+- [x] When would you use `document.write()`?
+  - **Explanation:** It is considered dangerous, and its use is not encouraged. It can clear the entire document and replace its content with a given parameter value.
   - **Source:**
-- [ ] What's the difference between feature detection, feature inference, and using the UA string?
+- [x] What's the difference between feature detection, feature inference, and using the UA string?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+    - **Feature Detection:** Working out whether a browser supports a certain block of code, and running different code depending on whether it does, so that the browser can provide a working experience rather crashing/erroring in some browsers.
+    - **Feature Inference:** Checks for a feature just like feature detection, but uses another function because it assumes it will also exist. Feature Detection is the better approach.
+    - **UA String:** A browser-reported string that allows the network protocol peers to identify various properties of the system. It's tricky to parse and can be spoofed so it's best to avoid this method.
+  - **Example:** Using feature detection:
+
+```javascript
+if ('geolocation' in navigator) {
+  // Can use navigator.geolocation
+} else {
+  // Handle lack of feature
+}
+```
   - **Source:**
 - [ ] Explain Ajax in as much detail as possible.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Ajax (asynchronous JavaScript and XML) is a set of web development techniques using many web technologies on the client side to create asynchronous web applications. With Ajax, web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page.
+  - **Use:** By decoupling the data interchange layer from the presentation layer, Ajax allows for web pages, and by extension web applications, to change content dynamically without the need to reload the entire page. In practice, modern implementations commonly use JSON instead of XML, due to the advantages of JSON being native to JavaScript.
+  - **Example:** The `fetch` API is typically used nowadays for asynchronous communication.
   - **Source:**
 - [ ] What are the advantages and disadvantages of using Ajax?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Advantages:**
+	    - Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page.
+	    - Reduce connections to the server since scripts and stylesheets only have to be requested once.
+	    - State can be maintained on a page. JavaScript variables and DOM state will persist because the main container page was not reloaded.
+	  - **Disadvantages:**
+	    - Dynamic webpages are harder to bookmark.
+	    - Does not work if JavaScript has been disabled in the browser.
+	    - Some webcrawlers do not execute JavaScript and would not see content that has been loaded by JavaScript.
+	    - JavaScript will have to be parsed and executed on the browser, and low-end mobile devices might struggle with this.
   - **Source:**
 - [ ] Explain how JSONP works (and how it's not really Ajax).
   - **Explanation:**
