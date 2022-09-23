@@ -430,53 +430,80 @@ h6 {
   - **Source:**
 - [ ] What's the difference between a `relative`, `fixed`, `absolute` and `static` positioned element?
   - **Explanation:**
-- Relative - The element’s position is adjusted relative to itself without changing layout, and allows the use of Z-index on said element.
-- Fixed - The element is removed from the flow of the page and set at a specific position, and doesn’t move when the page is scrolled.
-- Absolute - The element is removed from the flow of the page and positioned based off of the top of the DOM content. It is not affected by other elements, and can be placed exactly where you want on the DOM.
-- Static - Default position; element flows into the page as it normally would.
+	- Relative - The element’s position is adjusted relative to itself without changing layout, and allows the use of Z-index on said element.
+	- Fixed - The element is removed from the flow of the page and set at a specific position, and doesn’t move when the page is scrolled.
+	- Absolute - The element is removed from the flow of the page and positioned based off of the top of the DOM content. It is not affected by other elements, and can be placed exactly where you want on the DOM.
+	- Static - Default position; element flows into the page as it normally would.
   - **Source:**
 - [ ] What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Bootstrap and Tailwind. I like them as they are.
   - **Source:**
 - [ ] Have you played around with the new CSS Flexbox or Grid specs?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Yes, to Flexbox. I find it far more efficient than using floats because of enhanced customization and sizing options.
   - **Source:**
 - [ ] Can you explain the difference between coding a web site to be responsive versus using a mobile-first strategy?
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** 
+	- A responsive website will respond by adapting its size and/or other functionalities based on the user’s screen size.
+	- Mobile-first websites will cater their design to mobile devices first, and then add responsive rules for other screen sizes afterwards.
   - **Example:**
+	```css
+.my-class {
+  font-size: 12px;
+}
+
+@media (min-width: 600px) {
+  .my-class {
+    font-size: 24px;
+  }
+}
+```
   - **Source:**
 - [ ] How is responsive design different from adaptive design?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+	- Responsive design - A fluid website that can look good on any device. ie. A ball growing or shrinking to fit through several different hoops.
+	- Adaptive design - Detects the type of device used and delivers a pre-set layout for that device. ie. Several different balls to use depending on the hoop size.
   - **Source:**
 - [ ] Have you ever worked with retina graphics? If so, when and what techniques did you use?
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** Retina is just a marketing term to refer to high resolution screens with a pixel ratio bigger than 1. In order to have crisp, good-looking graphics that make the best of retina displays we need to use high resolution images whenever possible. However using highest resolution images will have an impact on page load times.
+  - **Use:** To overcome this problem, we can use responsive images, as specified in HTML5 with the `srcset` attribute.
   - **Example:**
+	  ```html
+  <img
+    src="/images/test-1600.jpg"
+    srcset="/images/test-400.jpg 400w, /images/test-800.jpg 800w, /images/test-1200.jpg 1200w"
+  />
+  ```
   - **Source:**
 - [ ] Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** `translate()` is more efficient than absolute positioning because it uses GPU, rather than CPU, which results in shorter paint times for smoother animations.
   - **Source:**
 
 ### Javascript
 
 - [ ] Explain event delegation
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** Event delegation is the practice of adding event listeners to a parent element instead of its descendents. The listener will be affected by triggered events on the descendent elements due to the parent-child relationship.
+  - **Use:** When you want some code to run when the user interacts with any one of a large number of child elements.
   - **Example:**
+```html
+<div id="container">
+  <div class="tile"></div>
+</div>
+<script>
+  container.addEventListener('click', (event) => (event.target.style.backgroundColor = bgChange()));
+</script>
+```
   - **Source:**
 - [ ] Explain how `this` works in JavaScript
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** this references an object. When inside of a constructor function or class it will reference the object on instantiation.
+  - **Use:** It is used to assign properties and values to an object on instantiation.
   - **Example:**
+```javascript
+class MyThing {
+  constructor(passThisIn) {
+    this.passThisIn = passThisIn;
+  }
+}
+```
   - **Source:**
 - [ ] Explain how prototypal inheritance works
   - **Explanation:**
