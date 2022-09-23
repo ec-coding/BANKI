@@ -183,12 +183,12 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Explanation:** A doctype tells the browser what version of HTML the document is written in.
   - **Use:** Must be the very first line of code in an HTML document. 
   - **Example:** Modern HTML5 documents use the tag `<!DOCTYPE html>`
-  - **Source:**
+  - **Source:** https://www.freecodecamp.org/news/what-is-the-doctype-declaration-in-html/
 - [x] How do you serve a page with content in multiple languages?
   - **Explanation:** By setting the lang attribute on various elements throughout the page. 
   - **Use:** Translates the text within the attribute’s container into a selected language.
   - **Example:** `<p> French “ <span lang=”fr”> Bonjour </span> “ </p>`
-  - **Source:**
+  - **Source:** https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
 - [x] What kinds of things must you be wary of when designing or developing for multilingual sites?
   - **Explanation:**
       - Including the `lang` attribute.
@@ -196,12 +196,12 @@ Most of the technical questions should have a three sentence response in the EUE
       - Language reading direction.
       - Date and currency formats.
       - Allowing users to change the language.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 - [x] What are `data-` attributes good for?
   - **Explanation:** They store data private to the page or application.
   - **Use:** Were often used for storing extra data in the DOM, but their use is discouraged now.
   - **Example:** `data-columns=”3”` | `data-index-number=”12314”`
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 - [x] Consider HTML5 as an open web platform. What are the building blocks of HTML5?
   - **Explanation:**
       - Semantics - Allows you to describe precisely what your content is
@@ -209,11 +209,11 @@ Most of the technical questions should have a three sentence response in the EUE
       - Performance and Integration - Speed optimization
       - Styling - More sophisticated themes
       - Standardization - Building a consensus across all involved web browser stakeholders.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 - [x] Describe the difference between a cookie, sessionStorage and localStorage.
   - **Explanation:** Cookies are typically set by a web server and can store data that is read by both the web server and the web browser. Local storage and session storage are only readable by the browser. The difference between the two is their lifetime; localStorage lasts forever, and sessionStorage only lasts for the length of the session.
   - **Use:** All used for client-side storage of strings in key-value pairs.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 - [x] Describe the difference between `<script>, <script async> and <script defer>`.
   - **Explanation:**
       - <script> HTML parsing is blocked, script is fetched and executed right away.
@@ -225,23 +225,23 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Example:**
       - `async` could be used for analytics scripts.
       - `defer` scripts must not contain `document.write`
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 - [x] Why is it generally a good idea to position CSS `<link>`s within `<head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
   - **Explanation:** Placing <link> in the <head> allows for quick “first meaningful paint”. When a page first loads, HTML and CSS are being parsed simultaneously. However, <script> tags block HTML parsing while they are being downloaded and run, which can slow down your page. Thus, placing scripts at the bottom will allow the HTML to be parsed and displayed to the user first.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 - [x] What is progressive rendering?
   - **Explanation:** Progressive rendering is a technique used to improve the performance of a webpage so that it can render content for display ASAP.
   - **Use:** Improving perceived load time.
   - **Example:** Lazy loading of images, prioritizing visible content, and async HTML fragments.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 - [x] Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
   - **Explanation:** When you want to serve different images to users depending on their device display width.
   - **Use:** Sending lower resolution to limit data waste and increase performance or sending larger images to a higher resolution display to enhance the UX.
   - **Example:** `<img srcset =”small.jpg 500w, medium.jpg 1000w, large.jpg 2000w” src=”...” alt=””>`
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 - [x] Have you used different HTML templating languages before?
   - **Explanation:** Yes, EJS and HBS. They are more or less the same as each other and provide similar functionality to escape content and provide helpful filters for manipulating the data to be displayed. Most templating engines also allow you to inject your own filters in the event you require custom processing before display.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/html-questions
 
 ### CSS
 
@@ -249,7 +249,7 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Explanation:** How browsers decide which CSS property values are the most relevant to an element and how to apply them.
   - **Use:** Specificity is a score that is applied to a given CSS declaration, and is determined by the number of each selector type that it calls upon.
   - **Example:** A selector of `#id .class tag` would have 111 points, as id’s count for 100, classes count for 10, and tags count for 1.
-  - **Source:**
+  - **Source:** https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 - [x] What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
   - **Explanation:** “Normalize” alteres the default styles of various browsers to match each other. “Reset” will remove a browser’s default styles so you are starting from scratch.
   - **Use:** Using one or the other is done so that websites can remain visually consistent across different browsers. I prefer CSS normalize because of its style presets.
@@ -285,12 +285,12 @@ h6 {
 }
 ```
    
-  - **Source:**
+  - **Source:** https://elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e
 - [x] Describe floats and how they work.
   - **Explanation:** They are a positioning property where an element that is floated will be removed from the flow of the page and affect elements around it. `.clearfix` hacks are used to fix parent elements which collapse to zero height due to containing only floated elements.
   - **Use:** Floats were used prior to flex and grid to organize pages in a more flexible way.
   - **Example:** You can float three `<div>` elements left and give them widths of 33% each to create three columns with equal width.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Describe z-index and how stacking context is formed.
   - **Explanation:** Z-index allows you to stack elements above or below one another to affect their visibility. Stacking context is formed by the parent-child relationship of nested elements, and the order of elements in the DOM.
   - **Use:** Giving a planet image with a transparent background a higher z-index so that it appears in front of a dark-colored background with a lower z-index.
@@ -299,7 +299,7 @@ h6 {
       position: relative;
       z-index: 1
    }`
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Describe BFC (Block Formatting Context) and how it works.
   - **Explanation:** A BFC is an HTML box that satisfies one or more of the following conditions:
       - The value of float is not ‘none’.
@@ -308,7 +308,7 @@ h6 {
       - The value of overflow is not visible. 
   - **Use:** Knowing how to establish a block formatting context is crucial, because otherwise, the containing box will not contain floated children.
   - **Example:** Without forming a BFC, you might end up with the contents of a float that end up being taller than the content beside it.
-  - **Source:**
+  - **Source:** https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
 - [x] What are the various clearing techniques and which is appropriate for what context?
   - **Explanation:**
       - Empty `div` method
@@ -325,40 +325,40 @@ h6 {
 		clear: both;
 		}`
       - Overflow: Parent will establish a new BFC and expand to contain its floated children.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Explain CSS sprites, and how you would implement them on a page or site.
   - **Explanation:** CSS sprites combine multiple images into one. To implement them, you would use a sprite generator and apply the proper CSS for it. Each image would have its own corresponding CSS class and background properties, which are placed in the elements which require them. 
   - **Use:** Commonly used for icons. 
-  - **Source:**
+  - **Source:** https://css-tricks.com/css-sprites/
 - [x] How would you approach fixing browser-specific styling issues?
   - **Explanation:** By writing browser-specific CSS code, using a library like Bootstrap, and also by using a normalizer or reset CSS. My personal preference would be to use a combination normalize/reset style sheet.
   - **Use:** Safari and IE have different default fonts, which means the font on any given site can change when viewed with either browser.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
   - **Explanation:**
 	- Graceful degradation - Building an app for modern browsers while ensuring it remains functional in older browsers.
 	- Progressive enhancement - Building an app for a base level of user experience, but adding functional enhancements when a browser supports it.
 	- @support tag in CSS to test whether certain features are supported.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] What are the different ways to visually hide content (and make it available only for screen readers)?
   - **Explanation:**
 	- Make width and height both 0 for the content.
 	- Position outside the screen.
 	- Indent the text by -9999px.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Have you ever used a grid system, and if so, what do you prefer?
   - **Explanation:** I have used floats and flex. I prefer flex because it feels more modernized and customizable, and has substantial browser support. I have been slightly exposed to CSS Grid Layout, but am still learning how to properly implement its `grid` property.
-  - **Source:**
+  - **Source:** https://www.flux-academy.com/blog/how-to-use-a-grid-in-web-design
 - [x] Have you used or implemented media queries or mobile specific layouts/CSS?
   - **Explanation:** Yes. It was to adjust the content displayed based on the user’s screen size.
   - **Use:** Re-organizing certain `<div>` and `<section>` elements on a site to be more aesthetic and functional if the user switches from a desktop to a mobile device.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Are you familiar with styling SVG?
   - **Explanation:** Yes. It has advantages over other image formats such as JPG and GIF, such as:
 	- Able to be created and edited with any text editor.
 	- SVG images are scalable.
 	- SVG graphics do not lose quality upon being resized or zoomed.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Can you give an example of an `@media` property other than screen?
   - **Explanation:** There are 4  types of @media properties:
 	- All - for all media type devices
@@ -373,10 +373,10 @@ h6 {
 	     }
 	}
 	```
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] What are some of the "gotchas" for writing efficient CSS?
   - **Explanation:** Avoid key selectors that are tag and universal selectors. Since they match a large number of elements, browsers become overworked as they have to determine if the parents are a match. Also, avoid writing styles that change the layout. Be aware of the CSS properties which trigger reflow, repaint and compositing. Everything should have a single class.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] What are the advantages/disadvantages of using CSS preprocessors?
   - **Explanation:**
 	- Pros:
@@ -388,7 +388,7 @@ h6 {
 		- Re-compilation time can be slow.
 
   - **Example:** Sass, Post-CSS, Less
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Describe what you like and dislike about the CSS preprocessors you have used.
   - **Explanation:**
 	- Likes:
@@ -396,10 +396,10 @@ h6 {
 	- Dislikes:
 		- Sass requires frequent re-compilation when switching between node versions.
 		- Less uses variable names prefixed with @, which can be confused with native CSS keywords such as @media, @import, etc.
-  - **Source:**
+  - **Source:** [https://www.frontendinterviewhandbook.com/css-questions/](https://adamsilver.io/blog/the-disadvantages-of-css-preprocessors/)
 - [x] How would you implement a web design comp that uses non-standard fonts?
   - **Explanation:** Use `@font-face` and define `font-family`.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Explain how a browser determines what elements match a CSS selector.
   - **Explanation:** Browsers match selectors from right to left. They filter out elements in the DOM based on the key selector and go up its parent element to find matches
   - **Example:** `p span` locates all `<span>` elements and works its way up until it finds a `<p>` element. 
@@ -407,38 +407,38 @@ h6 {
 - [x] Describe pseudo-elements and discuss what they are used for.
   - **Explanation:** A keyword added to a selector that lets you style a specific part of the element.
   - **Example:** `span: first-line` | `button: hover` 
-  - **Source:**
+  - **Source:** https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
 - [x] Explain your understanding of the box model and how you would tell the browser, through CSS, to render your layout in different box models.
   - **Explanation:** Everything inside a web-page is a box. There are several components that comprise a box model, such as padding, border, and margin. The size of an overall element is directly affected by the box element.
   - **Use:** The standard box model calculates box size by taking a specified height and width, then adding the padding and border. To change to the alternative box model, however, you would set `box-sizing: border box`, which allows you to set the box size with height and width.
   - **Example:** Content box (default), border box, etc
-  - **Source:**
+  - **Source:** https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#what_is_the_css_box_model
 - [x] What does `* { box-sizing: border-box; }` do? What are its advantages?
   - **Explanation:** It changes how the height and width of elements are calculated, compared to content-box. Changes the parameters of border and padding to not affect the overall sizing of the element.
-  - **Source:**
+  - **Source:** https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#the_alternative_css_box_model
 - [x] What is the CSS `display` property and can you give a few examples of its use?
   - **Explanation:** CSS display defines whether an element is treated as a block or inline element, as well as the layout used for its children, such as flow layout, grid, or flex.
   - **Example:**
 	- Block - takes up the whole line in the block’s direction.
 	- Inline - elements can be laid out beside one another.
 	- Inline-block - allows you to place block elements side by side.
-  - **Source:**
+  - **Source:** https://developer.mozilla.org/en-US/docs/Web/CSS/display
 - [x] What's the difference between `inline` and `inline-block`?
   - **Explanation:** Inline-block allows you to set a width and height on the element, unlike inline alone. Inline-block also allows you to set margin and padding on all sides, whereas for inline, you can only set margin and padding on the left and right sides.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] What's the difference between a `relative`, `fixed`, `absolute` and `static` positioned element?
   - **Explanation:**
 	- Relative - The element’s position is adjusted relative to itself without changing layout, and allows the use of Z-index on said element.
 	- Fixed - The element is removed from the flow of the page and set at a specific position, and doesn’t move when the page is scrolled.
 	- Absolute - The element is removed from the flow of the page and positioned based off of the top of the DOM content. It is not affected by other elements, and can be placed exactly where you want on the DOM.
 	- Static - Default position; element flows into the page as it normally would.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
   - **Explanation:** Bootstrap and Tailwind. I like them as they are.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Have you played around with the new CSS Flexbox or Grid specs?
   - **Explanation:** Yes, to Flexbox. I find it far more efficient than using floats because of enhanced customization and sizing options.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Can you explain the difference between coding a web site to be responsive versus using a mobile-first strategy?
   - **Explanation:** 
 	- A responsive website will respond by adapting its size and/or other functionalities based on the user’s screen size.
@@ -455,12 +455,12 @@ h6 {
   }
 }
 ```
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] How is responsive design different from adaptive design?
   - **Explanation:**
 	- Responsive design - A fluid website that can look good on any device. ie. A ball growing or shrinking to fit through several different hoops.
 	- Adaptive design - Detects the type of device used and delivers a pre-set layout for that device. ie. Several different balls to use depending on the hoop size.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Have you ever worked with retina graphics? If so, when and what techniques did you use?
   - **Explanation:** Retina is just a marketing term to refer to high resolution screens with a pixel ratio bigger than 1. In order to have crisp, good-looking graphics that make the best of retina displays we need to use high resolution images whenever possible. However using highest resolution images will have an impact on page load times.
   - **Use:** To overcome this problem, we can use responsive images, as specified in HTML5 with the `srcset` attribute.
@@ -471,10 +471,10 @@ h6 {
     srcset="/images/test-400.jpg 400w, /images/test-800.jpg 800w, /images/test-1200.jpg 1200w"
   />
   ```
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 - [x] Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?
   - **Explanation:** `translate()` is more efficient than absolute positioning because it uses GPU, rather than CPU, which results in shorter paint times for smoother animations.
-  - **Source:**
+  - **Source:** https://www.frontendinterviewhandbook.com/css-questions/
 
 ### Javascript
 
