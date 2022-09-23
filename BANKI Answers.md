@@ -368,11 +368,13 @@ h6 {
 	- Speech - for screen-readers that “read” the page out loud.
 	- Screen - for computer screens, tablets, phones, etc
   - **Example:**
-	```@media print { 
-	body { 
-		color: black
+	```
+	@media print { 
+		body { 
+			color: black
+		}
 	}
-}```
+	```
 	
   - **Source:**
 - [ ] What are some of the "gotchas" for writing efficient CSS?
