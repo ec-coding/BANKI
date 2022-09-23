@@ -180,34 +180,39 @@ Most of the technical questions should have a three sentence response in the EUE
 ### HTML
 
 - [ ] What does a doctype do?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** A doctype tells the browser what version of HTML the document is written in.
+  - **Use:** Must be the very first line of code in an HTML document. 
+  - **Example:** Modern HTML5 documents use the tag `<!DOCTYPE html>`
   - **Source:**
 - [ ] How do you serve a page with content in multiple languages?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** By setting the lang attribute on various elements throughout the page. 
+  - **Use:** Translates the text within the attribute’s container into a selected language.
+  - **Example:** `<p> French “ <span lang=”fr”> Bonjour </span> “ </p>`
   - **Source:**
 - [ ] What kinds of things must you be wary of when designing or developing for multilingual sites?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+      - Including the `lang` attribute.
+      - How colors are perceived.
+      - Language reading direction.
+      - Date and currency formats.
+      - Allowing users to change the language.
   - **Source:**
 - [ ] What are `data-` attributes good for?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** They store data private to the page or application.
+  - **Use:** Were often used for storing extra data in the DOM, but their use is discouraged now.
+  - **Example:** `data-columns=”3”; data-index-number=”12314”`
   - **Source:**
 - [ ] Consider HTML5 as an open web platform. What are the building blocks of HTML5?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+      - Semantics - Allows you to describe precisely what your content is
+      - Multimedia - Making video and audio priority items on the open web.
+      - Performance and Integration - Speed optimization
+      - Styling - More sophisticated themes
+      - Standardization - Building a consensus across all involved web browser stakeholders.
   - **Source:**
 - [ ] Describe the difference between a cookie, sessionStorage and localStorage.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Cookies are typically set by a web server and can store data that is read by both the web server and the web browser. Local storage and session storage are only readable by the browser. The difference between the two is their lifetime; localStorage lasts forever, and sessionStorage only lasts for the length of the session.
+  - **Use:** All used for client-side storage of strings in key-value pairs.
   - **Source:**
 - [ ] Describe the difference between `<script>, <script async> and <script defer>`.
   - **Explanation:**
