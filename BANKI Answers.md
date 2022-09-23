@@ -649,481 +649,1202 @@ if ('geolocation' in navigator) {
   - **Example:** The `fetch` API is typically used nowadays for asynchronous communication.
   - **Source:**
 - [ ] What are the advantages and disadvantages of using Ajax?
-  - **Explanation:**
   - **Advantages:**
-	    - Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page.
-	    - Reduce connections to the server since scripts and stylesheets only have to be requested once.
-	    - State can be maintained on a page. JavaScript variables and DOM state will persist because the main container page was not reloaded.
+    - Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page.
+    - Reduce connections to the server since scripts and stylesheets only have to be requested once.
+    - State can be maintained on a page. JavaScript variables and DOM state will persist because the main container page was not reloaded.
   - **Disadvantages:**
-	    - Dynamic webpages are harder to bookmark.
-	    - Does not work if JavaScript has been disabled in the browser.
-	    - Some webcrawlers do not execute JavaScript and would not see content that has been loaded by JavaScript.
-	    - JavaScript will have to be parsed and executed on the browser, and low-end mobile devices might struggle with this.
+    - Dynamic webpages are harder to bookmark.
+    - Does not work if JavaScript has been disabled in the browser.
+    - Some webcrawlers do not execute JavaScript and would not see content that has been loaded by JavaScript.
+    - JavaScript will have to be parsed and executed on the browser, and low-end mobile devices might struggle with this.
   - **Source:**
 - [ ] Explain how JSONP works (and how it's not really Ajax).
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** JSONP (JSON with Padding) is a method commonly used to bypass the cross-domain policies in web browsers because Ajax requests from the current page to a cross-origin domain is not allowed.
+  - **Use:** JSONP can be unsafe as it can do everything else JavaScript can so you need to trust the provider of data. These days, CORS is the recommended approach and JSONP is seen as a hack.
   - **Example:**
+
+```html
+<!-- https://mydomain.com -->
+<script>
+  function printData(data) {
+    console.log(`My name is ${data.name}!`);
+  }
+</script>
+
+<script src="https://example.com?callback=printData"></script>
+```
   - **Source:**
 - [ ] Have you ever used JavaScript templating? If so, what libraries have you used?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Yes. I have used handlebars(hbs) when I was picking up MVC architecture to split my code into multiple files and directories.
   - **Source:**
 - [ ] Explain "hoisting".
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** Hoisting is the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. Think of it as moving the code up to the top. Note that the assignment stays where it is despite this.
+  - **Use:** It allows you to execute code before they're declared. Function declaration and var are initialized before delaration whereas const, let, and function expressions are not. This means the first two can be accessed globally and the last 3 only after they've been declared.
   - **Example:**
+
+```
+eat()  //this hoisting works b.c it's a function declaration below
+
+function eat(){
+  console.log('eat')
+ }
+```
   - **Source:**
 - [ ] Describe event bubbling.
-  - **Explanation:**
-  - **Use:**
+  - **Explanation & Use:** When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors. The most deeply nested element that caused the event is called a target element, accessible as event.target.
   - **Example:**
+
+```html
+<style>
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+</style>
+<form onclick="alert('form')">
+  FORM
+  <div onclick="alert('div')">
+    DIV
+    <p onclick="alert('p')">P</p>
+  </div>
+</form>
+```
   - **Source:**
 - [ ] What's the difference between an "attribute" and a "property"?
-  - **Explanation:**
-  - **Use:**
+  - **Explanation & Use:** Attributes are defined on the HTML markup but properties are defined on the DOM. An attribute is the initial state when rendered in the DOM. A property is the current state.
   - **Example:**
+
+```javascript
+const input = document.querySelector('input');
+console.log(input.getAttribute('value')); // Hello
+console.log(input.value); // Hello
+```
+
+Notice how the property updates after adding "World" to the input.
+
+```javascript
+console.log(input.getAttribute('value')); // Hello
+console.log(input.value); // Hello World!
+```
   - **Source:**
 - [ ] Why is extending built-in JavaScript objects not a good idea?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Extending a built-in/native JavaScript object means adding properties/functions to its prototype. While this may seem like a good idea at first, it is dangerous in practice. Imagine your code uses a few libraries that both extend the Array.prototype by adding the same contains method, the implementations will overwrite each other and your code will break if the behavior of these two methods is not the same.
+  - **Use:** The only time you may want to extend a native object is when you want to create a polyfill, essentially providing your own implementation for a method that is part of the JavaScript specification but might not exist in the user's browser due to it being an older browser.
   - **Source:**
-- [ ] Difference between document `load` event and document `DOMContentLoaded` event?
-  - **Explanation:**
-  - **Use:**
+- [x] T-JS-25) What is the difference between window `load` event and document `DOMContentLoaded` event?
+  - **Explanation:** The DOMContentLoaded event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. window's load event is only fired after the DOM and all dependent resources and assets have loaded.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/#difference-between-document-load-event-and-document-domcontentloaded-event
+
+- [x] T-JS-26) What is the difference between `==` and `===`?
+  - **Explanation:** == checks for value equality while === checks for value and data type equality
+  - **Use:** == should generally be avoided unless for null or undefined
   - **Example:**
-  - **Source:**
-- [ ] What is the difference between `==` and `===`?
-  - **Explanation:**
-  - **Use:**
+
+```javascript
+1 == '1'; // true
+1 == [1]; // true
+1 == true; // true
+0 == ''; // true
+0 == '0'; // true
+0 == false; // true
+```
+
+- **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+
+- [x] T-JS-27) Explain the same-origin policy with regards to JavaScript.
+  - **Explanation:** The same-origin policy prevents JavaScript from making requests across domain boundaries only allowing one webpage to access another webpage if they have the same origin . An origin is defined as a combination of URI scheme, hostname, and port number. This policy prevents a malicious script on one page from obtaining access to sensitive data on another web page through that page's Document Object Model.
+  - **Source:** https://en.wikipedia.org/wiki/Same-origin_policy
+
+- [x] T-JS-28) Make this work: `duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5] `
   - **Example:**
-  - **Source:**
-- [ ] Explain the same-origin policy with regards to JavaScript.
-  - **Explanation:**
-  - **Use:**
+
+```javascript
+function duplicate(arr) {
+  return arr.concat(arr);
+}
+```
+
+- **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+
+- [x] T-JS-29) Why is it called a ternary expression, what does the word "ternary" indicate?
+  - **Explanation:** "Ternary" means "composed of three parts", as the expression accepts 3 operands. First, a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy.
+  - **Use:** Can simplify code over if...else statements.
   - **Example:**
-  - **Source:**
-- [ ] Make this work: `duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5] `
-  - **Explanation:**
+
+```javascript
+const age = 26;
+const beverage = age >= 21 ? 'Beer' : 'Juice';
+```
+
+- **Source:** https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+
+- [x] T-JS-30) What is "use strict";? what are the advantages and disadvantages to using it?
+
+  - **Explanation:** 'use strict' is a statement used to enable strict mode to entire scripts or individual functions. Strict mode is a way to opt into a restricted variant of JavaScript. Overall, I think the benefits outweigh the disadvantages, and I never had to rely on the features that strict mode blocks. I would recommend using strict mode.
   - **Use:**
+
+    - Advantages:
+
+      - Makes it impossible to accidentally create global variables.
+      - Makes assignments which would otherwise silently fail to throw an exception.
+      - Makes attempts to delete undeletable properties throw an exception (where before the attempt would simply have no effect).
+      - Requires that function parameter names be unique.
+      - this is undefined in the global context.
+      - It catches some common coding bloopers, throwing exceptions.
+      - It disables features that are confusing or poorly thought out.
+
+    - Disadvantages:
+      - Many missing features that some developers might be used to.
+      - No more access to function.caller and function.arguments.
+      - Concatenation of scripts written in different strict modes might cause issues.
+
+- **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/#what-is-use-strict-what-are-the-advantages-and-disadvantages-to-using-it
+
+- [x] T-JS-31) Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
   - **Example:**
-  - **Source:**
-- [ ] Why is it called a ternary expression, what does the word "ternary" indicate?
-  - **Explanation:**
-  - **Use:**
+
+```javascript
+function fizzBuzz() {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log(i, 'FizzBuzz');
+    } else if (i % 3 === 0) {
+      console.log(i, 'Fizz');
+    } else if (i % 5 === 0) {
+      console.log(i, 'Buzz');
+    }
+  }
+}
+```
+
+
+- [x] T-JS-32) Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+  - **Explanation:** Every script has access to the global scope, and if everyone uses the global namespace to define their variables, collisions will likely occur. Use the module pattern (IIFEs) to encapsulate your variables within a local namespace.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+
+- [x] T-JS-33) Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
+  - **Explanation:** `load` fires when the entire page is finished loading (HTML, CSS, Scripts, etc.). You might want to use `DOMContentLoaded` which fires when the DOM is loaded, but before stylesheets, scripts, etc. are loaded.
+  - **Use:** It depends on the context, but perhaps there is some non-blocking resource that is a large file which you would wait to load until the entire page is done.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+  - **Source:** https://www.geeksforgeeks.org/difference-between-domcontentloaded-and-load-events/
+
+- [x] T-JS-34) Explain what a single page app is and how to make one SEO-friendly.
+  - **Explanation:** SPA's render the page client side instead of server side. The server sends the initial page, but subsequent changes to the page do not initiate a page refresh. The data on the page is typically updated via an AJAX request which is then used to dynamically update the page via JavaScript.
+  - **Use:** A reason to use a SPA is that it feels more responsive to the user, fewer HTTP request are made so assets don
+    t have to be downloaded multiple times and there is a clear separation between client and server. As long as the API is the same either side can be modified without affecting the other. Some downsides would be heavier initial page load, additional server config needed and SEO can be more difficult. To overcome the SEO problem you could render your pages server side or use a service such as Prerender.
+  - **Source:** https://github.com/grab/front-end-guide
+
+- [x] T-JS-35) What is the extent of your experience with Promises and/or their polyfills?
+  - **Explanation:** I've used Promises extensively as they are a main component in modern asynchronous JavaScript. They are used for operations that will produce a resolved value in the future. I haven't used polyfills much as they aren't required much these days.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+
+- [x] T-JS-36) What are the pros and cons of using Promises instead of callbacks?
+
+  - **Pros:**
+    - Avoid callback
+    - Easy to write sequential asynchronous code that is readable with `.then()`.
+    - Easy to write parallel asynchronous code with `Promise.all()`.
+    - With promises, these scenarios which are present in callbacks-only coding, will not happen:
+      - Call the callback too early
+      - Call the callback too late (or never)
+      - Call the callback too few or too many times
+      - Fail to pass along any necessary environment/parameters
+      - Swallow any errors/exceptions that may happen
+  - **Cons:**
+    - Slightly more complex code (debatable).
+    - Older browsers may require a polyfill.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+
+
+- [x] T-JS-37) What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+  - **Advantages:**
+    - Adds some syntatic sugar allowing you to write shorter code.
+    - Static types may be available which helps for large projects that need to be maintainable.
+    - Discourages JavaScript anti-patterns.
+  - **Disadvantages:**
+    - Requires a build/compile step.
+    - Another language to learn so requires additional training for developers new to the project.
+    - Less resources due to smaller communities.
+    - Behind the latest features of the up to date ECMAScript standards.
+    - Debugging may be difficult if mapping from compiled to pre-compiled code is not done well.
+  - **Example:** Some more well known examples of these types of languages are CoffeeScript and TypeScript.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions#what-are-some-of-the-advantagesdisadvantages-of-writing-javascript-code-in-a-language-that-compiles-to-javascript
+
+- [x] T-JS-38) What tools and techniques do you use debugging JavaScript code?
+  - **Explanation & Use:** I typically will watch variables as they change over time to make sure they are carrying the correct values or states. The three most common tools I use are:
+    - Browser Devtools (Typically Chrome & Firefox)
+    - `console.log`
+    - `debugger` statement
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions#what-tools-and-techniques-do-you-use-for-debugging-javascript-code
+
+- [x] T-JS-39) What language constructions do you use for iterating over object properties and array items?
+  - **Objects:**
+    - `for...in` loops: When I don't need to access properties that are non-enumerable and that are keyed by Symbols.
+    - `Object.keys()`: Only when I need to access the enumerable properties.
+    - `Object.getOwnPropertyNames()`: When I need to access all properties.
+  - **Arrays:**
+    - `for` loops: I use them when I need to iterate through the array in steps larger than one.
+    - `forEach()`: I use it when I don't need to reference the index as it requires less code.
+    - `for...of` loops: I use them when I might need to `break` from the loop.
+  - **Sources:**
+    - https://www.frontendinterviewhandbook.com/javascript-questions#what-language-constructions-do-you-use-for-iterating-over-object-properties-and-array-items
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+
+- [x] T-JS-40) Explain the difference between mutable and immutable objects.
+  - **Explanation:** A mutable object is an object whose state can be modified after it is created. An immutable object is an object whose state cannot be modified after it is created.
+  - **Use:** Immutable objects make it easier to detect changes, make programs less complicated to think about and sharing is easy with references. If immutable objects are setup incorrectly though it could lead to poor performance due to multiple copies being made.
+  - **Example:** To make an object immutable you could `Object.freeze()` which prevents new properties from being added and existing properties from being altered or removed.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+
+- [x] T-JS-41) Explain the difference between synchronous and asynchronous functions.
+  - **Explanation:** Synchronous functions are blocking while asynchronous functions are not. In synchronous functions, statements complete before the next statement is run. In this case, the program is evaluated exactly in order of the statements and execution of the program is paused if one of the statements take a very long time.
+  - **Use:** Note that JavaScript is synchronous and it's actually the browser and Node.js that's actually asynchronous (think callbacks and promises)
   - **Example:**
-  - **Source:**
-- [ ] What is "use strict";? what are the advantages and disadvantages to using it?
-  - **Explanation:**
-  - **Use:**
+
+```javascript
+function f1() {
+  // Some code   //synchronous
+}
+function main() {
+  console.log('main');
+  setTimeout(f1, 0); // async, with a callback of f1 function
+  f2();
+}
+```
+
+- **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+
+
+- [x] T-JS-42) What is event loop? What is the difference between call stack and task queue?
+  - **Explanation:** The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the task queue, a function is dequeued and pushed onto the call stack to be executed.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+
+- [x] T-JS-43) Explain the differences on the usage of foo between `function foo() {}` and `var foo = function() {}`
+  - **Explanation:** The former is a function declaration while the latter is a function expression.
+  - **Use:** The function declaration is hoisted and can therefore be accessed from anywhere, whereas the function expression can only be accessed after it's been defined.
   - **Example:**
-  - **Source:**
-- [ ] Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
-  - **Explanation:**
-  - **Use:**
+  
+  ```javascript
+  console.log(name('Curtis')) // can be accessed before initialization (hoisted)
+
+   function name (str){ // function declaration
+      return str
+   }
+
+   console.log(nameTwo('Curtis')) // cannot be accused before initialization (not hoisted)
+
+   const nameTwo = function (str) { // expression
+      return str
+   }
+   ```
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+
+- [x] T-JS-44) What are the differences between variables created using `let`, `var` or `const`?
+  - **Explanation:** Variables declared using the var keyword are scoped to the function in which they are created, or if created outside of any function, to the global object. let and const are block scoped, meaning they are only accessible within the nearest set of curly braces (function, if-else block, or for-loop).
+  - **Use:** var is hoisted and can be redeclared, whereas let and const cannot be redeclared. let and var can be reassigned, but const cannot be.
   - **Example:**
-  - **Source:**
-- [ ] Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
-  - **Explanation:**
-  - **Use:**
+
+```javascript
+if (true) {
+  var thing1 = 'bar';
+  let thing2 = 'baz';
+  const thing3 = 'qux';
+}
+
+// var declared variables are accessible anywhere in the function scope.
+console.log(thing1); // bar
+// let and const defined variables are not accessible outside of the block they were defined in.
+console.log(thing2); // ReferenceError: baz is not defined
+console.log(thing3); // ReferenceError: qux is not defined
+```
+
+- **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
+
+
+- [x] T-JS-45) What are the differences between ES6 class and ES5 function constructors?
+  - **Explanation & Example:** Simple constructors are fairly similar in length and ease of use. The main difference in the constructor comes when using inheritance. If we want to create a Student class that subclasses Person and add a studentId field, this is what we have to do:
+
+```javascript
+// ES5 Function Constructor
+function Student(name, studentId) {
+  // Call constructor of superclass to initialize superclass-derived members.
+  Person.call(this, name);
+
+  // Initialize subclass's own members.
+  this.studentId = studentId;
+}
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+// ES6 Class
+class Student extends Person {
+  constructor(name, studentId) {
+    super(name);
+    this.studentId = studentId;
+  }
+}
+```
+
+- **Source:** https://www.frontendinterviewhandbook.com/javascript-questions#what-are-the-differences-between-es6-class-and-es5-function-constructors
+
+
+- [x] T-JS-46) Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?
+  - **Explanation & Use:** It simplifies the syntax needed to create functions and `this` is lexically bound meaning it uses `this` from the code that contains the arrow function.
+  - **Example:** Notice that you do not need to `.bind(this)` for the below to work.
+
+```javascript
+var obj = {
+  id: 42,
+  counter: function counter() {
+    setTimeout(() => {
+      console.log(this.id);
+    }, 1000);
+  },
+};
+```
+
+- **Source:** https://www.freecodecamp.org/news/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26/
+
+
+- [x] T-JS-47) What advantage is there for using the arrow syntax for a method in a constructor?
+
+  - **Explanation & Use:** The main advantage is that the value of `this` gets set at the time of the function creation and can't change after that. This is helpful in React class components when for example you may pass a click handler down into a child component as a prop.
   - **Example:**
-  - **Source:**
-- [ ] Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
-  - **Explanation:**
-  - **Use:**
+
+  ```javascript
+  const Person = function (firstName) {
+    this.firstName = firstName;
+    this.sayName1 = function () {
+      console.log(this.firstName);
+    };
+    this.sayName2 = () => {
+      console.log(this.firstName);
+    };
+  };
+  const john = new Person('John');
+  const dave = new Person('Dave');
+
+  john.sayName1(); // John
+  john.sayName2(); // John
+
+  // The regular function can have its 'this' value changed, but the arrow function cannot
+  john.sayName1.call(dave); // Dave (because "this" is now the dave object)
+  john.sayName2.call(dave); // John
+
+  john.sayName1.apply(dave); // Dave (because 'this' is now the dave object)
+  john.sayName2.apply(dave); // John
+
+  john.sayName1.bind(dave)(); // Dave (because 'this' is now the dave object)
+  john.sayName2.bind(dave)(); // John
+  ```
+
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions#what-advantage-is-there-for-using-the-arrow-syntax-for-a-method-in-a-constructor
+
+
+- [x] T-JS-48) What is the definition of a higher-order function?
+  - **Explanation:** A higher-order function is any function that takes one or more functions as arguments, which it uses to operate on some data, and/or returns a function as a result.
+  - **Use:** To abstract some operation that is performed repeatedly.
+  - **Example:** The classic example of this is `map`, which takes an array and a function as arguments. map then uses this function to transform each item in the array, returning a new array with the transformed data.
+  - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions#what-is-the-definition-of-a-higher-order-function
+
+- [x] T-JS-49) Can you give an example for destructuring an object or an array?
+  - **Explanation:** Destructuring is an expression that enables a convenient way to extract properties from Objects and values from Arrays and place them into distinct variables.
+  - **Use:** It's a more concise way to assign values to variables and can be particularly handy when passing function arguments.
+  - **Example:** An example of destructing a simple object:
+
+```javascript
+// Variable assignment
+const o = { p: 42, q: true };
+const { p, q } = o;
+
+console.log(p); // 42
+console.log(q); // true
+```
+
+- **Source:**
+
+  - https://www.frontendinterviewhandbook.com/javascript-questions#can-you-give-an-example-for-destructuring-an-object-or-an-array
+  - https://betterprogramming.pub/why-i-find-javascripts-destructuring-so-useful-7be41d9ba609
+
+
+- [x] T-JS-50) ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?
+  - **Explanation:** Template literals are a way to do string interpolation, or to include variables in a string.
+  - **Use:** It is simpler and more readable than using concatenation methods prior to ES2015.
   - **Example:**
-  - **Source:**
-- [ ] Explain what a single page app is and how to make one SEO-friendly.
-  - **Explanation:**
-  - **Use:**
+
+```javascript
+// Prior to ES2015
+'Hi, my name is ' + person.name + ' and I am ' + person.age + ' years old!';
+
+// Using template literals
+`Hi, my name is ${person.name} and I am ${person.age} years old!`;
+```
+
+- **Source:** https://www.frontendinterviewhandbook.com/javascript-questions#es6-template-literals-offer-a-lot-of-flexibility-in-generating-strings-can-you-give-an-example
+
+
+- [x] T-JS-51) Can you give an example of a curry function and why this syntax offers an advantage?
+  - **Explanation:** Currying is a pattern where a function with more than one parameter is broken into multiple functions taking a single parameter each that, when called in series, will accumulate all of the required parameters one at a time.
+  - **Use:** This technique can be useful for making code written in a functional style easier to read and compose.
   - **Example:**
-  - **Source:**
-- [ ] What is the extent of your experience with Promises and/or their polyfills?
-  - **Explanation:**
-  - **Use:**
+
+```javascript
+// regular function
+function sum3(x, y, z) {
+  return x + y + z;
+}
+
+// curried version
+function sum3(x) {
+  return (y) => {
+    return (z) => {
+      return x + y + z;
+    };
+  };
+}
+```
+
+- **Source:**
+
+  - https://www.frontendinterviewhandbook.com/javascript-questions#can-you-give-an-example-of-a-curry-function-and-why-this-syntax-offers-an-advantage
+  - https://hackernoon.com/currying-in-js-d9ddc64f162e
+
+
+- [x] T-JS-52) What are the benefits of using spread syntax and how is it different from rest syntax?
+  - **Explanation:** Spread syntax is used to "unpack" data from an array, while rest syntax is the opposite and is used to put data into an array.
+  - **Use:** When coding in a functional paradigm it is easier to create copies of arrays or objects with spread syntax versus using `Object.create`, `slice`, or a library function. Rest syntax is useful when used as a function parameter where there will be an arbitrary number of arguments.
   - **Example:**
-  - **Source:**
-- [ ] What are the pros and cons of using Promises instead of callbacks?
-  - **Explanation:**
-  - **Use:**
+
+```javascript
+// Copying an object
+const person = {
+  name: 'Todd',
+  age: 29,
+};
+
+const copyOfTodd = { ...person };
+```
+
+- **Source:** https://www.frontendinterviewhandbook.com/javascript-questions#what-are-the-benefits-of-using-spread-syntax-and-how-is-it-different-from-rest-syntax
+
+
+- [x] T-JS-53) How can you share code between files?
+  - **Explanation:** With ES6 modules via the `import ... export` syntax. Prior to ES6 modules you could use Asynchronous Module Definition for the client side scripts or CommonJS for server side scripts.
+  - **Use:** To better organize and abstract code bases.
   - **Example:**
-  - **Source:**
-- [ ] What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What tools and techniques do you use debugging JavaScript code?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What language constructions do you use for iterating over object properties and array items?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Explain the difference between mutable and immutable objects.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Explain the difference between synchronous and asynchronous functions.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is event loop? What is the difference between call stack and task queue?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Explain the differences on the usage of foo between `function foo() {}` and `var foo = function() {}`
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What are the differences between variables created using `let`, `var` or `const`?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What are the differences between ES6 class and ES5 function constructors?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What advantage is there for using the arrow syntax for a method in a constructor?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is the definition of a higher-order function?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Can you give an example for destructuring an object or an array?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Can you give an example of a curry function and why this syntax offers an advantage?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What are the benefits of using spread syntax and how is it different from rest syntax?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] How can you share code between files?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Why you might want to create static class members?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+
+```javascript
+// file square.js
+export { name, draw, reportArea, reportPerimeter };
+
+// file index.js
+import { name, draw, reportArea, reportPerimeter } from './modules/square.js';
+```
+
+- **Source:**
+
+  - https://www.frontendinterviewhandbook.com/javascript-questions#how-can-you-share-code-between-files
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+
+
+- [x] T-JS-54) Why might you want to create static class members?
+  - **Explanation:** Static class members are properties and methods that do not change.
+  - **Use:** You would use them for properties that stay the same throughout the application and every instance of the object needs to know that property. They could also be used for utility functions so they can be called without instantiating any object.
+  - **Source:** https://stackoverflow.com/questions/21155438/when-to-use-static-variables-methods-and-when-to-use-instance-variables-methods
 
 ### Javascript General
 
-- [ ] Can you name two programming paradigms important for JavaScript app developers?
+
+- [x] T-JSGeneral-1) Can you name two programming paradigms important for JavaScript app developers?
+  - OOP and Functional Programming are the most often used. OOP allows inheritance via different "classes". Functional is pure-functions without side effects.
+  - **Source:** https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
+
+- [x] T-JSGeneral-2) What is functional programming?
+  - **Explanation:** Using pure functions with no side effects to compose your program.
+  - **Use:** You avoid mutable data and shared states and instead make use of simple functions. It makes the code more predictable.
+  - **Example:** Instead of having a function with two parameters that does two tasks, you break it into two functions. Each function would have a single parameter and do a single task.
+  - **Source:** https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
+
+- [x] T-JSGeneral-3) What is the difference between classical inheritance and prototypal inheritance?
+  - **Explanation:** Classical instances inherit from class "templates" and create sub-class relationships. They are typically instantiated via constructor functions or the class keyword. Prototypal instances inherit directly from other objects and typically instantiated via factory functions or the `Object.create()` method.
+  - **Use:** It's generally considered better practice to use Prototypal inheritance for a few reasons:
+    - Protoypes are more flexible than classes
+    - The abstraction is only a single level deep
+    - It's less verbose than using classical inheritance
+  - **Source:**
+    - https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
+    - https://dev.to/crishanks/classical-vs-prototypal-inheritance-2o5a
+
+- [ ] T-JSGeneral-4) What are the pros and cons of functional programming vs object-oriented programming?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
-- [ ] What is functional programming?
+
+- [x] T-JSGeneral-5) What are two-way data binding and one-way data flow, and how are they different?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is the difference between classical inheritance and prototypal inheritance?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What are the pros and cons of functional programming vs object-oriented programming?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What are two-way data binding and one-way data flow, and how are they different?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is asynchronous programming, and why is it important in JavaScript?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+    - Two-way data: UI fields are bound to model data dynamically. When a UI field changes, the model data changes with it and vice-versa. Side effects can occur.
+    - One-way data: The model is the single source of truth. Changes in the UI signal user intent to the model (or “store” in React). Only the model has the access to change the app’s state. The effect is that data always flows in a single direction. It is deterministic meaning no side effects will occur.
+  - **Use:** React is a popular framework which uses one-way data flow. Angular on the other hand uses two-way data binding.
+  - **Source:** https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
+
+- [x] T-JSGeneral-6) What is asynchronous programming, and why is it important in JavaScript?
+  - **Explanation:** It allows you to run blocking code outside of the single thread so that the program can continue to run while it waits for the blocking code to complete. Javascript is synchronous by nature, but the runtime (browser or node) has an event loop which allows developers to write asynchronous programs.
+  - **Use:** It is important for user interfaces, where you are waiting for user input, and for network requests, where you are waiting for some data back from a server.
+  - **Example:** Using `async...await` and `fetch` to fetch resources from an API is a common implementation of async programming.
+  - **Source:** https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
 
 ### Node
 
-- [ ] What is Node.js? Where can you use it?
+
+- [x] T-Node-1) What is Node.js? Where can you use it?
+
+  - Node.js is a single-threaded, open-source, cross-platform runtime environment used to build server-side and networking applications. It uses event-driven, non-blocking I/O architecture, which makes it efficient and suitable for real-time applications.
+  - **Source:** https://kinsta.com/knowledgebase/what-is-node-js/
+
+
+- [x] T-Node-2) Why use Node.js?
+
+  - **Explanation:** It uses fewer resources and memory because it is single threaded, it has wide adoption with many open source pacakages available, it is multi-platform and it simplifies the full stack as you can use just one language: Javascript.
+  - **Use:** It's best used for real time applications that aren't data intensive. For programs that require more data processing a multi-threaded language like Java is a better choice.
+  - **Source:** https://kinsta.com/knowledgebase/what-is-node-js/
+
+
+- [ ] T-Node-3) What are the features of Node.js?
+
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
-- [ ] Why use Node.js?
+
+
+- [x] T-Node-4) How do you update NPM to a new version in Node.js?
+
+  - **Explanation:** With Mac or Linux systems it is rather easy just type the command `npm install -g npm@latest` into the terminal to update npm. With Windows it's a little more complex as you will need to either modify the Window's installation PATH or remove the npm files from the nodejs install directory then update npm in the terminal.
+  - **Source:** https://docs.npmjs.com/try-the-latest-stable-version-of-npm
+
+- [x] T-Node-5) Why is Node.js Single-threaded?
+
+  - **Explanation:** Node.js is single-threaded for async processing. By doing async processing on a single-thread under typical web loads, more performance and scalability can be achieved instead of the typical thread-based implementation.
+  - **Source:** https://www.simplilearn.com/tutorials/nodejs-tutorial/nodejs-interview-questions
+
+- [x] T-Node-6) Explain callback in Node.js.
+
+  - **Explanation:** A callback function is called after a given task. All APIs of Node are written to support callbacks.
+  - **Use:** Callbacks allow other code to be run in the meantime and prevents any blocking. Being an asynchronous platform, Node.js heavily relies on callback.
+  - **Source:** https://www.simplilearn.com/tutorials/nodejs-tutorial/nodejs-interview-questions
+
+- [x] T-Node-7) What is callback hell in Node.js?
+
+  - **Explanation:** This is a big issue caused by coding with complex nested callbacks. Imagine each and every callback takes an argument that is a result of the previous callbacks. In this manner, The code structure looks like a pyramid, making it difficult to read and maintain. Also, if there is an error in one function, then all other functions get affected.
+  - **Use:** This should be avoided.
+  - **Example:**
+
+  ```callback hell
+  fs.readdir(source, function (err, files) {
+    if (err) {
+      console.log('Error finding files: ' + err)
+    } else {
+      files.forEach(function (filename, fileIndex) {
+        console.log(filename)
+        gm(source + filename).size(function (err, values) {
+          if (err) {
+            console.log('Error identifying file size: ' + err)
+          } else {
+            console.log(filename + ' : ' + values)
+            aspect = (values.width / values.height)
+            widths.forEach(function (width, widthIndex) {
+              height = Math.round(width / aspect)
+              console.log('resizing ' + filename + 'to ' + height + 'x' + height)
+              this.resize(width, height).write(dest + 'w' + width + '_' + filename, function(err) {
+                if (err) console.log('Error writing file: ' + err)
+              })
+            }.bind(this))
+          }
+        })
+      })
+    }
+  })   //note this long line of stacking brackets is often a tell of callback hell
+  ```
+
+  - **Source:**
+
+- [x] T-Node-8) How do you prevent/fix callback hell?
+
+  - **Explanation:** One of the most common ways is to use promises (an object that represents the eventual completion or failure of an async operation and its value). Once each step is finished and we have our value, we can run then() method to call the async callback or if it fails we can catch an error. We could also just keep our code shallow and modularize (make each block of code do one thing only).
+  - **Example:**
+
+  ```promises and then() method
+  houseOne()
+  	.then(data=>console.log(data)
+  	.then(houseTwo)
+  	.then(data=>console.log(data)
+  	.then(houseTwo)
+  ```
+
+  - **Source:** https://www.geeksforgeeks.org/what-is-callback-hell-in-node-js/
+
+- [x] T-Node-9) Explain the role of REPL in Node.js.
+
+  - **Explanation:** The Node.js Read-Eval-Print-Loop (REPL) is an interactive shell that processes Node.js expressions. The shell reads JavaScript code the user enters, evaluates the result of interpreting the line of code, prints the result to the user, and loops until the user signals to quit.
+  - **Use:** The REPL is bundled with with every Node.js installation and allows you to quickly test and explore JavaScript code within the Node environment without having to store it in a file. Entering "node" in the terminal starts the REPL
+  - **Example:**
+
+  ```promises and then() method
+  sammy@b6755984:~$ node     //press enter on "node" to get ">", indicating the start
+  Welcome to Node.js v14.19.0.
+  Type ".help" for more information.
+  > 2+2    //used REPL to evaluate simple math
+  4
+  ```
+
+  - **Source:** https://www.digitalocean.com/community/tutorials/how-to-use-the-node-js-repl
+
+- [x] T-Node-10) Name the types of API functions in Node.js.
+
+  - **Explanation:** There are two types; **Asynchronous**, Non-blocking functions and **Synchronous**, Blocking functions
+  - **Example:** Asynchronous examples would be emails and online forums. Synchronous examples would be instant messaging and video calls.
+  - **Source:** https://www.geeksforgeeks.org/types-of-api-functions-in-node-js/
+
+- [x] T-Node-11) What are the functionalities of NPM in Node.js?
+
+  - **Explanation:** NPM serves two main purposes; being an online repository of open-source Node.js projects and a command line utility for interacting with said repository.
+  - **Use:** Typically it is used to install packages, manage versions and manage project dependencies.
+  - **Source:** https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/
+
+- [ ] T-Node-12) What is the difference between Node.js and Ajax?
+
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
-- [ ] What are the features of Node.js?
+
+- [x] T-Node-13) What are “streams” in Node.js? Explain the different types of streams present in Node.js.
+
+  - **Explanation:** Streams are objects that enable you to read data or write data continuously.
+  - **Use:** There are four types of streams:
+    - Readable – Used for reading operations
+    - Writable − Used for write operations
+    - Duplex − Can be used for both reading and write operations
+    - Transform − A type of duplex stream where the output is computed based on input
+  - **Source:** https://www.simplilearn.com/tutorials/nodejs-tutorial/nodejs-interview-questions
+
+- [ ] T-Node-14) Explain chaining in Node.js.
+
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
-- [ ] How do you update NPM to a new version in Node.js?
+
+- [x] T-Node-15) What are Globals in Node.js?
+
+  - **Explanation:** Node.js Global Objects are the objects that are available in all modules. Global Objects are built-in objects that are part of the JavaScript and can be used directly in the application without importing any particular module.
+  - **Use:** Common built-in modules, functions, strings and objects used widely in Node.
+  - **Example:** setTimeout() is a global function used to run a callback after at least x milliseconds:
+
+```javascript
+function printHello() {
+  console.log('Hello World!');
+}
+//call printHello() after 2 seconds
+setTimeout(printHello, 2000);
+```
+
+- **Source:** https://www.tutorialspoint.com/nodejs/nodejs_global_objects.htm
+
+- [ ] T-Node-16) What is Event-driven programming?
+
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
-- [ ] Why is Node.js Single-threaded?
+
+- [x] T-Node-17) What is Event loop in Node.js? And How does it work?
+
+  - **Explanation:** The Event loop handles all async callbacks. We can attach listeners to events, and when a said event fires, the listener executes the callback we provided.
+  - **Use:** Whenever we call `setTimeout`, `http.get` and `fs.readFile`, Node.js runs the operation and continues to run other code without waiting for the output. When the operation is finished, it receives the output and runs our callback function. All the callback functions are queued in an loop, and will run one-by-one when the response has been received.
+  - **Source:** https://vigowebs.medium.com/frequently-asked-node-js-interview-questions-and-answers-b74fa1f20678
+
+- [x] T-Node-18) What is the purpose of `module.exports` in Node.js?
+  - **Explanation:** In Node.js, a module encapsulates all related code into a single unit of code by moving all relevant functions into a single file.
+  - **Use:** You may export a module with the `module.exports` function, which lets it be imported into another file using `require`
+  - **Source:** https://www.simplilearn.com/tutorials/nodejs-tutorial/nodejs-interview-questions
+
+- [x] T-Node-19) What is the difference between Asynchronous and Non-blocking?
+
+  - **Explanation:** **Asynchronous** literally means not synchronous. HTTP requests which are asynchronous, means we are not waiting for the server response. The program continues with other code blocks and deals with the server response when it is received. The term **Non-Blocking** is widely used with I/O. For example non-blocking read/write calls return with whatever they can do and expect caller to execute the call again. Read will wait until it has some data and put the calling thread to sleep.
+
+- **Source:** https://vigowebs.medium.com/frequently-asked-node-js-interview-questions-and-answers-b74fa1f20678
+
+- [x] T-Node-20) What is Tracing in Node.js?
+
+  - **Explanation:** Tracing provides a mechanism to collect tracing information generated by V8, Node core and userspace code in a log file.
+  - **Use:** Tracing can be enabled by passing the `--trace-events-enabled` flag when starting a Node.js application. The set of categories for which traces are recorded can be specified using the `--trace-event-categories` flag followed by a list of comma separated category names. By default the `node` and `v8` categories are enabled. Log files can be opened in the `chrome://tracing` tab of Chrome.
+  - **Source:** https://vigowebs.medium.com/frequently-asked-node-js-interview-questions-and-answers-b74fa1f20678
+
+- [x] T-Node-21) How will you debug an application in Node.js?
+
+  - **Explanation:** Typically using the `debugger` utility and `console.log()`. I would place `debugger` statements in the code wherever I would like a breakpoint inserted and then run the script with node and `debug` enabled.
+  - **Source:** https://vigowebs.medium.com/frequently-asked-node-js-interview-questions-and-answers-b74fa1f20678
+
+- [x] T-Node-22) Difference between `setImmediate()` and `setTimeout()`?
+
+  - **Explanation:** setImmediate() is to schedule the immediate execution of callback after I/O (input/output) event callbacks and before setTimeout and setInterval. setTimeout() is to schedule execution of a one-time callback after delay milliseconds. both are async.
+  - **Use:** Inside an I/O cycle, the setImmediate() should execute before setTimeout({},0).
+  - **Example:**
+
+  ```// timeout_vs_immediate.js
+  const fs = require('fs');
+
+  fs.readFile(__filename, () => {
+    setTimeout(() => {
+      console.log('timeout');
+    }, 0);
+    setImmediate(() => {
+      console.log('immediate');
+    });
+  });
+  ```
+
+  - **Source:** https://dev.to/ynmanware/setimmediate-settimeout-and-process-nexttick-3mfd
+
+- [x] T-Node-23) What is `process.nextTick()`?
+
+  - **Explanation:** Every time the event loop takes a full trip, we call it a tick. When we pass a function to process.nextTick(), we instruct the engine to invoke this function at the end of the current operation, before the next event loop tick starts. process.nextTick() is actually faster
+  - **Use:** Calling setTimeout(() => {}, 0) will execute the function at the end of next tick, much later than when using nextTick() which prioritizes the call and executes it just before the beginning of the next tick.
+  - **Example:**
+
+  ```
+  process.nextTick(() => {
+    // do something
+  });
+  ```
+
+  - **Source:** https://nodejs.dev/learn/understanding-process-nexttick
+
+- [x] T-Node-24) What is package.json? What is it used for?
+
+  - **Explanation:** All npm packages contain a file, usually in the project root, called package.json - this file holds various metadata relevant to the project. It's a central repository of configuration for tools, for example. It's also where npm and yarn store the names and versions for all the installed packages.
+  - **Use:** This file is used to give information to npm that allows it to identify the project as well as handle **the project's dependencies**. It can also contain other metadata such as a project description, the version of the project in a particular distribution, license information, even configuration data - all of which can be vital to both npm and to the end users of the package. The package.json file is normally located at the root directory of a Node.js project.
+  - **Source:** https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/
+
+- [ ] T-Node-25) What is libuv?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
-- [ ] Explain callback in Node.js.
+- [ ] T-Node-26) What are some of the most popular modules of Node.js?
   - **Explanation:**
   - **Use:**
   - **Example:**
   - **Source:**
-- [ ] What is callback hell in Node.js?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] How do you prevent/fix callback hell?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Explain the role of REPL in Node.js.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Name the types of API functions in Node.js.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What are the functionalities of NPM in Node.js?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is the difference between Node.js and Ajax?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What are “streams” in Node.js? Explain the different types of streams present in Node.js.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Explain chaining in Node.js.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What are Globals in Node.js?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is Event-driven programming?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is Event loop in Node.js work? And How does it work?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is the purpose of `module.exports` in Node.js?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is the difference between Asynchronous and Non-blocking?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is Tracing in Node.js?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] How will you debug an application in Node.js?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Difference between `setImmediate()` and `setTimeout()`?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is `process.nextTick()`?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is package.json? What is it used for?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is libuv?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What are some of the most popular modules of Node.js?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is `EventEmitter` in Node.js?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+- [x] T-Node-27) What is `EventEmitter` in Node.js?
+  - **Explanation:** EventEmitter is a class that holds all the objects that can emit events.
+  - **Use:** Whenever an object from the EventEmitter class throws an event, all attached functions are called upon synchronously.
+  - **Source:** https://www.simplilearn.com/tutorials/nodejs-tutorial/nodejs-interview-questions
 
 ### CS Theory 
 
-- [ ] What is recursion and give an example using javascript?
-  - **Explanation:**
-  - **Use:**
+- [x] T-CSTheory-1) What is recursion and give an example using javascript?
+- **Explanation:** Recursion is when a function calls itself within its own body. Besides the recursive call, it should always have a base case which stops it from calling itself to prevent infinite loops.
+- **Use:** Recursion is made for solving problems that can be broken down into smaller, repetitive problems. It is especially good for working on things that have many possible branches and are too complex for an iterative approach.
+- **Example:** A classic example is computing a factorial given a number `num`:
+
+```js
+function factorial(num) {
+  if (num === 1) {
+    return num;
+  }
+  return num * factorial(num - 1);
+}
+```
+
+**Source:** https://developer.mozilla.org/en-US/docs/Glossary/Recursion
+
+- [x] T-CSTheory-2) What are types?
+
+  - **Explanation:** Types, also called data types, each have a unique set of rules/instructions of what can and can't be done with it.
+  - **Use:** Types are necessary so that the computer knows how to handle data when trying to do an operation with it.
+  - **Example:** A few data types that are shared by most programming language are:
+    - Boolean (ex. true or false)
+    - String ("hello world")
+    - Float (3.1415)
+  - **Source:** https://www.youtube.com/watch?v=A37-3lflh8I
+
+- [x] T-CSTheory-3) What are data structures?
+
+  - **Explanation:** Data structures is storage that is used to store and organize data. It is also a way of arranging data on a computer in such a way that it can be updated and accessed efficiently.
+  - **Use:** Data structures are not only used for processing, retrieving, and storing data, but also organizing the data into more readable ways.
+  - **Example:** There are many types of data structures, all classified as either linear or non-linear. The following are some examples:
+    - Linear Static Data Structures (Arrays)
+    - Linear Dynamic Data Structures (Queue, Stack, Linked List)
+    - Non-linear Data Structures (Tree and Graphs)
+  - **Source:** https://www.geeksforgeeks.org/data-structures/
+
+- [x] T-CSTheory-4) What is an algorithm?
+
+  - **Explanation:** In literal terms, an algorithm is a set of rules to be followed in calculations or other problem-solving opterations or a procedure for solving a mathematical problem in a finite number of steps that frequently by recursive operations.
+    In other words, an Algorithm refers to a sequence of finite steps to solve a particular problem.
+  - **Use:** Algorithms can be used for many things such as building a solution by searching all available solutions, searching, and sorting.
   - **Example:**
+    - Breadth First Search Algorithm
+    - Recursive Algorithms
+    - Brute Force Algorithms
+  - **Source:** https://www.geeksforgeeks.org/introduction-to-algorithms/
+
+- [x] T-CSTheory-5) What is scope / lexical scope in javascript?
+
+  - **Explanation:** Scope refers that the accessibility of variables, depending on where they are declared in the code they are “visible” and thus can be called. Lexically scoped variables can only be called from within the block of code they are defined, generally speaking inside of a function.
+  - **Use:** It is used to avoid scope pollution, or unwanted invoking of variables
   - **Source:**
-- [ ] What are types?
-  - **Explanation:**
-  - **Use:**
+
+- [x] T-CSTheory-6) What is polymorphism?
+
+  - **Explanation:** Polymorphism is a concept of Object-oriented programming(OOP) Paradigm that provides a way to perform a single action in different ways.
+  - **Use:** It provides an ability to call the same method on different JavaScript objects
   - **Example:**
-  - **Source:**
-- [ ] What are data structures?
-  - **Explanation:**
-  - **Use:**
+
+  ```javascript
+  class A {
+    display() {
+      console.log('A is invoked');
+    }
+  }
+
+  class B extends A {}
+
+  class C extends A {
+    constructor() {
+      super();
+    }
+
+    //overrides the display function of A and hence behaves differently
+    display() {
+      console.log('C is invoked');
+    }
+  }
+  var b = new B();
+  var c = new C();
+  b.display(); //output: :"A is invoked"
+  c.display(); //Output: "C is invoked"
+  ```
+
+  - **Source:**https://www.javatpoint.com/javascript-oops-polymorphism, www.stackOverflow.com
+
+- [x] T-CSTheory-7) What is encapsulation?
+
+  - **Explanation:** A tenet of OOP, it is the wrapping up of data under a single unit, those being variables, and functions acting on those variables. In JS this is accomplished with objects and constructor functions
+  - **Use:** Its main benefit is it allows your code to be more readable, and robust against errors.
   - **Example:**
-  - **Source:**
-- [ ] What is an algorithm?
+
+  ```javascript
+  class Person {
+    #name = 'Nathan';
+
+    getName() {
+      return this.#name;
+    }
+
+    setName(name) {
+      this.#name = name;
+    }
+  }
+  ```
+
+  - **Source:**https://www.javatpoint.com/javascript-oops-encapsulation
+
+- [x] T-CSTheory-8) What is a Linked List?
+
   - **Explanation:**
-  - **Use:**
+    It is a linear data structure similar to an array, except that elements are not stored on a particular memory location or index but instead represent separate objects containing a reference to the next item on the list
+    Elements (commonly called nodes) contain two items: the data and the link to the next node. The data can be of any type.
+    In a linked list, the head refers to the first node of the list. Null refers to the last node of the list. If the list is empty, the head is null.
+    There are 3 Types: Singly, Doubly and Circular Linked List.
+  - **Use:** The DOM, Blockchains, Prototypal Inheritance, Image Viewer, Music Payer and Previous And Next Page...
   - **Example:**
-  - **Source:**
-- [ ] What is scope / lexical scope in javascript?
-  - **Explanation:**
-  - **Use:**
+
+  ```javascript
+  const linkedList = {
+      head: {
+          value: 1
+          next: {
+              value: 2
+              next: {
+                  value: 12
+                  next: {
+                      value: 4
+                      next: null
+                      }
+                  }
+              }
+          }
+      }
+  };
+  ```
+
+  - **Source:** Implementing A Linked List https://www.freecodecamp.org/news/implementing-a-linked-list-in-javascript/
+
+- [x] T-CSTheory-1) What is a Doubly Linked List?
+
+  - **Explanation:** It is pretty much the same as a linked list, only each node also has a pointer to the previous node and also has a null head pointer. It makes it easier to traverse the nodes and delete items, though they require more space, and take longer due to the extra pointers.
+  - **Use:** They are used in stacks, hash tables, and binary trees.
   - **Example:**
-  - **Source:**
-- [ ] What is polymorphism?
-  - **Explanation:**
-  - **Use:**
+
+  ```javascript
+  const morningRoutine = {
+    value: 'Make Bed',
+    previous: null,
+    next: {
+      value: 'Drink Tea',
+      previous: `<REFERENCE TO NODE MAKE BED>`,
+      next: {
+        value: 'Brush Teeth',
+        previous: `<REFERENCE TO NODE DRINK TEA>`,
+        next: null,
+      },
+    },
+  };
+  ```
+
+  - **Source:** https://www.geeksforgeeks.org/doubly-linked-list/
+
+- [x] T-CSTheory-9) What is a Queue?
+
+  - **Explanation:** A Queue is a linear structure which follows a particular order in which the operations are performed. The order is First In First Out (FIFO).
+  - **Use:** Queue is used when things don't have to be processed immediately, but have to be processed in First In First Out order like Breadth First Search.
+  - **Example:** The Event Loop Model prioritizes all the Jobs in a Job Queue.
+  - **Source:** https://www.geeksforgeeks.org/queue-data-structure/
+
+- [x] T-CSTheory-10) What is a Stack?
+
+  - **Explanation:** A Stack is a linear data structure which follows a particular order in which the operations are performed. The order is LIFO(Last In First Out).
+  - **Use:** Stacks are used to implement functions, parsers, expression evaluation, and backtracking algorithms.
+  - **Example:** The Event loop uses call stack. Every time a script or function calls a function, it's added to the top of the call stack. Every time the function exits, the interpreter removes it from the call stack.
+  - **Source:** https://www.geeksforgeeks.org/stack-data-structure/
+
+- [x] T-CSTheory-11) What is a Hash Table?
+
+  - **Explanation:** Also known as a hash map or dictionary, is a data structure that implements a set data type, in a structure that can map keys to values. In JS you can create them with objects as they offer an easy way to make key/value pairs. When a key is passed into the table the corresponding value is returned.
+  - **Use:** Hash tables are used in all manner of tasks, the most common however would be password verification
   - **Example:**
-  - **Source:**
-- [ ] What is encapsulation?
-  - **Explanation:**
-  - **Use:**
+
+  ```javascript
+  function test() {
+    var map = {
+      m1: 12,
+      m2: 13,
+      m3: 14,
+      m4: 15,
+    };
+    alert(map['m3']);
+  }
+  ```
+
+  - **Source:** https://www.geeksforgeeks.org/hashing-data-structure/
+
+- [x] T-CSTheory-12) What is a Heap?
+
+  - **Explanation:** They are binary tree-based data structures, Heaps come in one of two forms min-heaps, and max-heaps, the only difference between the two, min and max, is that the root node in max-heap is the biggest key working down, and min is the reverse, this must be recursively true for all sub-trees in that binary tree.
+  - **Use:** Heaps are generally used in priority queues. or to order statistics
   - **Example:**
-  - **Source:**
-- [ ] What is a Linked List?
-  - **Explanation:**
-  - **Use:**
+
+  ```
+            10
+          /     \
+       15         30
+     /    \      /    \
+   40      50  100     40
+          min heap
+
+            100
+          /     \
+       40         50
+     /    \     /     \
+   10      15  50      40
+          max heap
+  ```
+
+  - **Source:** https://www.geeksforgeeks.org/heap-data-structure/?ref=lbp
+
+- [x] T-CSTheory-13) What is a Trie?
+
+  - **Explanation:** It is a type of tree data structure, they are used to store associate arrays where the keys are usually strings. They are often compared to hash tables, though some key differences are that.
+    Nodes in the tree do not store keys, instead, they each store parts of keys, traversing down from the root node to a leaf allowing you to build the key as you progress, they also don't need to be a value at every node. Values are typically only associated with leaf nodes.
+  - **Use:** They are typically used for auto-complete.
   - **Example:**
-  - **Source:**
-- [ ] What is a Doubly Linked List?
-  - **Explanation:**
-  - **Use:**
+
+  ```
+                       root
+                    /    \    \
+                    t    a     b
+                    |    |     |
+                    h    n     y
+                    |    |  \  |
+                    e    s  y  e
+                 /  |    |
+                 i  r    w
+                 |  |    |
+                 r  e    e
+                         |
+                         r
+  ```
+
+  - **Source:** https://www.geeksforgeeks.org/trie-insert-and-search/
+
+- [x] T-CSTheory-14) What is a Tree?
+
+  - **Explanation:** Trees are non-linear data structures, they organize data hierarchically. They are a collection of nodes, that are linked via branches, each node branches to its child nodes. They are possibly the most commonly used data structure. You can think of it as a family tree, or company structure, branching down from the root node (CEO) to child nodes (managers) and terminating at leaf nodes(entry level employees)
+  - **Use:** The DOM, file management, and even machine learning decision-based algorithms.
+  - **Source:** https://www.programiz.com/dsa/trees
+
+- [x] T-CSTheory-15) What is a Binary Search Tree?
+
+  - **Explanation:** A binary search tree, or "ordered binary tree" is a type of binary tree where the nodes are arranged in order: for each node, all elements in its left subtree are less than the parent node, and all the elements in its right subtree are greater than the parent node.
+  - **Use:** They are used to implement dictionaries, implement multilevel indexing in DBs. as well as Implementing search algorithms.
   - **Example:**
-  - **Source:**
-- [ ] What is a Queue?
-  - **Explanation:**
-  - **Use:**
+
+  ```
+            5
+          /   \
+        3      6
+       /  \      \
+     1     4      9
+
+  ```
+
+  - **Source:** https://www.geeksforgeeks.org/binary-search-tree-data-structure/?ref=gcse
+
+- [x] T-CSTheory-16) What is a Disjoint Set?
+
+  - **Explanation:** Disjoint-set is a data structure that keeps track of a elements broken down into sets, of which each set is unique. It is useful for keep track or elements as you can compare sets to see what set they belong to. They are two main functions used on these sets, being union and find.
+  - **Use:** The uses for this data structure are compilers and symbolic computation
+  - **Source:** https://www.oodlestechnologies.com/blogs/understanding-disjoint-set-and-their-use-cases-in-computer-science/#:~:text=1It%20is%20used%20to,used%20in%20Maze%20generation%20problems
+
+- [x] T-CSTheory-17) What is a Bloom Filter?
+
+  - **Explanation:** It is a probabilistic data structure that is execptionally space-efficient , it is used to check to see if an element is a member of a set. A common use case is checking the availability of a username, this approach is far more efficient than alternative solutions, however, since it is probabilistic it can return false positives so it is not suitable for mission-critical tasks. It is important to note that although it can give a false positives it is not possible to return a false negative.
+  - **Use:** This used to be used in search engines, and currently has found use in blockchain technology
+  - **Source:** https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/?ref=gcse
+
+- [x] T-CSTheory-18) Demonstrate Bubble Sort and explain when you might use it?
+
+  - **Explanation:** A bubble sort algorithm is an algorithm that sorts an array by comparing two adjacent elements and swaps them if they are not in the intended order. Order can be anything like increasing order or decreasing order.
+  - **Use:** It is generally considered a bad practice to implement this in most situations, though it is easy to implement so for a first-pass solution, on a small data set it can find use.
   - **Example:**
-  - **Source:**
-- [ ] What is a Stack?
-  - **Explanation:**
-  - **Use:**
+
+  ```javascript
+  function bblSort(arr){
+    for(let i = 0; i < arr.length; i++){
+      // Last i elements are already in place
+      for(let j = 0; j < ( arr.length - i -1 ); j++){
+        // Checking if the item at the present iteration
+        // is greater than the next iteration
+        if(arr[ j ] > arr[ j +1 ]){
+          // If the condition is true then swap them
+          let temp = arr[ j ]
+          arr[ j ] = arr[ j + 1]
+          arr[ j+1] = temp
+        }
+      }
+    }
+  ```
+
+  - **Source:** https://www.geeksforgeeks.org/bubble-sort/?ref=gcse
+
+- [x] T-CSTheory-19) Demonstrate Insertion Sort and explain when you might use it?
+
+  - **Explanation:** Insertion sort is a simple sorting algorithm that builds the final sorted array/list one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+  - **Use:** It is very efficient in smaller data sets, especially if they are already mostly sorted.
   - **Example:**
-  - **Source:**
-- [ ] What is a Hash Table?
-  - **Explanation:**
-  - **Use:**
+
+  ```javascript
+  function insertionSort(inputArr) {
+    let n = inputArr.length;
+    for (let i = 1; i < n; i++) {
+      // Choosing the first element in our unsorted subarray
+      let current = inputArr[i];
+      // The last element of our sorted subarray
+      let j = i - 1;
+      while (j > -1 && current < inputArr[j]) {
+        inputArr[j + 1] = inputArr[j];
+        j--;
+      }
+      inputArr[j + 1] = current;
+    }
+    return inputArr;
+  }
+  ```
+
+  - **Source:** https://www.geeksforgeeks.org/insertion-sort/?ref=g
+
+- [x] T-CSTheory-20) Demonstrate Merge Sort and explain when you might use it?
+
+  - **Explanation:** Merge sort is a sorting algorithm that uses the “divide and conquer” concept. Given an array, we first divide it in the middle and we get 2 arrays. We recursively perform this operation, until we get to arrays of 1 element. After divinding into its smallest units it starts merging the elements again based on their size.
+  - **Use:** It is one of the most respected sorting algorithms. Merge sort is more efficient and works faster than quick sort in case of larger array size or datasets.
   - **Example:**
-  - **Source:**
-- [ ] What is a Heap?
-  - **Explanation:**
-  - **Use:**
+
+  ```javascript
+  const _mergeArrays = (a, b) => {
+    const c = [];
+    while (a.length && b.length) {
+      c.push(a[0] > b[0] ? b.shift() : a.shift());
+    }
+    // if we still have values, let's add them at the end of `c`
+    while (a.length) {
+      c.push(a.shift());
+    }
+    while (b.length) {
+      c.push(b.shift());
+    }
+    return c;
+  };
+
+  const mergeSort = (a) => {
+    if (a.length < 2) return a;
+    const middle = Math.floor(a.length / 2);
+    const a_l = a.slice(0, middle);
+    const a_r = a.slice(middle, a.length);
+    const sorted_l = mergeSort(a_l);
+    const sorted_r = mergeSort(a_r);
+    return _mergeArrays(sorted_l, sorted_r);
+  };
+  ```
+
+  - **Source:** https://www.geeksforgeeks.org/merge-sort/?ref=gcse
+
+- [x] T-CSTheory-21) Demonstrate Quicksort and explain when you might use it?
+
+  - **Explanation:** Quicksort is an in-place sorting algorithm. it is still a widely used algorithm for sorting. It picks an element as a pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. When implemented well, it can be somewhat faster than merge sort and about two or three times faster than heapsort.
+  - **Use:** It is used pretty much everywhere that doesnt require a stable sort.
   - **Example:**
-  - **Source:**
-- [ ] What is a Trie?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is a Tree?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is a Binary Search Tree?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is a Disjoint Set?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] What is a Bloom Filter?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Demonstrate Bubble Sort and explain when you might use it?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Demonstrate Insertion Sort and explain when you might use it?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Demonstrate Merge Sort and explain when you might use it?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
-- [ ] Demonstrate Quicksort and explain when you might use it?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
-  - **Source:**
+
+  ```javascript
+  function quicksort(array) {
+    if (array.length <= 1) {
+      return array;
+    }
+
+    let pivot = array[0];
+    let left = [];
+    let right = [];
+
+    for (let i = 1; i < array.length; i++) {
+      array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
+    }
+
+    return quicksort(left).concat(pivot, quicksort(right));
+  }
+
+  let unsorted = [23, 45, 16, 37, 3, 99, 22];
+  let sorted = quicksort(unsorted);
+
+  console.log('Sorted array', sorted);
+  ```
+
+  - **Source:** https://www.geeksforgeeks.org/quick-sort/?ref=gcse
 
 ## Questions to ask your interviewer
 
