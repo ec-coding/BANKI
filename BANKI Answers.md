@@ -216,23 +216,30 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Source:**
 - [ ] Describe the difference between `<script>, <script async> and <script defer>`.
   - **Explanation:**
+      - <script> HTML parsing is blocked, script is fetched and executed right away.
+      - <script async> script fetched in parallel to HTML parsing and executed as soon as it 
+is available.
+      - <script defer> script fetched in parallel to HTML parsing and executed when the page 
+has finished parsing.
   - **Use:**
+      - `async` is used when the script is independent of any other scripts on the page.
+      - `defer` is useful when you need to ensure the HTML is fully parsed before running.
   - **Example:**
+      - `async` could be used for analytics scripts.
+      - `defer` scripts must not contain `document.write`
   - **Source:**
 - [ ] Why is it generally a good idea to position CSS `<link>`s within `<head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Placing <link> in the <head> allows for quick “first meaningful paint”. When a page first loads, HTML and CSS are being parsed simultaneously. However, <script> tags block HTML parsing while they are being downloaded and run, which can slow down your page. Thus, placing scripts at the bottom will allow the HTML to be parsed and displayed to the user first.
   - **Source:**
 - [ ] What is progressive rendering?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Progressive rendering is a technique used to improve the performance of a webpage so that it can render content for display ASAP.
+  - **Use:** Improving perceived load time.
+  - **Example:** Lazy loading of images, prioritizing visible content, and async HTML fragments.
   - **Source:**
 - [ ] Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** When you want to serve different images to users depending on their device display width.
+  - **Use:** Sending lower resolution to limit data waste and increase performance or sending larger images to a higher resolution display to enhance the UX.
+  - **Example:** `<img srcset =”small.jpg 500w, medium.jpg 1000w, large.jpg 2000w” src=”...” alt=””>`
   - **Source:**
 - [ ] Have you used different HTML templating languages before?
   - **Explanation:**
