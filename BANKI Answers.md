@@ -245,12 +245,12 @@ Most of the technical questions should have a three sentence response in the EUE
 
 ### CSS
 
-- [ ] What is CSS selector specificity and how does it work?
+- [x] What is CSS selector specificity and how does it work?
   - **Explanation:** How browsers decide which CSS property values are the most relevant to an element and how to apply them.
   - **Use:** Specificity is a score that is applied to a given CSS declaration, and is determined by the number of each selector type that it calls upon.
   - **Example:** A selector of `#id .class tag` would have 111 points, as id’s count for 100, classes count for 10, and tags count for 1.
   - **Source:**
-- [ ] What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
+- [x] What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
   - **Explanation:** “Normalize” alteres the default styles of various browsers to match each other. “Reset” will remove a browser’s default styles so you are starting from scratch.
   - **Use:** Using one or the other is done so that websites can remain visually consistent across different browsers. I prefer CSS normalize because of its style presets.
   - **Example:**
@@ -286,12 +286,12 @@ h6 {
 ```
    
   - **Source:**
-- [ ] Describe floats and how they work.
+- [x] Describe floats and how they work.
   - **Explanation:** They are a positioning property where an element that is floated will be removed from the flow of the page and affect elements around it. `.clearfix` hacks are used to fix parent elements which collapse to zero height due to containing only floated elements.
   - **Use:** Floats were used prior to flex and grid to organize pages in a more flexible way.
   - **Example:** You can float three `<div>` elements left and give them widths of 33% each to create three columns with equal width.
   - **Source:**
-- [ ] Describe z-index and how stacking context is formed.
+- [x] Describe z-index and how stacking context is formed.
   - **Explanation:** Z-index allows you to stack elements above or below one another to affect their visibility. Stacking context is formed by the parent-child relationship of nested elements, and the order of elements in the DOM.
   - **Use:** Giving a planet image with a transparent background a higher z-index so that it appears in front of a dark-colored background with a lower z-index.
   - **Example:** 
@@ -300,7 +300,7 @@ h6 {
       z-index: 1
    }`
   - **Source:**
-- [ ] Describe BFC (Block Formatting Context) and how it works.
+- [x] Describe BFC (Block Formatting Context) and how it works.
   - **Explanation:** A BFC is an HTML box that satisfies one or more of the following conditions:
       - The value of float is not ‘none’.
       - The value of position is neither static nor relative.
@@ -309,7 +309,7 @@ h6 {
   - **Use:** Knowing how to establish a block formatting context is crucial, because otherwise, the containing box will not contain floated children.
   - **Example:** Without forming a BFC, you might end up with the contents of a float that end up being taller than the content beside it.
   - **Source:**
-- [ ] What are the various clearing techniques and which is appropriate for what context?
+- [x] What are the various clearing techniques and which is appropriate for what context?
   - **Explanation:**
       - Empty `div` method
       - Clearfix method
@@ -326,42 +326,40 @@ h6 {
 		}`
       - Overflow: Parent will establish a new BFC and expand to contain its floated children.
   - **Source:**
-- [ ] Explain CSS sprites, and how you would implement them on a page or site.
+- [x] Explain CSS sprites, and how you would implement them on a page or site.
   - **Explanation:** CSS sprites combine multiple images into one. To implement them, you would use a sprite generator and apply the proper CSS for it. Each image would have its own corresponding CSS class and background properties, which are placed in the elements which require them. 
   - **Use:** Commonly used for icons. 
-  - **Example:**
   - **Source:**
-- [ ] How would you approach fixing browser-specific styling issues?
+- [x] How would you approach fixing browser-specific styling issues?
   - **Explanation:** By writing browser-specific CSS code, using a library like Bootstrap, and also by using a normalizer or reset CSS. My personal preference would be to use a combination normalize/reset style sheet.
   - **Use:** Safari and IE have different default fonts, which means the font on any given site can change when viewed with either browser.
-  - **Example:**
   - **Source:**
-- [ ] How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
+- [x] How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
   - **Explanation:**
 	- Graceful degradation - Building an app for modern browsers while ensuring it remains functional in older browsers.
 	- Progressive enhancement - Building an app for a base level of user experience, but adding functional enhancements when a browser supports it.
 	- @support tag in CSS to test whether certain features are supported.
   - **Source:**
-- [ ] What are the different ways to visually hide content (and make it available only for screen readers)?
+- [x] What are the different ways to visually hide content (and make it available only for screen readers)?
   - **Explanation:**
 	- Make width and height both 0 for the content.
 	- Position outside the screen.
 	- Indent the text by -9999px.
   - **Source:**
-- [ ] Have you ever used a grid system, and if so, what do you prefer?
+- [x] Have you ever used a grid system, and if so, what do you prefer?
   - **Explanation:** I have used floats and flex. I prefer flex because it feels more modernized and customizable, and has substantial browser support. I have been slightly exposed to CSS Grid Layout, but am still learning how to properly implement its `grid` property.
   - **Source:**
-- [ ] Have you used or implemented media queries or mobile specific layouts/CSS?
+- [x] Have you used or implemented media queries or mobile specific layouts/CSS?
   - **Explanation:** Yes. It was to adjust the content displayed based on the user’s screen size.
   - **Use:** Re-organizing certain `<div>` and `<section>` elements on a site to be more aesthetic and functional if the user switches from a desktop to a mobile device.
   - **Source:**
-- [ ] Are you familiar with styling SVG?
+- [x] Are you familiar with styling SVG?
   - **Explanation:** Yes. It has advantages over other image formats such as JPG and GIF, such as:
 	- Able to be created and edited with any text editor.
 	- SVG images are scalable.
 	- SVG graphics do not lose quality upon being resized or zoomed.
   - **Source:**
-- [ ] Can you give an example of an `@media` property other than screen?
+- [x] Can you give an example of an `@media` property other than screen?
   - **Explanation:** There are 4  types of @media properties:
 	- All - for all media type devices
 	- Print - for printers
@@ -376,10 +374,10 @@ h6 {
 	}
 	```
   - **Source:**
-- [ ] What are some of the "gotchas" for writing efficient CSS?
+- [x] What are some of the "gotchas" for writing efficient CSS?
   - **Explanation:** Avoid key selectors that are tag and universal selectors. Since they match a large number of elements, browsers become overworked as they have to determine if the parents are a match. Also, avoid writing styles that change the layout. Be aware of the CSS properties which trigger reflow, repaint and compositing. Everything should have a single class.
   - **Source:**
-- [ ] What are the advantages/disadvantages of using CSS preprocessors?
+- [x] What are the advantages/disadvantages of using CSS preprocessors?
   - **Explanation:**
 	- Pros:
 		- CSS is made more maintainable.
@@ -391,7 +389,7 @@ h6 {
 
   - **Example:** Sass, Post-CSS, Less
   - **Source:**
-- [ ] Describe what you like and dislike about the CSS preprocessors you have used.
+- [x] Describe what you like and dislike about the CSS preprocessors you have used.
   - **Explanation:**
 	- Likes:
 		- Being able to split files and nest selectors is very efficient.
@@ -399,49 +397,49 @@ h6 {
 		- Sass requires frequent re-compilation when switching between node versions.
 		- Less uses variable names prefixed with @, which can be confused with native CSS keywords such as @media, @import, etc.
   - **Source:**
-- [ ] How would you implement a web design comp that uses non-standard fonts?
+- [x] How would you implement a web design comp that uses non-standard fonts?
   - **Explanation:** Use `@font-face` and define `font-family`.
   - **Source:**
-- [ ] Explain how a browser determines what elements match a CSS selector.
+- [x] Explain how a browser determines what elements match a CSS selector.
   - **Explanation:** Browsers match selectors from right to left. They filter out elements in the DOM based on the key selector and go up its parent element to find matches
   - **Example:** `p span` locates all `<span>` elements and works its way up until it finds a `<p>` element. 
   - **Source:**
-- [ ] Describe pseudo-elements and discuss what they are used for.
+- [x] Describe pseudo-elements and discuss what they are used for.
   - **Explanation:** A keyword added to a selector that lets you style a specific part of the element.
   - **Example:** `span: first-line` | `button: hover` 
   - **Source:**
-- [ ] Explain your understanding of the box model and how you would tell the browser, through CSS, to render your layout in different box models.
+- [x] Explain your understanding of the box model and how you would tell the browser, through CSS, to render your layout in different box models.
   - **Explanation:** Everything inside a web-page is a box. There are several components that comprise a box model, such as padding, border, and margin. The size of an overall element is directly affected by the box element.
   - **Use:** The standard box model calculates box size by taking a specified height and width, then adding the padding and border. To change to the alternative box model, however, you would set `box-sizing: border box`, which allows you to set the box size with height and width.
   - **Example:** Content box (default), border box, etc
   - **Source:**
-- [ ] What does `* { box-sizing: border-box; }` do? What are its advantages?
+- [x] What does `* { box-sizing: border-box; }` do? What are its advantages?
   - **Explanation:** It changes how the height and width of elements are calculated, compared to content-box. Changes the parameters of border and padding to not affect the overall sizing of the element.
   - **Source:**
-- [ ] What is the CSS `display` property and can you give a few examples of its use?
+- [x] What is the CSS `display` property and can you give a few examples of its use?
   - **Explanation:** CSS display defines whether an element is treated as a block or inline element, as well as the layout used for its children, such as flow layout, grid, or flex.
   - **Example:**
 	- Block - takes up the whole line in the block’s direction.
 	- Inline - elements can be laid out beside one another.
 	- Inline-block - allows you to place block elements side by side.
   - **Source:**
-- [ ] What's the difference between `inline` and `inline-block`?
+- [x] What's the difference between `inline` and `inline-block`?
   - **Explanation:** Inline-block allows you to set a width and height on the element, unlike inline alone. Inline-block also allows you to set margin and padding on all sides, whereas for inline, you can only set margin and padding on the left and right sides.
   - **Source:**
-- [ ] What's the difference between a `relative`, `fixed`, `absolute` and `static` positioned element?
+- [x] What's the difference between a `relative`, `fixed`, `absolute` and `static` positioned element?
   - **Explanation:**
 	- Relative - The element’s position is adjusted relative to itself without changing layout, and allows the use of Z-index on said element.
 	- Fixed - The element is removed from the flow of the page and set at a specific position, and doesn’t move when the page is scrolled.
 	- Absolute - The element is removed from the flow of the page and positioned based off of the top of the DOM content. It is not affected by other elements, and can be placed exactly where you want on the DOM.
 	- Static - Default position; element flows into the page as it normally would.
   - **Source:**
-- [ ] What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+- [x] What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
   - **Explanation:** Bootstrap and Tailwind. I like them as they are.
   - **Source:**
-- [ ] Have you played around with the new CSS Flexbox or Grid specs?
+- [x] Have you played around with the new CSS Flexbox or Grid specs?
   - **Explanation:** Yes, to Flexbox. I find it far more efficient than using floats because of enhanced customization and sizing options.
   - **Source:**
-- [ ] Can you explain the difference between coding a web site to be responsive versus using a mobile-first strategy?
+- [x] Can you explain the difference between coding a web site to be responsive versus using a mobile-first strategy?
   - **Explanation:** 
 	- A responsive website will respond by adapting its size and/or other functionalities based on the user’s screen size.
 	- Mobile-first websites will cater their design to mobile devices first, and then add responsive rules for other screen sizes afterwards.
@@ -458,12 +456,12 @@ h6 {
 }
 ```
   - **Source:**
-- [ ] How is responsive design different from adaptive design?
+- [x] How is responsive design different from adaptive design?
   - **Explanation:**
 	- Responsive design - A fluid website that can look good on any device. ie. A ball growing or shrinking to fit through several different hoops.
 	- Adaptive design - Detects the type of device used and delivers a pre-set layout for that device. ie. Several different balls to use depending on the hoop size.
   - **Source:**
-- [ ] Have you ever worked with retina graphics? If so, when and what techniques did you use?
+- [x] Have you ever worked with retina graphics? If so, when and what techniques did you use?
   - **Explanation:** Retina is just a marketing term to refer to high resolution screens with a pixel ratio bigger than 1. In order to have crisp, good-looking graphics that make the best of retina displays we need to use high resolution images whenever possible. However using highest resolution images will have an impact on page load times.
   - **Use:** To overcome this problem, we can use responsive images, as specified in HTML5 with the `srcset` attribute.
   - **Example:**
@@ -474,13 +472,13 @@ h6 {
   />
   ```
   - **Source:**
-- [ ] Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?
+- [x] Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?
   - **Explanation:** `translate()` is more efficient than absolute positioning because it uses GPU, rather than CPU, which results in shorter paint times for smoother animations.
   - **Source:**
 
 ### Javascript
 
-- [ ] Explain event delegation
+- [x] Explain event delegation
   - **Explanation:** Event delegation is the practice of adding event listeners to a parent element instead of its descendents. The listener will be affected by triggered events on the descendent elements due to the parent-child relationship.
   - **Use:** When you want some code to run when the user interacts with any one of a large number of child elements.
   - **Example:**
@@ -493,7 +491,7 @@ h6 {
 </script>
 ```
   - **Source:**
-- [ ] Explain how `this` works in JavaScript
+- [x] Explain how `this` works in JavaScript
   - **Explanation:** this references an object. When inside of a constructor function or class it will reference the object on instantiation.
   - **Use:** It is used to assign properties and values to an object on instantiation.
   - **Example:**
@@ -505,10 +503,32 @@ class MyThing {
 }
 ```
   - **Source:**
-- [ ] Explain how prototypal inheritance works
-  - **Explanation:**
-  - **Use:**
+- [x] Explain how prototypal inheritance works
+  - **Explanation:** When a property is accessed on an object, but said property does not exist within said object, it moves up the chain to see if its parent objects contain said property so it can call upon them.
+  - **Use:** It can help reduce redundant code.
   - **Example:**
+```javascript
+function Parent() {
+  this.name = 'Parent';
+}
+Parent.prototype.greet = function () {
+  console.log('Hello from ' + Parent.name);
+};
+const child = Object.create(Parent.prototype);
+child.cry = function () {
+  console.log('waaaaaahhhh!');
+};
+child.cry();
+// waaaaaahhhh!
+child.greet();
+// hello from Parent
+console.log(child.constructor);
+// ƒ Parent() {
+// this.name = 'Parent';
+// }
+console.log(child.constructor.name);
+// 'Parent'
+```	
   - **Source:**
 - [ ] What do you think of AMD vs CommonJS?
   - **Explanation:**
