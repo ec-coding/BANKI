@@ -254,22 +254,41 @@ Most of the technical questions should have a three sentence response in the EUE
   - **Explanation:** “Normalize” alteres the default styles of various browsers to match each other. “Reset” will remove a browser’s default styles so you are starting from scratch.
   - **Use:** Using one or the other is done so that websites can remain visually consistent across different browsers. I prefer CSS normalize because of its style presets.
   - **Example:**
-   ```Normalize:
+
+   Normalize:
+
+```css
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
 h1 {
-   font -size: 2 em;
-   margin: 0.67em 0;
+  font-size: 2em;
+  margin: 0.67em 0;
 }
+```
 
 Reset:
-Html, body, h1, h2, {
-   margin: 0;
-   padding: 0;
-}```
+
+```css
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+```
+   
   - **Source:**
 - [ ] Describe floats and how they work.
   - **Explanation:** They are a positioning property where an element that is floated will be removed from the flow of the page and affect elements around it. `.clearfix` hacks are used to fix parent elements which collapse to zero height due to containing only floated elements.
   - **Use:** Floats were used prior to flex and grid to organize pages in a more flexible way.
-
   - **Example:** You can float three `<div>` elements left and give them widths of 33% each to create three columns with equal width.
   - **Source:**
 - [ ] Describe z-index and how stacking context is formed.
@@ -282,14 +301,30 @@ Html, body, h1, h2, {
    }`
   - **Source:**
 - [ ] Describe BFC (Block Formatting Context) and how it works.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** A BFC is an HTML box that satisfies one or more of the following conditions:
+      - The value of float is not ‘none’.
+      - The value of position is neither static nor relative.
+      - The value of display is table-cell, table-caption, inline-block, flex, or inline-flex, grid, or inline-grid.
+      - The value of overflow is not visible. 
+  - **Use:** Knowing how to establish a block formatting context is crucial, because otherwise, the containing box will not contain floated children.
+  - **Example:** Without forming a BFC, you might end up with the contents of a float that end up being taller than the content beside it.
   - **Source:**
 - [ ] What are the various clearing techniques and which is appropriate for what context?
   - **Explanation:**
-  - **Use:**
+      - Empty `div` method
+      - Clearfix method
+      - `overflow: auto` or `overflow: hidden` method
+  - **Use:** `.clearfix` is likely the most efficient method to use on a general basis due to its short construction time and lack of clipping issues compared to the overflow methods.
   - **Example:**
+      - `<div style=”clear:both;”></div>`
+      - `.cleafix:after {
+		content: ‘ ‘;
+		visibility: hidden;
+		display: block;
+		height: 0;
+		clear: both;
+		}`
+      - Overflow: Parent will establish a new BFC and expand to contain its floated children.
   - **Source:**
 - [ ] Explain CSS sprites, and how you would implement them on a page or site.
   - **Explanation:**
