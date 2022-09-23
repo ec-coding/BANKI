@@ -4,15 +4,15 @@
 ---
 
 ### Breakdown of Questions
-1. [Behaviorial](#behavioral)
-2. [Technical](#technical-questions)
-   - [HTML](#html)
-   - [CSS](#css)
-   - [Javascript](#javascript)
-   - [Javascript General](#javascript-general)
-   - [Node](#node)
-   - [CS Theory](#cs-theory)
-3. [Questions to ask your interviewer](#questions-to-ask-your-interviewer)
+1. [Behaviorial]
+2. [Technical]
+   - [HTML]
+   - [CSS]
+   - [Javascript]
+   - [Javascript General]
+   - [Node]
+   - [CS Theory]
+3. [Questions to ask your interviewer]
 
 ---
 
