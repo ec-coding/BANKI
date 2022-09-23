@@ -375,16 +375,20 @@ h6 {
 	     }
 	}
 	```
-	
   - **Source:**
 - [ ] What are some of the "gotchas" for writing efficient CSS?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Avoid key selectors that are tag and universal selectors. Since they match a large number of elements, browsers become overworked as they have to determine if the parents are a match. Also, avoid writing styles that change the layout. Be aware of the CSS properties which trigger reflow, repaint and compositing. Everything should have a single class.
   - **Source:**
 - [ ] What are the advantages/disadvantages of using CSS preprocessors?
   - **Explanation:**
-  - **Use:**
+	- Pros:
+		- CSS is made more maintainable.
+		- Easy to write nested selectors.
+		- Mixins to generate repeated CSS.
+	- Cons:
+		- Requires tools for preprocessing.
+		- Re-compilation time can be slow.
+
   - **Example:**
   - **Source:**
 - [ ] Describe what you like and dislike about the CSS preprocessors you have used.
