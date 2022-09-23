@@ -597,7 +597,7 @@ const doubled = a.map((num) => {
 	- Host objects are provided by the runtime environment (browser) such as window, XMLHTTPRequest, etc.
   - **Example:** Some native objects are `String`, `Math`, `RegExp`, and `Object`. A couple of host objects are `window` and `console`
   - **Source:**
-- [ ] What is the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
+- [x] What is the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
   - **Explanation & Use:**
     - `function Person(){}` is likely being used as a constructor.
     - `var person = new Person()`is instantiated a new Person object as person.
@@ -643,12 +643,12 @@ if ('geolocation' in navigator) {
 }
 ```
   - **Source:**
-- [ ] Explain Ajax in as much detail as possible.
+- [x] Explain Ajax in as much detail as possible.
   - **Explanation:** Ajax (asynchronous JavaScript and XML) is a set of web development techniques using many web technologies on the client side to create asynchronous web applications. With Ajax, web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page.
   - **Use:** By decoupling the data interchange layer from the presentation layer, Ajax allows for web pages, and by extension web applications, to change content dynamically without the need to reload the entire page. In practice, modern implementations commonly use JSON instead of XML, due to the advantages of JSON being native to JavaScript.
   - **Example:** The `fetch` API is typically used nowadays for asynchronous communication.
   - **Source:**
-- [ ] What are the advantages and disadvantages of using Ajax?
+- [x] What are the advantages and disadvantages of using Ajax?
   - **Advantages:**
     - Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page.
     - Reduce connections to the server since scripts and stylesheets only have to be requested once.
@@ -659,7 +659,7 @@ if ('geolocation' in navigator) {
     - Some webcrawlers do not execute JavaScript and would not see content that has been loaded by JavaScript.
     - JavaScript will have to be parsed and executed on the browser, and low-end mobile devices might struggle with this.
   - **Source:**
-- [ ] Explain how JSONP works (and how it's not really Ajax).
+- x] Explain how JSONP works (and how it's not really Ajax).
   - **Explanation:** JSONP (JSON with Padding) is a method commonly used to bypass the cross-domain policies in web browsers because Ajax requests from the current page to a cross-origin domain is not allowed.
   - **Use:** JSONP can be unsafe as it can do everything else JavaScript can so you need to trust the provider of data. These days, CORS is the recommended approach and JSONP is seen as a hack.
   - **Example:**
@@ -675,10 +675,10 @@ if ('geolocation' in navigator) {
 <script src="https://example.com?callback=printData"></script>
 ```
   - **Source:**
-- [ ] Have you ever used JavaScript templating? If so, what libraries have you used?
+- [x] Have you ever used JavaScript templating? If so, what libraries have you used?
   - **Explanation:** Yes. I have used handlebars(hbs) when I was picking up MVC architecture to split my code into multiple files and directories.
   - **Source:**
-- [ ] Explain "hoisting".
+- [x] Explain "hoisting".
   - **Explanation:** Hoisting is the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. Think of it as moving the code up to the top. Note that the assignment stays where it is despite this.
   - **Use:** It allows you to execute code before they're declared. Function declaration and var are initialized before delaration whereas const, let, and function expressions are not. This means the first two can be accessed globally and the last 3 only after they've been declared.
   - **Example:**
@@ -691,7 +691,7 @@ function eat(){
  }
 ```
   - **Source:**
-- [ ] Describe event bubbling.
+- [x] Describe event bubbling.
   - **Explanation & Use:** When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors. The most deeply nested element that caused the event is called a target element, accessible as event.target.
   - **Example:**
 
@@ -711,7 +711,7 @@ function eat(){
 </form>
 ```
   - **Source:**
-- [ ] What's the difference between an "attribute" and a "property"?
+- [x] What's the difference between an "attribute" and a "property"?
   - **Explanation & Use:** Attributes are defined on the HTML markup but properties are defined on the DOM. An attribute is the initial state when rendered in the DOM. A property is the current state.
   - **Example:**
 
@@ -728,7 +728,7 @@ console.log(input.getAttribute('value')); // Hello
 console.log(input.value); // Hello World!
 ```
   - **Source:**
-- [ ] Why is extending built-in JavaScript objects not a good idea?
+- [x] Why is extending built-in JavaScript objects not a good idea?
   - **Explanation:** Extending a built-in/native JavaScript object means adding properties/functions to its prototype. While this may seem like a good idea at first, it is dangerous in practice. Imagine your code uses a few libraries that both extend the Array.prototype by adding the same contains method, the implementations will overwrite each other and your code will break if the behavior of these two methods is not the same.
   - **Use:** The only time you may want to extend a native object is when you want to create a polyfill, essentially providing your own implementation for a method that is part of the JavaScript specification but might not exist in the user's browser due to it being an older browser.
   - **Source:**
@@ -1178,10 +1178,10 @@ import { name, draw, reportArea, reportPerimeter } from './modules/square.js';
     - https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95
     - https://dev.to/crishanks/classical-vs-prototypal-inheritance-2o5a
 
-- [ ] T-JSGeneral-4) What are the pros and cons of functional programming vs object-oriented programming?
+- [x] T-JSGeneral-4) What are the pros and cons of functional programming vs object-oriented programming?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+	- FP: Avoids bugs related to shared state, due to lack of multiple functions competing for the same resources. A downside with FP is that it reduces readability of code due to abstract specifications and large compositions.
+	- OOP: Easy to understand the basic concept of objects and easy to interpret the meaning of method calls. However, it depends on shared state, which can lead to undesirable behavior such as race conditions.
   - **Source:**
 
 - [x] T-JSGeneral-5) What are two-way data binding and one-way data flow, and how are they different?
@@ -1213,11 +1213,9 @@ import { name, draw, reportArea, reportPerimeter } from './modules/square.js';
   - **Source:** https://kinsta.com/knowledgebase/what-is-node-js/
 
 
-- [ ] T-Node-3) What are the features of Node.js?
+- [x] T-Node-3) What are the features of Node.js?
 
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Node.js is a single-threaded, but highly scalable, system that uses JavaScript as its scripting language. It uses asynchronous, event-driven I/O instead of separate processes or threads. It can achieve high output via single-threaded event loop and non-blocking I/O.
   - **Source:**
 
 
@@ -1315,11 +1313,10 @@ import { name, draw, reportArea, reportPerimeter } from './modules/square.js';
   - **Use:** Typically it is used to install packages, manage versions and manage project dependencies.
   - **Source:** https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/
 
-- [ ] T-Node-12) What is the difference between Node.js and Ajax?
+- [x] T-Node-12) What is the difference between Node.js and Ajax?
 
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Node.js and Ajax are the advanced implementations of JavaScript. They each serve entirely different purposes.
+  - **Use:** Ajax is primarily designed for dynamically updating a particular section of a page’s content, without having to update the entire page. Meanwhile, Node.js is used for developing client-server apps.
   - **Source:**
 
 - [x] T-Node-13) What are “streams” in Node.js? Explain the different types of streams present in Node.js.
@@ -1332,11 +1329,9 @@ import { name, draw, reportArea, reportPerimeter } from './modules/square.js';
     - Transform − A type of duplex stream where the output is computed based on input
   - **Source:** https://www.simplilearn.com/tutorials/nodejs-tutorial/nodejs-interview-questions
 
-- [ ] T-Node-14) Explain chaining in Node.js.
+- [x] T-Node-14) Explain chaining in Node.js.
 
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** It is a mechanism where the output of one stream is connected to another stream, creating a chain of multiple stream operations.
   - **Source:**
 
 - [x] T-Node-15) What are Globals in Node.js?
@@ -1355,11 +1350,11 @@ setTimeout(printHello, 2000);
 
 - **Source:** https://www.tutorialspoint.com/nodejs/nodejs_global_objects.htm
 
-- [ ] T-Node-16) What is Event-driven programming?
+- [x] T-Node-16) What is Event-driven programming?
 
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Event-driven programming is used to synchronize the occurrence of multiple events and to make the program as simple as possible. The basic components of event-driven programming are:
+	- A callback function (ie. an event handler) is called when an event is triggered.
+	- An event loop that listens for event triggers and calls the corresponding event handler for that event.
   - **Source:**
 
 - [x] T-Node-17) What is Event loop in Node.js? And How does it work?
@@ -1431,16 +1426,24 @@ setTimeout(printHello, 2000);
   - **Use:** This file is used to give information to npm that allows it to identify the project as well as handle **the project's dependencies**. It can also contain other metadata such as a project description, the version of the project in a particular distribution, license information, even configuration data - all of which can be vital to both npm and to the end users of the package. The package.json file is normally located at the root directory of a Node.js project.
   - **Source:** https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/
 
-- [ ] T-Node-25) What is libuv?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+- [x] T-Node-25) What is libuv?
+  - **Explanation:** `libuv` is a multi-platform support library with a focus on asynchronous/non-blocking I/O. It was developed mainly to be used by Node.js, but it is also used by other libraries such as Luvit, Julia, pyuv, etc.
+  - **Use:** It provides mechanisms to handle file systems, DNS, networks, child processes, pipes, and more. Some features of `libuv` are:
+	- Full-featured event loop backed by epoll, kqueue, IOCP, event ports.
+	- Asynchronous file and file system operations.
+	- Child processes.
+	- File system events.
   - **Source:**
-- [ ] T-Node-26) What are some of the most popular modules of Node.js?
+	
+- [x] T-Node-26) What are some of the most popular modules of Node.js?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+	- Express
+	- Async
+	- Browserify
+	- Socket.io
+	- Bower
   - **Source:**
+	
 - [x] T-Node-27) What is `EventEmitter` in Node.js?
   - **Explanation:** EventEmitter is a class that holds all the objects that can emit events.
   - **Use:** Whenever an object from the EventEmitter class throws an event, all attached functions are called upon synchronously.
