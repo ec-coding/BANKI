@@ -200,7 +200,7 @@ Most of the technical questions should have a three sentence response in the EUE
 - [ ] What are `data-` attributes good for?
   - **Explanation:** They store data private to the page or application.
   - **Use:** Were often used for storing extra data in the DOM, but their use is discouraged now.
-  - **Example:** `data-columns=”3”; data-index-number=”12314”`
+  - **Example:** `data-columns=”3”` | `data-index-number=”12314”`
   - **Source:**
 - [ ] Consider HTML5 as an open web platform. What are the building blocks of HTML5?
   - **Explanation:**
