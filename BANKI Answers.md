@@ -446,7 +446,7 @@ h6 {
 	- A responsive website will respond by adapting its size and/or other functionalities based on the user’s screen size.
 	- Mobile-first websites will cater their design to mobile devices first, and then add responsive rules for other screen sizes afterwards.
   - **Example:**
-	```css
+```css
 .my-class {
   font-size: 12px;
 }
