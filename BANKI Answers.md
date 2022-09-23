@@ -179,17 +179,17 @@ Most of the technical questions should have a three sentence response in the EUE
 
 ### HTML
 
-- [ ] What does a doctype do?
+- [x] What does a doctype do?
   - **Explanation:** A doctype tells the browser what version of HTML the document is written in.
   - **Use:** Must be the very first line of code in an HTML document. 
   - **Example:** Modern HTML5 documents use the tag `<!DOCTYPE html>`
   - **Source:**
-- [ ] How do you serve a page with content in multiple languages?
+- [x] How do you serve a page with content in multiple languages?
   - **Explanation:** By setting the lang attribute on various elements throughout the page. 
   - **Use:** Translates the text within the attribute’s container into a selected language.
   - **Example:** `<p> French “ <span lang=”fr”> Bonjour </span> “ </p>`
   - **Source:**
-- [ ] What kinds of things must you be wary of when designing or developing for multilingual sites?
+- [x] What kinds of things must you be wary of when designing or developing for multilingual sites?
   - **Explanation:**
       - Including the `lang` attribute.
       - How colors are perceived.
@@ -197,12 +197,12 @@ Most of the technical questions should have a three sentence response in the EUE
       - Date and currency formats.
       - Allowing users to change the language.
   - **Source:**
-- [ ] What are `data-` attributes good for?
+- [x] What are `data-` attributes good for?
   - **Explanation:** They store data private to the page or application.
   - **Use:** Were often used for storing extra data in the DOM, but their use is discouraged now.
   - **Example:** `data-columns=”3”` | `data-index-number=”12314”`
   - **Source:**
-- [ ] Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+- [x] Consider HTML5 as an open web platform. What are the building blocks of HTML5?
   - **Explanation:**
       - Semantics - Allows you to describe precisely what your content is
       - Multimedia - Making video and audio priority items on the open web.
@@ -210,17 +210,15 @@ Most of the technical questions should have a three sentence response in the EUE
       - Styling - More sophisticated themes
       - Standardization - Building a consensus across all involved web browser stakeholders.
   - **Source:**
-- [ ] Describe the difference between a cookie, sessionStorage and localStorage.
+- [x] Describe the difference between a cookie, sessionStorage and localStorage.
   - **Explanation:** Cookies are typically set by a web server and can store data that is read by both the web server and the web browser. Local storage and session storage are only readable by the browser. The difference between the two is their lifetime; localStorage lasts forever, and sessionStorage only lasts for the length of the session.
   - **Use:** All used for client-side storage of strings in key-value pairs.
   - **Source:**
-- [ ] Describe the difference between `<script>, <script async> and <script defer>`.
+- [x] Describe the difference between `<script>, <script async> and <script defer>`.
   - **Explanation:**
       - <script> HTML parsing is blocked, script is fetched and executed right away.
-      - <script async> script fetched in parallel to HTML parsing and executed as soon as it 
-is available.
-      - <script defer> script fetched in parallel to HTML parsing and executed when the page 
-has finished parsing.
+      - <script async> script fetched in parallel to HTML parsing and executed as soon as it is available.
+      - <script defer> script fetched in parallel to HTML parsing and executed when the page has finished parsing.
   - **Use:**
       - `async` is used when the script is independent of any other scripts on the page.
       - `defer` is useful when you need to ensure the HTML is fully parsed before running.
@@ -228,46 +226,61 @@ has finished parsing.
       - `async` could be used for analytics scripts.
       - `defer` scripts must not contain `document.write`
   - **Source:**
-- [ ] Why is it generally a good idea to position CSS `<link>`s within `<head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+- [x] Why is it generally a good idea to position CSS `<link>`s within `<head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
   - **Explanation:** Placing <link> in the <head> allows for quick “first meaningful paint”. When a page first loads, HTML and CSS are being parsed simultaneously. However, <script> tags block HTML parsing while they are being downloaded and run, which can slow down your page. Thus, placing scripts at the bottom will allow the HTML to be parsed and displayed to the user first.
   - **Source:**
-- [ ] What is progressive rendering?
+- [x] What is progressive rendering?
   - **Explanation:** Progressive rendering is a technique used to improve the performance of a webpage so that it can render content for display ASAP.
   - **Use:** Improving perceived load time.
   - **Example:** Lazy loading of images, prioritizing visible content, and async HTML fragments.
   - **Source:**
-- [ ] Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
+- [x] Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
   - **Explanation:** When you want to serve different images to users depending on their device display width.
   - **Use:** Sending lower resolution to limit data waste and increase performance or sending larger images to a higher resolution display to enhance the UX.
   - **Example:** `<img srcset =”small.jpg 500w, medium.jpg 1000w, large.jpg 2000w” src=”...” alt=””>`
   - **Source:**
-- [ ] Have you used different HTML templating languages before?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+- [x] Have you used different HTML templating languages before?
+  - **Explanation:** Yes, EJS and HBS. They are more or less the same as each other and provide similar functionality to escape content and provide helpful filters for manipulating the data to be displayed. Most templating engines also allow you to inject your own filters in the event you require custom processing before display.
   - **Source:**
 
 ### CSS
 
 - [ ] What is CSS selector specificity and how does it work?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** How browsers decide which CSS property values are the most relevant to an element and how to apply them.
+  - **Use:** Specificity is a score that is applied to a given CSS declaration, and is determined by the number of each selector type that it calls upon.
+  - **Example:** A selector of `#id .class tag` would have 111 points, as id’s count for 100, classes count for 10, and tags count for 1.
   - **Source:**
 - [ ] What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** “Normalize” alteres the default styles of various browsers to match each other. “Reset” will remove a browser’s default styles so you are starting from scratch.
+  - **Use:** Using one or the other is done so that websites can remain visually consistent across different browsers. I prefer CSS normalize because of its style presets.
   - **Example:**
+   `Normalize:
+h1 {
+   font -size: 2 em;
+   margin: 0.67em 0;
+}
+
+Reset:
+Html, body, h1, h2, {
+   margin: 0;
+   padding: 0;
+}
+`
   - **Source:**
 - [ ] Describe floats and how they work.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** They are a positioning property where an element that is floated will be removed from the flow of the page and affect elements around it. `.clearfix` hacks are used to fix parent elements which collapse to zero height due to containing only floated elements.
+  - **Use:** Floats were used prior to flex and grid to organize pages in a more flexible way.
+
+  - **Example:** You can float three `<div>` elements left and give them widths of 33% each to create three columns with equal width.
   - **Source:**
 - [ ] Describe z-index and how stacking context is formed.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Z-index allows you to stack elements above or below one another to affect their visibility. Stacking context is formed by the parent-child relationship of nested elements, and the order of elements in the DOM.
+  - **Use:** Giving a planet image with a transparent background a higher z-index so that it appears in front of a dark-colored background with a lower z-index.
+  - **Example:** 
+   `#planet {
+      position: relative;
+      z-index: 1
+   }`
   - **Source:**
 - [ ] Describe BFC (Block Formatting Context) and how it works.
   - **Explanation:**
