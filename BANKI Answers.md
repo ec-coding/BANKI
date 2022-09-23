@@ -389,52 +389,51 @@ h6 {
 		- Requires tools for preprocessing.
 		- Re-compilation time can be slow.
 
-  - **Example:**
+  - **Example:** Sass, Post-CSS, Less
   - **Source:**
 - [ ] Describe what you like and dislike about the CSS preprocessors you have used.
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+	- Likes:
+		- Being able to split files and nest selectors is very efficient.
+	- Dislikes:
+		- Sass requires frequent re-compilation when switching between node versions.
+		- Less uses variable names prefixed with @, which can be confused with native CSS keywords such as @media, @import, etc.
   - **Source:**
 - [ ] How would you implement a web design comp that uses non-standard fonts?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Use `@font-face` and define `font-family`.
   - **Source:**
 - [ ] Explain how a browser determines what elements match a CSS selector.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Browsers match selectors from right to left. They filter out elements in the DOM based on the key selector and go up its parent element to find matches
+  - **Example:** `p span` locates all `<span>` elements and works its way up until it finds a `<p>` element. 
   - **Source:**
 - [ ] Describe pseudo-elements and discuss what they are used for.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** A keyword added to a selector that lets you style a specific part of the element.
+  - **Example:** `span: first-line` | `button: hover` 
   - **Source:**
 - [ ] Explain your understanding of the box model and how you would tell the browser, through CSS, to render your layout in different box models.
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Everything inside a web-page is a box. There are several components that comprise a box model, such as padding, border, and margin. The size of an overall element is directly affected by the box element.
+  - **Use:** The standard box model calculates box size by taking a specified height and width, then adding the padding and border. To change to the alternative box model, however, you would set `box-sizing: border box`, which allows you to set the box size with height and width.
+  - **Example:** Content box (default), border box, etc
   - **Source:**
 - [ ] What does `* { box-sizing: border-box; }` do? What are its advantages?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** It changes how the height and width of elements are calculated, compared to content-box. Changes the parameters of border and padding to not affect the overall sizing of the element.
   - **Source:**
 - [ ] What is the CSS `display` property and can you give a few examples of its use?
-  - **Explanation:**
-  - **Use:**
+  - **Explanation:** CSS display defines whether an element is treated as a block or inline element, as well as the layout used for its children, such as flow layout, grid, or flex.
   - **Example:**
+	- Block - takes up the whole line in the block’s direction.
+	- Inline - elements can be laid out beside one another.
+	- Inline-block - allows you to place block elements side by side.
   - **Source:**
 - [ ] What's the difference between `inline` and `inline-block`?
-  - **Explanation:**
-  - **Use:**
-  - **Example:**
+  - **Explanation:** Inline-block allows you to set a width and height on the element, unlike inline alone. Inline-block also allows you to set margin and padding on all sides, whereas for inline, you can only set margin and padding on the left and right sides.
   - **Source:**
 - [ ] What's the difference between a `relative`, `fixed`, `absolute` and `static` positioned element?
   - **Explanation:**
-  - **Use:**
-  - **Example:**
+- Relative - The element’s position is adjusted relative to itself without changing layout, and allows the use of Z-index on said element.
+- Fixed - The element is removed from the flow of the page and set at a specific position, and doesn’t move when the page is scrolled.
+- Absolute - The element is removed from the flow of the page and positioned based off of the top of the DOM content. It is not affected by other elements, and can be placed exactly where you want on the DOM.
+- Static - Default position; element flows into the page as it normally would.
   - **Source:**
 - [ ] What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
   - **Explanation:**
