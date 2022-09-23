@@ -654,7 +654,7 @@ if ('geolocation' in navigator) {
 	    - Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page.
 	    - Reduce connections to the server since scripts and stylesheets only have to be requested once.
 	    - State can be maintained on a page. JavaScript variables and DOM state will persist because the main container page was not reloaded.
-	  - **Disadvantages:**
+  - **Disadvantages:**
 	    - Dynamic webpages are harder to bookmark.
 	    - Does not work if JavaScript has been disabled in the browser.
 	    - Some webcrawlers do not execute JavaScript and would not see content that has been loaded by JavaScript.
