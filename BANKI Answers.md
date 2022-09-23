@@ -467,7 +467,7 @@ h6 {
   - **Explanation:** Retina is just a marketing term to refer to high resolution screens with a pixel ratio bigger than 1. In order to have crisp, good-looking graphics that make the best of retina displays we need to use high resolution images whenever possible. However using highest resolution images will have an impact on page load times.
   - **Use:** To overcome this problem, we can use responsive images, as specified in HTML5 with the `srcset` attribute.
   - **Example:**
-	  ```html
+  ```html
   <img
     src="/images/test-1600.jpg"
     srcset="/images/test-400.jpg 400w, /images/test-800.jpg 800w, /images/test-1200.jpg 1200w"
