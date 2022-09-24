@@ -531,7 +531,7 @@ h6 {
   - **Source:** https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_delegation
 	
 - [x] T-JS-2) Explain how `this` works in JavaScript
-  - **Explanation:** this references an object. When inside of a constructor function or class it will reference the object on instantiation.
+  - **Explanation:** `this` references an object. When inside of a constructor function or class it will reference the object on instantiation.
   - **Use:** It is used to assign properties and values to an object on instantiation.
   - **Example:**
 ```javascript
