@@ -651,7 +651,7 @@ const doubled = a.map((num) => {
 - [x] T-JS-12) What is the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
   - **Explanation & Use:**
     - `function Person(){}` is likely being used as a constructor.
-    - `var person = new Person()`is instantiated a new Person object as person.
+    - `var person = new Person()`is instantiating a new Person object as person.
     - `var person = Person()` is not correct and would likely return undefined. To create a new instance you would need to use the `new` operator as above.
   - **Example:**
 
