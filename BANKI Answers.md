@@ -684,7 +684,7 @@ console.log(person.name); // "john"
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
 	
 - [x] T-JS-16) What's the difference between feature detection, feature inference, and using the UA string?
-  - **Explanation:** https://www.frontendinterviewhandbook.com/javascript-questions/
+  - **Explanation:** 
 	
     - **Feature Detection:** Working out whether a browser supports a certain block of code, and running different code depending on whether it does, so that the browser can provide a working experience rather crashing/erroring in some browsers.
     - **Feature Inference:** Checks for a feature just like feature detection, but uses another function because it assumes it will also exist. Feature Detection is the better approach.
