@@ -576,7 +576,7 @@ console.log(child.constructor.name);
   - **Use:** CJS has been used in node.js for a while.
   - **Source:** https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm
 	
-- [x] T-JS-5) Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
+- [x] T-JS-5) Explain why the following doesn't work as an IIFE (Immediately Invoked Function Expression): `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
   - **Explanation:** The parser reads it as two seperate statements. First the function declaration `function foo(){ }` and then a blank function call attempt `();` The best way to fix this would be to add another set of parenthesis wrapping the function declaration `(function foo(){ })()` This changes it from a function declaration to a function expression.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions
 	
