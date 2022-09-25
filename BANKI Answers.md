@@ -718,7 +718,7 @@ if ('geolocation' in navigator) {
     - JavaScript will have to be parsed and executed on the browser, and low-end mobile devices might struggle with this.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
 	
-- x] T-JS-19) Explain how JSONP works (and how it's not really Ajax).
+- [x] T-JS-19) Explain how JSONP works (and how it's not really Ajax).
   - **Explanation:** JSONP (JSON with Padding) is a method commonly used to bypass the cross-domain policies in web browsers because Ajax requests from the current page to a cross-origin domain is not allowed.
   - **Use:** JSONP can be unsafe as it can do everything else JavaScript can so you need to trust the provider of data. These days, CORS is the recommended approach and JSONP is seen as a hack.
   - **Example:**
