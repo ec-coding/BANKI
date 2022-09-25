@@ -641,7 +641,7 @@ const doubled = a.map((num) => {
   - **Source:** https://www.theodinproject.com/lessons/node-path-javascript-es6-modules
 	
 - [x] T-JS-11) What's the difference between host objects and native objects?
-  - **Explanation:** https://www.frontendinterviewhandbook.com/javascript-questions/
+  - **Explanation:** 
 	
 	- Native objects are ones that are part of the JavaScript language, such as string, math, object, function, etc.
 	- Host objects are provided by the runtime environment (browser) such as window, XMLHTTPRequest, etc.
