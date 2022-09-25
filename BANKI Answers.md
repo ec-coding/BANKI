@@ -675,7 +675,7 @@ console.log(person.name); // "john"
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
 	
 - [x] T-JS-14) Explain `Function.prototype.bind`.
-  - **Explanation:** Creates a new function with a `this` keyword that sets itself to a value provided by the function call.
+  - **Explanation:** Creates a new function that, when called, has its this keyword set to the provided value.
   - **Use:** It binds the value of [this] in methods of classes you want to pass into other functions. Frequently performed with React components.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
 	
