@@ -677,6 +677,23 @@ console.log(person.name); // "john"
 - [x] T-JS-14) Explain `Function.prototype.bind`.
   - **Explanation:** Creates a new function that, when called, has its `this` keyword set to the provided value.
   - **Use:** It binds the value of `this` in methods of classes you want to pass into other functions. Frequently performed with React components.
+  - **Example:**
+
+```javascript
+function getMonthlyFee(fee){
+  var remaining = this.total - fee;
+  this.total = remaining;
+  return this.name +' remaining balance:'+remaining;
+}
+	
+var rachel = {name:'Rachel Green', total:500};
+
+//bind
+var getRachelFee = getMonthlyFee.bind(rachel, 90);
+//deduct
+getRachelFee();//Rachel Green remaining balance:410
+getRachelFee();//Rachel Green remaining balance:320
+```
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
 	
 - [x] T-JS-15) When would you use `document.write()`?
