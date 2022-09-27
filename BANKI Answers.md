@@ -815,7 +815,7 @@ console.log(input.value); // Hello World!
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/#why-is-extending-built-in-javascript-objects-not-a-good-idea
 	
 - [x] T-JS-25) What is the difference between window `load` event and document `DOMContentLoaded` event?
-  - **Explanation:** The DOMContentLoaded event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. window's load event is only fired after the DOM and all dependent resources and assets have loaded.
+  - **Explanation:** The DOMContentLoaded event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. window's `load` event is only fired after the DOM and all dependent resources and assets have loaded.
   - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/#difference-between-document-load-event-and-document-domcontentloaded-event
 
 - [x] T-JS-26) What is the difference between `==` and `===`?
