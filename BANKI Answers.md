@@ -758,7 +758,7 @@ if ('geolocation' in navigator) {
 	
 - [x] T-JS-21) Explain "hoisting".
   - **Explanation:** Hoisting is the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code. Think of it as moving the code up to the top. Note that the assignment stays where it is despite this.
-  - **Use:** It allows you to execute code before they're declared. Function declaration and var are initialized before delaration whereas const, let, and function expressions are not. This means the first two can be accessed globally and the last 3 only after they've been declared.
+  - **Use:** Hoisting allows functions to be safely used in code before they are declared.
   - **Example:**
 
 ```
