@@ -923,7 +923,7 @@ function fizzBuzz() {
 - [x] T-JS-36) What are the pros and cons of using Promises instead of callbacks?
 
   - **Pros:**
-    - Avoid callback
+    - Avoid callback hell
     - Easy to write sequential asynchronous code that is readable with `.then()`.
     - Easy to write parallel asynchronous code with `Promise.all()`.
     - With promises, these scenarios which are present in callbacks-only coding, will not happen:
