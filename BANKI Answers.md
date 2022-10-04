@@ -913,8 +913,7 @@ function fizzBuzz() {
 
 - [x] T-JS-34) Explain what a single page app is and how to make one SEO-friendly.
   - **Explanation:** SPA's render the page client side instead of server side. The server sends the initial page, but subsequent changes to the page do not initiate a page refresh. The data on the page is typically updated via an AJAX request which is then used to dynamically update the page via JavaScript.
-  - **Use:** A reason to use a SPA is that it feels more responsive to the user, fewer HTTP request are made so assets don
-    t have to be downloaded multiple times and there is a clear separation between client and server. As long as the API is the same either side can be modified without affecting the other. Some downsides would be heavier initial page load, additional server config needed and SEO can be more difficult. To overcome the SEO problem you could render your pages server side or use a service such as Prerender.
+  - **Use:** A reason to use a SPA is that it feels more responsive to the user, fewer HTTP request are made so assets don't have to be downloaded multiple times and there is a clear separation between client and server. As long as the API is the same either side can be modified without affecting the other. Some downsides would be heavier initial page load, additional server config needed and SEO can be more difficult. To overcome the SEO problem you could render your pages server side or use a service such as Prerender.
   - **Source:** https://github.com/grab/front-end-guide
 
 - [x] T-JS-35) What is the extent of your experience with Promises and/or their polyfills?
