@@ -835,7 +835,7 @@ console.log(input.value); // Hello World!
 - **Source:** https://www.frontendinterviewhandbook.com/javascript-questions/
 
 - [x] T-JS-27) Explain the same-origin policy with regards to JavaScript.
-  - **Explanation:** The same-origin policy prevents JavaScript from making requests across domain boundaries only allowing one webpage to access another webpage if they have the same origin . An origin is defined as a combination of URI scheme, hostname, and port number. This policy prevents a malicious script on one page from obtaining access to sensitive data on another web page through that page's Document Object Model.
+  - **Explanation:** The same-origin policy is a critical security mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin. This policy prevents a malicious script on one page from obtaining access to sensitive data on another web page through that page's Document Object Model.
   - **Source:** https://en.wikipedia.org/wiki/Same-origin_policy
 
 - [x] T-JS-28) Make this work: `duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5] `
