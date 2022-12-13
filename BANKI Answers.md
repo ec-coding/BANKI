@@ -92,7 +92,7 @@ Most of the behavioral questions should be answered in the CAR format. At least 
   - **Cause:**  At a previous job I held for a factoring company, I was placed in charge of a project that was meant to minimize the company’s financial loss due to over-aged invoices. Many of our clients were notorious for submitting shoddy paperwork that would often be rejected by their brokering companies, which led to us not receiving payment.
   - **Action:** To achieve the goals of this project, I proposed a plan to penalize repeat-offending clients with delayed purchasing dates for each time they had paperwork rejected for their truckloads. 
   - **Result:** The plan was a huge success, and as it incentivized a great number of our clients to begin submitting proper paperwork, which then eliminated a large fraction of the over-aged and unpaid invoices our division had been suffering from.
-  - 
+
 - [x] B10) Tell me about a situation when you made a mistake at work. What happened exactly and how did you deal with it? What steps did you take to improve the situation?
 
   - **Cause:** I once mistakenly authorized the release of a fraudulent load at my previous shipping company, which cost them a sizable amount of money when the client refused to pay for the load post-release.
