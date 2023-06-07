@@ -141,7 +141,7 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [ ] B18) Tell me about your dream job?  What do you really want to do with your career?
 
-  - **Cause:** I would like to work in a position that spurs me to continuously improve upon my skill-set. I loathe the thought of becoming stagnant with my ambitions, and am always looking to gain higher ground with my learning and self-improvement. 
+  - **Cause:** I’ve been a software engineer for a while now and I want my skill set to be tied to my passions. 
   - **Action:** 
   - **Result:** 
 
@@ -157,7 +157,7 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [ ] B21) What's some critical feedback you've gotten recently?
 
-  - **Cause:** 
+  - **Cause:** Talk less, and listen more. People love to talk about themselves and be listened to, and will value you greatly for lending an ear to them as they share their story.
   - **Action:** 
   - **Result:** 
   
