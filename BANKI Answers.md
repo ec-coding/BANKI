@@ -65,9 +65,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B5) Give me an example of a time you had to take a creative and unusual approach to solve coding problem. How did this idea come to your mind? Why do you think it was unusual?
 
-  - **Cause:** I once had an issue deploying a project on Heroku, due to constant errors stemming from my back-end code.
-  - **Action:** Because my server-side code was all contained in one file, I searched for possible ways to divide it up so that I could quarantine specific sectors to narrow down the problem area. I felt it was a very unorthodox approach at the time, as I had never thought to split my code in such fashion.
-  - **Result:** In the process, I came across the concept of MVC architecture and learned how its use made it possible to mitigate the exact troubleshoots I was suffering from. I ended up adopting this architecture into all my future projects going forward.
+  - **Cause:** In a previous project, I was tasked with optimizing a web application that was experiencing slow performance due to a large amount of data being fetched from a MongoDB database. The traditional approach of querying the database and rendering the data on the client side was resulting in significant loading times and a poor user experience.
+  - **Action:** To address this issue, I took a creative and unusual approach by implementing server-side rendering with React and Node.js. Instead of fetching the entire dataset on the client side, I devised a solution where the server would pre-render the React components with the necessary data and send the fully rendered HTML to the client.
+  - **Result:** As a result, I was able to achieve remarkable performance improvements with the app. The initial loading time was drastically reduced, and the overall user experience was enhanced. 
 
 - [x] B6) Describe a situation in which you worked diligently on a project and it did not produce the desired results. Why didn't you get the desired results? What did you learn from the experience?
 
@@ -113,7 +113,7 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B13) Tell me about yourself.
 
-  - I am a highly motivated candidate with an aptitude for productivity and process streamlining. I enjoy both the client-side and server-side immensely, and am excited that this opportunity would allow me to grow in both aspects. I really enjoy the idea that I’ll be able to see the results of my work and its connection to improving research. I think having exposure to this connection will motivate me in the long term because it aligns with my need to constantly improve my process efficiency skills.
+  - I am a highly motivated software engineer with an extensive background in developing both front-end and back-end web applications. I'm skilled in leveraging a wide variety of technologies, such as HTML5, CSS3, JavaScript, React, Node.js, and MongoDB, in order to deliver robust and efficient software solutions. In my current role at CodeStream Studios, I perform the role of a frontend developer, and am tasked with building and maintaining cutting edge UIs that help our teachers access and edit classroom data on a daily basis.
 
 - [x] B14) Tell me about your experience at 100Devs.
 
@@ -141,9 +141,13 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [ ] B18) Tell me about your dream job?  What do you really want to do with your career?
 
-  - **Cause:** I’ve been a software engineer for a while now and I want my skill set to be tied to my passions. 
-  - **Action:** 
-  - **Result:** 
+  - In my career as a software engineer, my dream job is to work at a large company like yours where I can contribute to meaningful projects and collaborate with a talented team. I have a passion for solving complex problems and enjoy being involved in the entire software development lifecycle, from ideation to deployment.
+
+One aspect of my dream job is the opportunity to work on cutting-edge technologies and innovative projects that push the boundaries of what's possible. I thrive in an environment that encourages continuous learning and allows me to stay up-to-date with the latest trends and advancements in the industry. Your company's reputation for being at the forefront of technological innovation aligns perfectly with my aspirations.
+
+Additionally, I value a company culture that fosters teamwork, open communication, and knowledge sharing. I believe that a collaborative and supportive environment not only enhances productivity but also promotes personal and professional growth. Being part of a diverse and inclusive team that celebrates different perspectives and experiences is crucial to me.
+
+Overall, my dream job is to be part of a dynamic organization where I can continuously learn, contribute my technical skills, collaborate with talented individuals, and make a positive impact on the company's success. I believe that your company's commitment to innovation, culture, and growth perfectly aligns with my long-term career aspirations."
 
 - [x] B19) Tell me a time when you failed.
 
