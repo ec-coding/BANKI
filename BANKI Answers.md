@@ -59,10 +59,10 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B4) Tell me about when you had to deal with conflict within your team. How was the conflict solved? How did you handle that? How would you deal with it now?
 
-  - **Cause:**  During my previous occupation in ocean freight shipping, I once volunteered to lead a project that would audit the company’s invoices for a specific client. The client was claiming that our company owed them a sizable sum of money due to unreported reserves.
-  - **Action:** Some of my team members debated the merit of working on the project due to the lack of bonus or overtime offered. Many of them were disappointed that I had chosen to accept it, as they felt I should have negotiated for compensation beforehand.
-  - **Result:** I reassured them that it was not their responsibility, and that they were not expected to contribute if they did not want to. I took on the project alone initially, but my work ethic gradually inspired my team members to volunteer their assistance over time, and we ended up completing it as a joint project together.
-
+  - **Cause:**  In my current role at CodeStream Studios, I encountered a situation where conflict arose within the team regarding an unreasonable time frame for a large project. Due to an upcoming and improptu meeting with potential clients and stalkeholders, management had requested the completion of said project within a tight deadline that seemed unrealistic given the scope and complexity of the task.
+  - **Action:** When I became aware of the timeline set by management, I proactively approached them to express my concerns. I explained the potential risks associated with rushing the project and the possible negative impact on the quality of deliverables. However, despite my efforts to convey the challenges and propose alternatives, I was unable to fully convince management to adjust the timeline. 
+  - **Result:** As a result, I buckled down and confirmed with management that I would still give 110% towards the project. I collaborated closely with my team to get a rough prototype ready by the deadline, which was met with appreciation by management. Even though I was unsuccessful in negotiating for more time, this situation taught me the importance being adaptable to situational changes, and to always communicate my disagreements with organized data and research. 
+  - 
 - [x] B5) Give me an example of a time you had to take a creative and unusual approach to solve coding problem. How did this idea come to your mind? Why do you think it was unusual?
 
   - **Cause:** In a previous project, I encountered a challenging coding problem where a web application was experiencing severe performance issues due to fetching a large amount of data from an external API. The traditional approach of querying the API and rendering all the data on the client side was resulting in significant delays and a poor user experience.
