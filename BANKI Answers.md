@@ -47,9 +47,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B2) Tell me about a time you had to work on several projects at once. How did you handle this?
 
-  - **Cause:** During my freelancing period, I was contracted to work on multiple websites at once for different clients.
-  - **Action:** I handled the workload by designating certain days and time slots for different clients, so that I would not have to divert my focus back and forth between them. In essence, they were all promised specific days where I would reach out to them with updates.
-  - **Result:** The result was that I was able to tend to each client’s needs in a timely and organized fashion, which allowed me to complete each project according to their specifications. 
+  - **Cause:**  Within the freelancing side of my software engineering career, I've often found myself managing multiple client projects concurrently.
+  - **Action:** I've handled these substantial workloads by prioritizing each project based on factors such as client deadlines and app complexity. In addition, I provide each client with frequent, organized updates regarding deliverables and timelines in order to set realistic expecations. Throughout the development phase, I will also schedule and break down each project into smaller tasks, which are they allocated to specific time slots. This allows me to make steady progress on all projects through efficient time management.
+  - **Result:** As a result, by following these strategies, I've been able to successfully manage multiple projects simultaneously during my freelance web development experience. I've delivered high-quality work, met client expectations, and maintained a professional approach throughout each engagement.
 
 - [x] B3) Describe a situation in which you felt you had not communicated well enough. What did you do? How did you handle it?
 
