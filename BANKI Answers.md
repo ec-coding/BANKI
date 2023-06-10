@@ -65,9 +65,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B5) Give me an example of a time you had to take a creative and unusual approach to solve coding problem. How did this idea come to your mind? Why do you think it was unusual?
 
-  - **Cause:** In a previous project, I was tasked with optimizing a web application that was experiencing slow performance due to a large amount of data being fetched from a MongoDB database. The traditional approach of querying the database and rendering the data on the client side was resulting in significant loading times and a poor user experience.
-  - **Action:** To address this issue, I took a creative and unusual approach by implementing server-side rendering with React and Node.js. Instead of fetching the entire dataset on the client side, I devised a solution where the server would pre-render the React components with the necessary data and send the fully rendered HTML to the client.
-  - **Result:** As a result, I was able to achieve remarkable performance improvements with the app. The initial loading time was drastically reduced, and the overall user experience was enhanced. 
+  - **Cause:** In a previous project, I encountered a challenging coding problem where a web application was experiencing severe performance issues due to fetching a large amount of data from an external API. The traditional approach of querying the API and rendering all the data on the client side was resulting in significant delays and a poor user experience.
+  - **Action:** To tackle this issue, I decided to take a creative and unusual approach by implementing pagination on the API fetch. Instead of retrieving the entire dataset in a single request, I devised a solution where the data would be fetched in smaller chunks or pages. I introduced pagination controls, allowing users to navigate through different pages of data and fetch only the necessary subset of records at a time.
+  - **Result:** Implementing pagination on the API fetch yielded remarkable results. The web application's performance improved significantly, as it now retrieved and rendered a smaller portion of data per request. This led to faster loading times, enhanced responsiveness, and an improved user experience overall.
 
 - [x] B6) Describe a situation in which you worked diligently on a project and it did not produce the desired results. Why didn't you get the desired results? What did you learn from the experience?
 
