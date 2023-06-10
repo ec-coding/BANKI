@@ -53,9 +53,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B3) Describe a situation in which you felt you had not communicated well enough. What did you do? How did you handle it?
 
-  - **Cause:** At the start of a major portfolio review during my days in ocean freight shipping, I discovered that critical roles were not delegated to the proper individuals at the time of the project’s conception. 
-  - **Action:** After convening with my teammates and coming to a consensus, we agreed to allocate separate responsibilities to each individual to ensure a smooth trajectory for the project. 
-  - **Result:** The result was that we were able to greatly reduce the amount of role overlap brought about by the initial lack of communication, and work morale ended up improving tremendously. The portfolio was thus completed successfully and in a timely fashion.
+  - **Cause:** During my freelance website development work for a client, I encountered a situation where I had not effectively communicated the payment details due to the process of establishing an LLC. As a result, the client kept making checks out to my business name, which I could not cash in my personal name.  
+  - **Action:** To compensate for the communication difficulty, I decided to exempt one of the payments that I was owed from the client because I valued our business relationship and didn't want this mishap to cause unnecessary tension throughout the development process.
+  - **Result:** By taking these steps, I addressed the communication gap, rectified the payment issue, and provided compensation for the difficulty caused. This helped me retain my client and avoid unnecessary agitation from a misunderstanding. I took ownership of the mistake and used this as a lesson going forward on how to more effectively communicate payment details with future clients.
 
 - [x] B4) Tell me about when you had to deal with conflict within your team. How was the conflict solved? How did you handle that? How would you deal with it now?
 
