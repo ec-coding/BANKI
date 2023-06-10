@@ -41,9 +41,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B1) Give me an example of a project or initiative that you started on your own. What prompted you to get started?
 
-  - **Cause:** Shortly after I had left my first teaching position, I wound up wanting to spend some of my free time outside of work towards helping students from underprivileged families.
-  - **Action:** Thus, I began a non-for-profit tutoring service for underprivileged grade school students, using connections I had made from my job in teaching, and also from the church I was attending at the time. I offered educational assistance in areas they were struggling in, namely for Math and Language Arts.
-  - **Result:** The program lasted about 4 months, and was a tremendous success. We had amazing turnouts every week, and I myself ended up learning some valuable life lessons that I still carry with me to this day.
+  - **Cause:** During my time at a training agency called 100devs, I began a standalone tutorial project to assist the some of our students in understanding the basics of CRUD app development and CSS styling.
+  - **Action:** I saw an opportunity to go beyond the typical CRUD app by incorporating elements from entertainment franchises to generate increased user engagement. Thus, I began production of a full-stack deck building app centered around Pokémon cards. Because Pokémon has a large fan base and is well-known among different age groups, I felt choosing this theme for the app would making it more likely for members of the cohort to explore and interact with the examples and apply what they learned towards their own projects.
+  - **Result:** As a result, the cohort was a tremendous success and allowed me to educate others on the vast possibilities of CSS styling and CRUD fundamentals which went on to inspire them to think creatively when developing and designing their own projects. This initiative allowed me to showcase my abilities as a fullstack developer, provide value to users through engaging examples, and demonstrate my creativity in applying technical skills to real-world projects.
 
 - [x] B2) Tell me about a time you had to work on several projects at once. How did you handle this?
 
