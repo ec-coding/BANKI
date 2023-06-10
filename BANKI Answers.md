@@ -71,9 +71,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B6) Describe a situation in which you worked diligently on a project and it did not produce the desired results. Why didn't you get the desired results? What did you learn from the experience?
 
-  - **Cause:** My first experience with coding was to try and build a personal website to kickstart my portfolio.
-  - **Action:** I attempted to create a sophisticated layout with animations and scroll-based events using only a limited knowledge of HTML and CSS, and no insight on JavaScript.
-  - **Result:** I did not produce the desired results because the lack of JavaScript made it impossible for the site to trigger user events and display the appropriate content. This experience taught me the importance of each of the three front-end languages, and from then onwards, I was motivated to learn how they function altogether.
+  - **Cause:** In a recent freelance website development project, I worked diligently to create a visually stunning and user-friendly website for a client in the real estate industry. However, despite my efforts, the website did not generate the expected level of user engagement and conversions.
+  - **Action:** Upon reflection, I identified a few reasons why the desired results were not achieved. Firstly, the project had a tight timeline, which limited the amount of time available for thorough user research and testing. As a result, some design decisions were made without obtaining sufficient user feedback, leading to suboptimal user experiences.
+  - **Result:** From this experience, I learned the significance of allocating adequate time for user research and fostering effective communication with clients. I now prioritize thorough user testing, engage in regular client check-ins to align on project goals, and emphasize the importance of realistic deadlines to ensure high-quality deliverables.
 
 - [x] B7) Give an example of an important project goal you reached and how you achieved it.
 
@@ -83,9 +83,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B8) Describe a situation in which you experienced difficulty in getting others to accept your ideas? What was your approach? How did this work? Were you able to successfully persuade someone to see things your way?
 
-  - **Cause:** At one of my previous workplaces, we were once tasked with learning new software for taking client calls. 
-  - **Action:** Because the onboarding sessions were long and scarce in breaks, I suggested to management if our team could utilize the pomodoro technique, which basically entails 25 minutes of dedicated focus, followed by a 5-minute break, all with the aim of reducing burnout.  
-  - **Result:** The idea was rejected at the time, because the supervisor in charge of the course was intent on following a set schedule. However, after the workshop had ended, I approached some of my superiors and explained the merits of pomodo in a polite and civil manner. We ended up having a great discussion about employee learning expectations, and they promised to look into implementing such techniques for future onboarding sessions.
+  - **Cause:** At my current role with CodeStream Studios, I once encountered difficulty in getting the development team to adopt a new frontend framework for an upcoming project. Despite recognizing the benefits of the framework in terms of productivity and code maintainability, some team members were hesitant to adopt a new technology and preferred sticking to the existing stack.
+  - **Action:** To overcome this challenge, I took an approach that focused on collaboration, evidence-based reasoning, and addressing concerns head-on. I organized informal knowledge-sharing sessions where I presented case studies and examples of successful implementation of the framework in other companies. I demonstrated how it could streamline our development process, improve code quality, and increase overall productivity.
+  - **Result:** While I couldn't persuade everyone to see things my way initially, the key takeaway from this experience was the importance of building a compelling case supported by evidence, fostering open communication, and addressing concerns empathetically to gradually influence others' perspectives.
 
 - [x] B9) Tell me about a situation when you were responsible for project planning. Did everything go according to your plan? If not, then why and what kind of counteractions did you have to take?
 
