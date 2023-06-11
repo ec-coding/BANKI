@@ -127,12 +127,10 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [ ] B16) Why do you want to work for us?
 
-
-  - **Cause:** 
+  - **Cause:** I have a deep admiration and respect for the US Military and the crucial role it plays in protecting our nation and ensuring global security. I firmly believe that the work of defense contractors like Lockheed Martin is integral to supporting and equipping our military forces effectively. Working for a company that contributes directly to national defense is a way for me to make a meaningful impact and contribute to a cause I genuinely care about.
   - **Action:** 
   - **Result:** 
   
-
 - [ ] B17) Why are you interested in this opportunity?
 
   - **Cause:** 
@@ -141,9 +139,7 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [ ] B18) Tell me about your dream job?  What do you really want to do with your career?
 
-  - In my career as a software engineer, my dream job is to work at a large company like yours where I can contribute to meaningful projects and collaborate with a talented team. I have a passion for solving complex problems and enjoy being involved in the entire software development lifecycle, from ideation to deployment.
-
-  - Overall, my dream job is to be part of a dynamic organization where I can continuously learn, contribute my technical skills, collaborate with talented individuals, and make a positive impact on the company's success. I believe that your company's commitment to innovation, culture, and growth perfectly aligns with my long-term career aspirations."
+  - I am motivated by the idea of being part of a team that plays a critical role in equipping and empowering our armed forces to successfully overcome evolving threats and challenges. My aim is to work at a large company like yours where I can contribute to meaningful projects that help accelerate this cause. I have a passion for solving complex problems and enjoy being involved in the entire software development lifecycle, from ideation to deployment. Ultimately, my dream job is one where I can utilize my skills and knowledge to serve an industry that I feel closely aligns with my passions."
 
 - [x] B19) Tell me a time when you failed.
 
