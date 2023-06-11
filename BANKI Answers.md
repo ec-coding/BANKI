@@ -143,11 +143,7 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
   - In my career as a software engineer, my dream job is to work at a large company like yours where I can contribute to meaningful projects and collaborate with a talented team. I have a passion for solving complex problems and enjoy being involved in the entire software development lifecycle, from ideation to deployment.
 
-One aspect of my dream job is the opportunity to work on cutting-edge technologies and innovative projects that push the boundaries of what's possible. I thrive in an environment that encourages continuous learning and allows me to stay up-to-date with the latest trends and advancements in the industry. Your company's reputation for being at the forefront of technological innovation aligns perfectly with my aspirations.
-
-Additionally, I value a company culture that fosters teamwork, open communication, and knowledge sharing. I believe that a collaborative and supportive environment not only enhances productivity but also promotes personal and professional growth. Being part of a diverse and inclusive team that celebrates different perspectives and experiences is crucial to me.
-
-Overall, my dream job is to be part of a dynamic organization where I can continuously learn, contribute my technical skills, collaborate with talented individuals, and make a positive impact on the company's success. I believe that your company's commitment to innovation, culture, and growth perfectly aligns with my long-term career aspirations."
+  - Overall, my dream job is to be part of a dynamic organization where I can continuously learn, contribute my technical skills, collaborate with talented individuals, and make a positive impact on the company's success. I believe that your company's commitment to innovation, culture, and growth perfectly aligns with my long-term career aspirations."
 
 - [x] B19) Tell me a time when you failed.
 
