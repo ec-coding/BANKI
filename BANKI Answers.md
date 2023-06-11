@@ -77,9 +77,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B7) Give an example of an important project goal you reached and how you achieved it.
 
-  - **Cause:** I was once tasked with training new hires at a previous workplace, which dealt with ocean freight shipping. However, due to the outdated software that said company used, it was very difficult to relate its functions to modern-day applications.
-  - **Action:** I took the initiative to document the software’s capabilities using OneNote, and included many examples on how the trainees could better understand the tasks it was developed for.
-  - **Result:** The new hires were successfully trained and became integrated into my team. Furthermore, the documentation I created for the company ended up becoming the de facto training manual for future hires and internal transfers.
+  - **Cause:** In my role as a frontend developer at CodeStream Studios, we had an important project goal to optimize the loading performance of our learning management system (LMS) to enhance the user experience for students and educators.
+  - **Action:** To achieve this goal, I employed several strategies. First, I conducted a sweep of the LMS codebase to identify areas of improvement. I then set about reducing the size of CSS and JavaScript files and implementing lazy loading for non-critical resources, all in order to optimize rendering paths. I also collaborated closely with the backend team to optimize API responses, reduce unnecessary data transfer, and implement server-side rendering for frequently visited pages.
+  - **Result:** As a result, we successfully achieved the project goal of significantly improving the loading performance of our LMS. This resulted in a more seamless and efficient learning experience for our users.
 
 - [x] B8) Describe a situation in which you experienced difficulty in getting others to accept your ideas? What was your approach? How did this work? Were you able to successfully persuade someone to see things your way?
 
