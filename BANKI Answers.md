@@ -89,9 +89,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B9) Tell me about a situation when you were responsible for project planning. Did everything go according to your plan? If not, then why and what kind of counteractions did you have to take?
 
-  - **Cause:**  At a previous job I held for a factoring company, I was placed in charge of a project that was meant to minimize the company’s financial loss due to over-aged invoices. Many of our clients were notorious for submitting shoddy paperwork that would often be rejected by their brokering companies, which led to us not receiving payment.
-  - **Action:** To achieve the goals of this project, I proposed a plan to penalize repeat-offending clients with delayed purchasing dates for each time they had paperwork rejected for their truckloads. 
-  - **Result:** The plan was a huge success, and as it incentivized a great number of our clients to begin submitting proper paperwork, which then eliminated a large fraction of the over-aged and unpaid invoices our division had been suffering from.
+  - **Cause:**  In a previous web app project I was leading for a nonprofit group, our team encountered an unexpected challenge when one of our key team members decided to leave the project due to unforeseen personal circumstances.
+  - **Action:** The departure of this team member had the potential to impact the project timeline and deliverables. I immediately identified areas where resources needed to be adjusted to compensate for the missing team member's contributions, and facilitated discussions with the remaining team members to redistribute tasks and responsibilities effectively. This involved reevaluating task priorities, adjusting deadlines, and ensuring open communication with stakeholders about the revised plan, along with any and all updates.
+  - **Result:** Ultimately, despite the unexpected departure and the need to reallocate resources, our team successfully completed the project within the revised timeline. The experience taught me the importance of adaptability, effective communication, and collaborative problem-solving in project planning and management."
 
 - [x] B10) Tell me about a situation when you made a mistake at work. What happened exactly and how did you deal with it? What steps did you take to improve the situation?
 
