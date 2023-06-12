@@ -148,8 +148,8 @@ Most of the behavioral questions should be answered in the CAR format. At least 
   - **Result:** The entire process taught me the value of learning when to say “No” and to always be honest about my limitations with the people I work with. As I moved forward from this experience, I have stood by the principle of under-promising and over-delivering when possible.
 
 - [x] B20) What do you read on a regular basis?
-  - Recently I've been reading various books on Data Structures & Algorithms along with books about different styles of coding architecture.
-  - I'll also typically read movie screenplays, self-help books, and cooking guides. I'm a huge fan of our public library system and regularly use it.
+  - I regularly follow influential tech blogs and publications such as Medium's engineering section, Hacker News, and publications like ACM Queue and IEEE Spectrum. These sources provide valuable insights into emerging technologies, best practices, and thought-provoking articles written by industry experts. I'm usually always on the lookout for content related to niche packages I use with React, especially if expansive documentation is not readily available for them.
+  - I'll also typically read self-help books and cooking guides. I'm a huge fan of our public library system and regularly use it.
 
 - [ ] B21) What's some critical feedback you've gotten recently?
 
