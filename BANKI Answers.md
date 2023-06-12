@@ -107,9 +107,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
 
 - [x] B12) Describe a situation when you worked effectively under pressure. How did you feel when working under pressure? What was going on, and how did you get through it?
 
-  - **Cause:** At my previous workplace, I often had to work under pressure at the end of each month, due to the large influx of client invoices that arrived around said time.
-  - **Action:** Repeated exposure to working under these hectic conditions allowed me to develop efficient time management skills so that I could divide and conquer my tasks with sufficient breakpoints in between.
-  - **Result:** Each experience built upon the previous to the point where I felt little to no anxiety while working under high pressure conditions. I feel I have become a far more tempered worker as a result.
+  - **Cause:** During my previous role as a teacher, I was in charge of a PSAT/SAT preparatory class that lasted throughout the summer, and I frequently found myself working effectively under pressure. The intensity of the program, coupled with the importance of helping students achieve their best results, created a challenging yet rewarding environment.
+  - **Action:** There was a tight timeline for delivering results, as the exams were scheduled for a specific date and our goal was to adequately prepare students within the given timeframe. Additionally, the students themselves were under considerable pressure, as they aspired to achieve impressive scores that would open doors to their desired universities. To compensate for this, I created a supportive and motivating classroom environment where students felt comfortable asking questions, sharing their concerns, and collaborating with their peers. 
+  - **Result:** Despite the demanding nature of the summer program, I thrived under pressure by maintaining a positive mindset and reminding myself of the positive impact I could have on the students' lives. I sought to create a balance between rigorous academic preparation and fostering a supportive and encouraging learning environment.
 
 - [x] B13) Tell me about yourself.
 
