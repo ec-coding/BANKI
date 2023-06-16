@@ -12,6 +12,7 @@
    - [Javascript General]
    - [Node]
    - [CS Theory]
+   - [React]
 3. [Questions to ask your interviewer]
 
 ---
