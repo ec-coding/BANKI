@@ -157,8 +157,9 @@ Most of the behavioral questions should be answered in the CAR format. At least 
   - **Action:** 
   - **Result:** 
   
+- [ ] B22) What is your greatest strength? What would you say is your greatest weakness?
 
-- [ ] B22) Do you have any questions?
+- [ ] B23) Do you have any questions?
 - What is the interview process like? What is the timeline?
 - What are some of the challenges for the person in this position?
 - What is a typical day in this position?
